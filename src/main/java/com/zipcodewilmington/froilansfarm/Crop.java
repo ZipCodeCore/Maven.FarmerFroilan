@@ -4,7 +4,6 @@ public class Crop {
     private Boolean fertilized = false;
 
     public Crop(){
-
     }
 
     public void fertilize(){

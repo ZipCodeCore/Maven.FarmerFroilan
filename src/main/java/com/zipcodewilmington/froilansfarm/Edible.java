@@ -1,5 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Edible {
+public interface Edible {
 
 }

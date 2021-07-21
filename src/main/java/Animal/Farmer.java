@@ -56,11 +56,11 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
 
     }
 
-    public int setNumberOfplants() {
+    public int setNumberOfPlants() {
         return 0;
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

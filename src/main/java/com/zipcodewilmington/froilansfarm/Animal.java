@@ -1,13 +1,13 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Animal implements Eater, NoiseMaker {
+public abstract class Animal <T extends Edible> implements Eater<T>, NoiseMaker {
     private String name;
 
     public Animal() {
         name = "";
     }
 
-    public void eat(Edible edible) {
+    public void eat(T edible) {
 
     }
 
@@ -26,4 +26,5 @@ public class Animal implements Eater, NoiseMaker {
     public void setName(String name) {
         this.name = name;
     }
+
 }

@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Produce {
+public class Produce implements Edible {
     private Boolean hasBeenFertilized;
 
     private Produce yield() {

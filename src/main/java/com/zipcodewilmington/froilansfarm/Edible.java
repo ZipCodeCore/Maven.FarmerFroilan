@@ -1,2 +1,4 @@
-package com.zipcodewilmington.froilansfarm;public interface Edible {
+package com.zipcodewilmington.froilansfarm;
+
+public interface Edible {
 }

@@ -8,15 +8,15 @@ public class Stable implements Shelter<Horse> {
     List<Horse> horseList = new ArrayList<Horse>();
     Horse horse;
 
-    public void add(Horse thingToBeStored) {
-        horseList.add(thingToBeStored);
+    public void add(Horse horse) {
+        horseList.add(horse);
     }
 
     public Horse getTypeByName(String name) {
         return horse.getName();
     }
 
-    public void remove(Horse thingToBeStored) {
-        horseList.remove(thingToBeStored);
+    public void remove(Horse horse) {
+        horseList.remove(horse);
     }
 }

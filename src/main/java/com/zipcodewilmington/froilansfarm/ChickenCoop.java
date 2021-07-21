@@ -8,15 +8,15 @@ public class ChickenCoop implements Shelter<Chicken> {
     List<Chicken> chickenList = new ArrayList<Chicken>();
     Chicken chicken;
 
-    public void add(Chicken thingToBeStored) {
-        chickenList.add(thingToBeStored);
+    public void add(Chicken chicken) {
+        chickenList.add(chicken);
     }
 
     public Chicken getTypeByName(String name) {
         return chicken.getName();
     }
 
-    public void remove(Chicken thingToBeStored) {
-        chickenList.remove(thingToBeStored);
+    public void remove(Chicken chicken) {
+        chickenList.remove(chicken);
     }
 }

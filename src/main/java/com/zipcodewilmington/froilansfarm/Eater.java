@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface Eater<Edible> {
+public interface Eater {
     void eat(Edible edible);
 }
+//

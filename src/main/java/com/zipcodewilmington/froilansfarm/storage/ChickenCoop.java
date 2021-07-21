@@ -15,14 +15,12 @@ public class ChickenCoop implements StorageInterface {
 
     @Override
     public void add(Object thingYouAreStoring) {
-        Chicken chicken = new Chicken();
-        listOfChicken.add(chicken);
+        listOfChicken.add((Chicken) thingYouAreStoring);
     }
 
     @Override
     public void remove(Object thingYouAreStoring) {
-        Chicken chicken = new Chicken();
-        listOfChicken.remove(chicken);
+        listOfChicken.remove(thingYouAreStoring);
     }
 
     @Override
@@ -30,7 +28,7 @@ public class ChickenCoop implements StorageInterface {
         return listOfChicken.size();
     }
 
-    public List<Chicken> getListOfChicken() {
-        return listOfChicken;
+    public Integer getListOfChicken() {
+        return listOfChicken.size();
     }
 }

@@ -15,18 +15,20 @@ public class Stable implements StorageInterface {
 
     @Override
     public void add(Object thingYouAreStoring) {
-        Horse horse = new Horse();
-        listOfHorses.add(horse);
+        listOfHorses.add((Horse) thingYouAreStoring);
     }
 
     @Override
     public void remove(Object thingYouAreStoring) {
-        Horse horse = new Horse();
-        listOfHorses.remove(horse);
+        listOfHorses.remove(thingYouAreStoring);
     }
 
     @Override
     public int amount(Object thingYouAreStoring) {
+        return listOfHorses.size();
+    }
+
+    public Integer getListOfHorses () {
         return listOfHorses.size();
     }
 }

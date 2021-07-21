@@ -15,18 +15,20 @@ public class Field implements StorageInterface {
 
     @Override
     public void add(Object thingYouAreStoring) {
-        CropRow cropRow = new CropRow();
-        listOfCropRow.add(cropRow);
+        listOfCropRow.add((CropRow) thingYouAreStoring);
     }
 
     @Override
     public void remove(Object thingYouAreStoring) {
-        CropRow cropRow = new CropRow();
-        listOfCropRow.remove(cropRow);
+        listOfCropRow.remove(thingYouAreStoring);
     }
 
     @Override
     public int amount(Object thingYouAreStoring) {
+        return listOfCropRow.size();
+    }
+
+    public Integer getListOfCropRow() {
         return listOfCropRow.size();
     }
 }

@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm;
 public class Animal implements Eater, NoiseMaker {
     private String name;
 
-    public void eat(Object o) {
+    public void eat(Edible edible) {
 
     }
 

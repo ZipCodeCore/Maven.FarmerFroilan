@@ -13,12 +13,20 @@ public class FarmHouse implements Shelter<Person> {
         this.personList = personList;
     }
 
+    public FarmHouse() {}
+
     public void add(Person person) {
         personList.add(person);
     }
 
-    public Person getTypeByName(String name) {
-        return person.getName();
+    public Person getObjectByName(String name) {
+        Person thisPerson = new Person();
+        for(Person person : personList) {
+            if(person.equals(name)) {
+                thisPerson = person;
+            }
+        }
+        return thisPerson;
     }
 
     public void remove(Person person) {

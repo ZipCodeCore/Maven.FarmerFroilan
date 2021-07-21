@@ -16,8 +16,14 @@ public class Stable implements Shelter<Horse> {
         horseList.add(horse);
     }
 
-    public Horse getTypeByName(String name) {
-        return horse.getName();
+    public Horse getObjectByName(String name) {
+        Horse thisHorse = new Horse();
+        for(Horse horse : horseList) {
+            if(horse.equals(name)) {
+                thisHorse = horse;
+            }
+        }
+        return thisHorse;
     }
 
     public void remove(Horse horse) {

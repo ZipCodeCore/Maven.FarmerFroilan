@@ -26,9 +26,25 @@ public class CropRow {
         this.numOfCropsAvailableToEat = 0;
     }
 
-    public int getNumberofCropsPlanted() {return numOfCropsPlanted;}
+    public int getNumberofCropsPlanted() {return cropRow.size();}
 
     public int getCropRowSize() {
         return cropRow.size();
+    }
+
+    public Integer getNumOfCropsPlanted() {
+        return numOfCropsPlanted;
+    }
+
+    public Integer getNumOfCropsHarvested() {
+        return numOfCropsHarvested;
+    }
+
+    public Integer getNumOfCropsFertilized() {
+        return numOfCropsFertilized;
+    }
+
+    public Integer getNumOfCropsAvailableToEat() {
+        return numOfCropsAvailableToEat;
     }
 }

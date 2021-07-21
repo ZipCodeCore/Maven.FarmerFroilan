@@ -34,6 +34,12 @@ public class FarmHouseTest {
         Assert.assertFalse(farmhouse.getPersonList().contains(person1));
     }
 
+    @Test
+    public void testImplementation() {
+        FarmHouse farmhouse = new FarmHouse();
+        Assert.assertTrue(farmhouse instanceof Shelter);
+    }
+
 //    @Test
 //    public void testGetName() {
 //        //given

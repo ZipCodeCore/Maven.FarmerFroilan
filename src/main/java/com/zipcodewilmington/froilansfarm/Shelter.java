@@ -4,7 +4,7 @@ public interface Shelter<ShelterableType> {
 
     void add(ShelterableType thingToBeStored);
 
-    ShelterableType getTypeByName(String name);
+    ShelterableType getObjectByName(String name);
 
     void remove(ShelterableType thingToBeStored);
 }

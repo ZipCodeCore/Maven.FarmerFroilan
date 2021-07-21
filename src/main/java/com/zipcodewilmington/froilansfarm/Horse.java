@@ -6,6 +6,8 @@ public class Horse extends Animal implements Ridable {
         super(name);
     }
 
+    public Horse() { }
+
     public void ride() {
 
     }

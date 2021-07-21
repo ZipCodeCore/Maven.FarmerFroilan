@@ -6,5 +6,7 @@ public class Chicken extends Animal implements Edible {
         super(name);
     }
 
+    public Chicken() { }
+
 
 }

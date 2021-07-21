@@ -16,8 +16,14 @@ public class ChickenCoop implements Shelter<Chicken> {
         chickenList.add(chicken);
     }
 
-    public Chicken getTypeByName(String name) {
-        return chicken.getName();
+    public Chicken getObjectByName(String name) {
+        Chicken thisChicken = new Chicken();
+        for(Chicken chicken : chickenList) {
+            if(chicken.equals(name)) {
+                thisChicken = chicken;
+            }
+        }
+        return thisChicken;
     }
 
     public void remove(Chicken chicken) {

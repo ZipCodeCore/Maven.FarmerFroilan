@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class TomatoPlant extends Produce{
+public class TomatoPlant extends Crop{
 
         public Tomato yield() {
 

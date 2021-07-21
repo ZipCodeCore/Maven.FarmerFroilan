@@ -5,7 +5,7 @@ import org.junit.Test;
 public class TractorTest {
 
     @Test
-    public class constructorTest(){
+    public void constructorTest(){
         //given
         //when
         //then

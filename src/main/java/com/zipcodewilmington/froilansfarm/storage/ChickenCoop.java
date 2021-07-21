@@ -1,4 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.storage;
+
+import com.zipcodewilmington.froilansfarm.Chicken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +28,9 @@ public class ChickenCoop implements StorageInterface {
     @Override
     public int amount(Object thingYouAreStoring) {
         return listOfChicken.size();
+    }
+
+    public List<Chicken> getListOfChicken() {
+        return listOfChicken;
     }
 }

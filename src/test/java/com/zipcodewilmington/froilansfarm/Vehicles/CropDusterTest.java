@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class CropDusterTest {
     @Test
-    public class constructorTest(){
+    public void constructorTest(){
         //given
 
 
@@ -14,18 +14,18 @@ public class CropDusterTest {
         //then
     }
     @Test
-    public class nullaryConstructorTest(){
+    public void nullaryConstructorTest(){
         //given
 
         //when
 
         //then
-        Assert.assertEquals(expected, actual);
+    //    Assert.assertEquals(expected, actual);
     }
-    @Test
-    public class constructorTest(){
-        //given
-        //when
-        //then
-    }
+//    @Test
+//    public void constructorTest(){
+//        //given
+//        //when
+//        //then
+//    }
 }

@@ -12,6 +12,11 @@ public class ChickenCoop implements Shelter<Chicken> {
         this.chicken = chicken;
         this.chickenList = chickenList;
     }
+
+    public ChickenCoop() {
+
+    }
+
     public void add(Chicken chicken) {
         chickenList.add(chicken);
     }

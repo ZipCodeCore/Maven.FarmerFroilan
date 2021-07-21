@@ -12,6 +12,9 @@ public class Stable implements Shelter<Horse> {
         this.horse = horse;
         this.horseList = horseList;
     }
+
+    public Stable() {}
+
     public void add(Horse horse) {
         horseList.add(horse);
     }

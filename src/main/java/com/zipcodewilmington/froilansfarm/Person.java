@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Person {
+public class Person<T extends Edible> implements Eater<T>{
 
     private String name;
 
@@ -18,5 +18,10 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void eat(T edible) {
+
     }
 }

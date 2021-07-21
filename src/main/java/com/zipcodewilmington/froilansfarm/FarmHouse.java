@@ -8,6 +8,11 @@ public class FarmHouse implements Shelter<Person> {
     List<Person> personList = new ArrayList<Person>();
     Person person;
 
+    public FarmHouse(Person person) {
+        this.person = person;
+        this.personList = personList;
+    }
+
     public void add(Person person) {
         personList.add(person);
     }

@@ -10,7 +10,8 @@ public class Person {
     }
 
     public Person(){
-
+ this.name="";
+ this.amountOfFoodEaten=0;
     }
 
     public String getName() {
@@ -19,5 +20,13 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAmountOfFoodEaten() {
+        return amountOfFoodEaten;
+    }
+
+    public void setAmountOfFoodEaten(int amountOfFoodEaten) {
+        this.amountOfFoodEaten = amountOfFoodEaten;
     }
 }

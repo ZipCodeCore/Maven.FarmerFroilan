@@ -7,7 +7,7 @@ public class Chicken extends Animal implements Produce {
     Boolean isFertilized=false;
     Integer eggs;
 
-
+public Chicken(){}
 
     public void yield(Edible object) {
         if(isFertilized==true){
@@ -29,6 +29,7 @@ public class Chicken extends Animal implements Produce {
     public String makeNoise(){
         return "Cluck!";
     }
+
     public void eat(Edible Object){
 
     }

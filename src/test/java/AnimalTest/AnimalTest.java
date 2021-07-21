@@ -16,6 +16,18 @@ public class AnimalTest {
     }
     //given
 
+    @Test
+    public void constructorTest2(){    Integer age=0;
+        Integer amountOfFoodEaten;
+        Animal animal=new Animal();
+        //when
+        String actual=animal.getName();
+
+        //then
+        Assert.assertEquals("",actual);
+    }
+
+
 
 
 }

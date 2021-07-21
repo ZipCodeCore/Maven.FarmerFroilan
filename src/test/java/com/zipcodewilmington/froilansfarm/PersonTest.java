@@ -27,4 +27,10 @@ public class PersonTest {
         //then
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testImplementation() {
+        Person person = new Person("Jonah");
+        Assert.assertTrue(person instanceof Eater);
+    }
 }

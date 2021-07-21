@@ -31,4 +31,10 @@ public class ChickenCoopTest {
         //then
         Assert.assertFalse(chickenCoop.getChickenList().contains(chicken1));
     }
+
+    @Test
+    public void testImplementation() {
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Assert.assertTrue(chickenCoop instanceof Shelter);
+    }
 }

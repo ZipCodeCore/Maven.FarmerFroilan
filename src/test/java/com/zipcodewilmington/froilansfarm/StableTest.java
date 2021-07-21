@@ -31,4 +31,10 @@ public class StableTest {
         //then
         Assert.assertFalse(stable.getHorseList().contains(horse1));
     }
+
+    @Test
+    public void testImplementation() {
+        Stable stable = new Stable();
+        Assert.assertTrue(stable instanceof Shelter);
+    }
 }

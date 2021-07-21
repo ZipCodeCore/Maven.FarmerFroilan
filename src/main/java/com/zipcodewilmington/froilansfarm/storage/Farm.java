@@ -1,11 +1,13 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.storage;
+
+import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
 
 public class Farm implements StorageInterface {
 
  //   List<AnimalFacilities> animalStorage
 
     public Farm () {
-        
+
     }
 
     @Override

@@ -1,4 +1,7 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Structure;
+
+import com.zipcodewilmington.froilansfarm.Mammal.Person;
+import com.zipcodewilmington.froilansfarm.Shelter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +34,9 @@ public class FarmHouse implements Shelter<Person> {
 
     public void remove(Person person) {
         personList.remove(person);
+    }
+
+    public List<Person> getPersonList() {
+        return personList;
     }
 }

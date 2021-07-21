@@ -1,6 +1,4 @@
-package Vehicles;
-
-import com.zipcodewilmington.froilansfarm.Farm;
+package com.zipcodewilmington.froilansfarm.Vehicles;
 
 public class Aircraft implements Vehicle{
     void fly(){}

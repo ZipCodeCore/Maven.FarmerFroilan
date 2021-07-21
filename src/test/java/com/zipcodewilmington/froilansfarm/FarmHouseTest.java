@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
+import com.zipcodewilmington.froilansfarm.Mammal.Person;
+import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +17,7 @@ public class FarmHouseTest {
         FarmHouse farmhouse = new FarmHouse();
         farmhouse.add(person);
         //then
-        Assert.assertTrue(farmhouse.personList.contains(person));
+        Assert.assertTrue(farmhouse.getPersonList().contains(person));
     }
 
     @Test
@@ -28,7 +31,7 @@ public class FarmHouseTest {
         farmhouse.add(person2);
         farmhouse.remove(person1);
         //then
-        Assert.assertFalse(farmhouse.personList.contains(person1));
+        Assert.assertFalse(farmhouse.getPersonList().contains(person1));
     }
 
 //    @Test

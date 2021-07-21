@@ -1,4 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Food;
+
+import com.zipcodewilmington.froilansfarm.Edible;
 
 public class Produce implements Edible {
     private Boolean hasBeenFertilized;

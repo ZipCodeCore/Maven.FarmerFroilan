@@ -1,6 +1,9 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Mammal;
 
-public class Person<T extends Edible> implements Eater<T>{
+import com.zipcodewilmington.froilansfarm.Edible;
+import com.zipcodewilmington.froilansfarm.Eater;
+
+public class Person<T extends Edible> implements Eater<T> {
 
     private String name;
 

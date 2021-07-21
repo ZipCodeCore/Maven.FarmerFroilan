@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
+import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +15,7 @@ public class ChickenCoopTest {
         ChickenCoop chickenCoop = new ChickenCoop();
         chickenCoop.add(chicken);
         //then
-        Assert.assertTrue(chickenCoop.chickenList.contains(chicken));
+        Assert.assertTrue(chickenCoop.getChickenList().contains(chicken));
     }
 
     @Test
@@ -27,6 +29,6 @@ public class ChickenCoopTest {
         chickenCoop.add(chicken2);
         chickenCoop.remove(chicken1);
         //then
-        Assert.assertFalse(chickenCoop.chickenList.contains(chicken1));
+        Assert.assertFalse(chickenCoop.getChickenList().contains(chicken1));
     }
 }

@@ -1,4 +1,7 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Structure;
+
+import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
+import com.zipcodewilmington.froilansfarm.Shelter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,5 +36,9 @@ public class ChickenCoop implements Shelter<Chicken> {
 
     public void remove(Chicken chicken) {
         chickenList.remove(chicken);
+    }
+
+    public List<Chicken> getChickenList() {
+        return chickenList;
     }
 }

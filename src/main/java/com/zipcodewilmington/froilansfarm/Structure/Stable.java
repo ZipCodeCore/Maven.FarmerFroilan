@@ -1,4 +1,7 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Structure;
+
+import com.zipcodewilmington.froilansfarm.Mammal.Horse;
+import com.zipcodewilmington.froilansfarm.Shelter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +34,9 @@ public class Stable implements Shelter<Horse> {
 
     public void remove(Horse horse) {
         horseList.remove(horse);
+    }
+
+    public List<Horse> getHorseList() {
+        return horseList;
     }
 }

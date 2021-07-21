@@ -1,8 +1,8 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Food;
 
-import java.util.Arrays;
+import com.zipcodewilmington.froilansfarm.Food.Crop;
 
-public class CropRow extends Crop{
+public class CropRow extends Crop {
     private Integer amount;
     private Crop crop;
 

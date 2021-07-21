@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
+import com.zipcodewilmington.froilansfarm.Mammal.Horse;
+import com.zipcodewilmington.froilansfarm.Mammal.Person;
+
 public class Farm {
     private static Shelter<Person> farmhouse;
     private static Shelter<Horse> stable;

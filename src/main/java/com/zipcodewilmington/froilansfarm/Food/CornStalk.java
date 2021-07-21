@@ -1,6 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.Food;
 
-public class CornStalk extends Crop{
+public class CornStalk extends Crop {
     Integer capacity = 0;
 
 

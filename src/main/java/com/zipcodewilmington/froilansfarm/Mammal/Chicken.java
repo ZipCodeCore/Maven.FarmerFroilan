@@ -12,6 +12,11 @@ public class Chicken extends Animal<EarCorn> implements Edible {
 
     public Chicken() { }
 
+    @Override
+    public String makeNoise() {
+        return "Cluck CLuck";
+    }
+
     boolean isFertlized = false;
 
     public Egg yield() {

@@ -13,9 +13,12 @@ public class Horse extends Animal<EarCorn> implements Ridable {
         super(name);
     }
 
-    public Horse() { }
+    public Horse() {}
 
-    public void ride() {
+    public void ride() {}
 
+    @Override
+    public String makeNoise(){
+        return "Neigh";
     }
 }

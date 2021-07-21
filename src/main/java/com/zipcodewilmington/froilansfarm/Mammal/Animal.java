@@ -15,9 +15,7 @@ public abstract class Animal <T extends Edible> implements Eater<T>, NoiseMaker 
 
     }
 
-    public String makeNoise() {
-        return null;
-    }
+    public abstract String makeNoise();
 
     public Animal(String name) {
         this.name = name;

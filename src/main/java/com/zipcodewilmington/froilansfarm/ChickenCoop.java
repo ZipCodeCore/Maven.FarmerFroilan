@@ -8,6 +8,10 @@ public class ChickenCoop implements Shelter<Chicken> {
     List<Chicken> chickenList = new ArrayList<Chicken>();
     Chicken chicken;
 
+    public ChickenCoop(Chicken chicken) {
+        this.chicken = chicken;
+        this.chickenList = chickenList;
+    }
     public void add(Chicken chicken) {
         chickenList.add(chicken);
     }

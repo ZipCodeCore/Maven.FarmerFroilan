@@ -8,6 +8,10 @@ public class Stable implements Shelter<Horse> {
     List<Horse> horseList = new ArrayList<Horse>();
     Horse horse;
 
+    public Stable(Horse horse) {
+        this.horse = horse;
+        this.horseList = horseList;
+    }
     public void add(Horse horse) {
         horseList.add(horse);
     }

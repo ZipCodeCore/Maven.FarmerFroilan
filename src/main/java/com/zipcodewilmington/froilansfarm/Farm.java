@@ -1,31 +1,23 @@
 package com.zipcodewilmington.froilansfarm;
 
-public abstract class Farm {
-    private FarmHouse farmhouse;
-    private Stable stable;
-    private ChickenCoop chickenCoop;
+public class Farm {
+    private static Shelter<Person> farmhouse;
+    private static Shelter<Horse> stable;
+    private static Shelter<Chicken> chickenCoop;
 
-    public FarmHouse getFarmhouse() {
+    public Farm(){
+
+    }
+
+    public static Shelter<Person> getFarmhouse() {
         return farmhouse;
     }
 
-    public void setFarmhouse(FarmHouse farmhouse) {
-        this.farmhouse = farmhouse;
-    }
-
-    public Stable getStable() {
+    public static Shelter<Horse> getStable() {
         return stable;
     }
 
-    public void setStable(Stable stable) {
-        this.stable = stable;
-    }
-
-    public ChickenCoop getChickenCoop() {
+    public static Shelter<Chicken> getChickenCoop() {
         return chickenCoop;
-    }
-
-    public void setChickenCoop(ChickenCoop chickenCoop) {
-        this.chickenCoop = chickenCoop;
     }
 }

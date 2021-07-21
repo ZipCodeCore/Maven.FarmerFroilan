@@ -1,0 +1,19 @@
+package Animal;
+
+import java.security.PrivateKey;
+
+public class Farmer {
+     String name="Froilan";
+
+     public Farmer(String name){
+         this.name=name;
+     }
+
+    public String getName() {
+        return name;
+    }
+
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+}

@@ -4,6 +4,9 @@ public class CornStalk {
     Integer capacity = 0;
 
     public EarCorn earCorn () {
-        return null;
+
+        EarCorn earCorn = new EarCorn();
+
+        return earCorn;
     }
 }

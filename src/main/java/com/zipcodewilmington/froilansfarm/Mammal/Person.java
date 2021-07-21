@@ -2,8 +2,9 @@ package com.zipcodewilmington.froilansfarm.Mammal;
 
 import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Eater;
+import com.zipcodewilmington.froilansfarm.NoiseMaker;
 
-public class Person<T extends Edible> implements Eater<T> {
+public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
 
     private String name;
 
@@ -26,5 +27,10 @@ public class Person<T extends Edible> implements Eater<T> {
     @Override
     public void eat(T edible) {
 
+    }
+
+    @Override
+    public String makeNoise() {
+        return "Hello";
     }
 }

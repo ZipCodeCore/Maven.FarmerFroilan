@@ -1,5 +1,8 @@
 package Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Food.Crop;
+import com.zipcodewilmington.froilansfarm.Food.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
@@ -41,8 +44,13 @@ public class TractorTest {
     public void tractorHarvestTest(){
         Vehicle tractor = new Tractor();
         Farmer farmer = new Farmer();
-
+        Crop crop = new TomatoPlant();
+        CropRow rows = new CropRow();
+        rows.plantCrop(crop);
         //Needs something testable in regards to tractor.ride
         tractor.ride(farmer);
+        //tractor;
+
     }
+
 }

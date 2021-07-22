@@ -2,12 +2,18 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.Crop;
+import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Rider;
 
-public class Tractor implements FarmVehicle{
+import java.util.ArrayList;
+import java.util.List;
 
-    public Crop harvest(Crop crop){
-        return null;
+public class Tractor implements FarmVehicle{
+    private Rider rider;
+    private List<Crop> aList = new ArrayList<>();
+
+    public void harvest(Crop crop){
+        aList.add(crop);
     }
 
 
@@ -18,11 +24,15 @@ public class Tractor implements FarmVehicle{
 
     @Override
     public void ride(Rider rider) {
-
+        this.rider = rider;
     }
 
     @Override
     public void operate(Farm farm) {
-
+        List<CropRow> rows = farm.getField().getMyField();
+        for(int i = 0; i < rows.size(); i++){
+            //aList.add(rows.get(i));
+        }
     }
+
 }

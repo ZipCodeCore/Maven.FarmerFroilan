@@ -2,9 +2,7 @@ package com.zipcodewilmington.froilansfarm.Food;
 
 import com.zipcodewilmington.froilansfarm.Edible;
 
-public class Tomato implements Edible {
+public class Carrot implements Edible {
 
-    public Tomato() {
-    }
-
+    public Carrot() {}
 }

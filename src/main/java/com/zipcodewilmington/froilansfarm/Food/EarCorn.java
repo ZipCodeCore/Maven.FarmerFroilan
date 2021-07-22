@@ -5,7 +5,8 @@ import com.zipcodewilmington.froilansfarm.Edible;
 public class EarCorn implements Edible {
 
     public EarCorn() {
-
     }
+
+
 
 }

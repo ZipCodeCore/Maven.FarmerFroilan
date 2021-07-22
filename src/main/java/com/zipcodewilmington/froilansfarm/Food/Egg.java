@@ -4,10 +4,21 @@ import com.zipcodewilmington.froilansfarm.Edible;
 
 public class Egg implements Edible {
 
-    boolean isFertlized = false;
+    public static boolean isFertilized;
 
-    public Egg() {
-
+    public Egg(boolean isFertilized) {
+        this.isFertilized = isFertilized;
     }
 
+    public Egg() {
+        isFertilized = false;
+    }
+
+    public static boolean isIsFertilized() {
+        return isFertilized;
+    }
+
+    public static void setIsFertilized(boolean isFertilized) {
+        Egg.isFertilized = isFertilized;
+    }
 }

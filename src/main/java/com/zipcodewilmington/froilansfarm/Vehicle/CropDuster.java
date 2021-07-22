@@ -26,8 +26,7 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     public int getNumOfCropRows(){ return 0;
     }
 
-    public boolean hasFertilizer() {
-    }
+    public boolean hasFertilizer() { return true;}
 
     public void setNumOfFertCrop(){}
 

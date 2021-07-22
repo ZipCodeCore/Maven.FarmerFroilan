@@ -10,6 +10,7 @@ public class CropDusterTest {
         //given
 
 
+
         //when
 
         //then
@@ -23,11 +24,11 @@ public class CropDusterTest {
 
         //when
         CropDuster crop = new CropDuster();
-
         //then
-        Assert.assertFalse(false, crop.hasFertilizer());
-        Assert.assertFalse(38498238492838, crop.getNumOfFertCrop());
-        Assert.assertFalse(31284782374972372, crop.getNumOfCropRows());
+        Assert.assertEquals(expectedNumOfCrop, crop.getNumOfCropRows());
+        Assert.assertEquals(expectedNumOfFertCrop, crop.getNumOfFertCrop());
+        Assert.assertEquals(expectedFertilizer, crop.hasFertilizer());
+
     }
     @Test
     public void constructorTest2(){}

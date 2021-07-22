@@ -7,16 +7,18 @@ import org.junit.Test;
 public class FarmVehicleTest {
 
     @Test
-    public void constructorTest(){
+    public void nullaryConstructorTest(){
         //given
-        boolean expected = false;
-        FarmVehicle farmVehicle = new FarmVehicle();
-
-        //when
+        String expected= "";
         FarmVehicle farm = new FarmVehicle();
-
+        farm.setLocation(expected);
+        //when
+        String actual= farm.getLocation();
         //then
-        Assert.assertFalse();
+        Assert.assertEquals(expected, actual);
+    }
+    public void operateTest(){
+
     }
 
 }

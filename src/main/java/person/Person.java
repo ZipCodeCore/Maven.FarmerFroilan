@@ -1,26 +1,26 @@
 package person;
 
 import Interface.*;
+import animal.Animal;
 
-public abstract class Person implements NoiseMaker, Rider, Eater<Edible> {
+public abstract class Person extends Animal implements NoiseMaker, Eater<Edible> {
     String name;
 
-    public void Person(String name){
+
+    public Person(String name) {
+        super(name);
         this.name = name;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
-    public void mount(Rideable rideable){
 
-    }
-    public void disMount(){
+    public String makeNoise() {
 
-    }
-    public void  makeNoise(){
-
+        return null;
     }
 
 }

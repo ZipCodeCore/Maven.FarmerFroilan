@@ -29,19 +29,19 @@ public class TomatoPlantTest {
 //
 //    }
 
-    @Test
-    public void yieldTest2(){
-        //Given
-        TomatoPlant tomatoPlant = new TomatoPlant();
-        Assertions.assertTrue(tomatoPlant.hasBeenFertilized());
-
-        //When
-        Tomato tomato = tomatoPlant.yield();
-
-        //Then
-        Assertions.assertNotNull(tomato);
-
-    }
+//    @Test
+//    public void yieldTest2(){
+//        //Given
+//        TomatoPlant tomatoPlant = new TomatoPlant();
+//        Assertions.assertTrue(tomatoPlant.hasBeenFertilized());
+//
+//        //When
+//        Tomato tomato = tomatoPlant.yield();
+//
+//        //Then
+//        Assertions.assertNotNull(tomato);
+//
+//    }
 
 //
 //    {

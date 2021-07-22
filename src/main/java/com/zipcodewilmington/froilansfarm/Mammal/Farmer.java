@@ -26,9 +26,7 @@ public class Farmer extends Person<Edible> implements Botanist, Rider {
 
     @Override
     public void plant(Crop crop, CropRow cropRow) {
-        cropRow.setCrop(crop);
-        Integer current = cropRow.getAmount();
-        cropRow.setAmount(current + 1);
+        cropRow.plantCrop(crop);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.FoodTests;
 
 import com.zipcodewilmington.froilansfarm.Food.CornStalk;
+import com.zipcodewilmington.froilansfarm.Food.Crop;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,7 +34,8 @@ public class CornStalkTest {
     public void yieldTest() {
 
         CornStalk cornStalk = new CornStalk();
-
+        cornStalk.checkFertilized();
+        cornStalk.checkHarvested();
 
     }
 
@@ -41,5 +44,13 @@ public class CornStalkTest {
 
     }
 
-    // fertilize, check yield, inheritance test
+
+    @Test
+    public void testCornStalkInheritance() {
+
+        CornStalk cornStalk = new CornStalk();
+        Assert.assertTrue(cornStalk instanceof Crop);
+    }
+
+
 }

@@ -6,10 +6,11 @@ public class FarmVehicle implements Vehicle{
     String location;
 
     public FarmVehicle(){
-        onFarm="Can Operate.";
-        offFarm= "Can't Operate.";
+        onFarm="On Farm";
+        offFarm= "Off Farm";
         location ="";
     }
+    public
     public void setLocation(String expected){ this.location=location;
     }
 
@@ -17,10 +18,11 @@ public class FarmVehicle implements Vehicle{
         return this.location;
     }
 
-    public String operation(String location){
+    public Boolean operation(String location){
+        boolean canOperate;
         if(location==onFarm){
-            return onFarm;
-        }return offFarm;
+            return canOperate=true;
+        }return canOperate=false;
     }
 
     @Override

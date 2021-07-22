@@ -1,18 +1,22 @@
 package crop;
 //
+import Interface.Edible;
 import Interface.Produce;
 //
-public abstract class Crops implements Produce {
-//    private boolean isHarvested = false;
-//    private boolean isFertilized = false;
-//
-//    public Crop(){
-//
-//    }
-//
-//    public boolean isHarvested() {
-//        return isHarvested;
-//    }
+public abstract class Crop implements Produce {
+    //public abstract Edible yield();
+
+    //do I need to also implement edible?
+    //private boolean isHarvested = false;
+    //private boolean isFertilized = false;
+
+    //public Crop(){
+
+    //}
+
+    //public boolean isHarvested {
+     //   return isHarvested;
+    //}
 //
 //    public boolean isFertilized() {
 //        return isFertilized;

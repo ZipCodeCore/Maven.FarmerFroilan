@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm.croptests;
 
-import com.zipcodewilmington.froilansfarm.crops.CropRow;
-import com.zipcodewilmington.froilansfarm.crops.Tomato;
-import com.zipcodewilmington.froilansfarm.crops.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.crops.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,5 +65,24 @@ public class CropRowTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getTotalPlants(){
+        //given
+        Crop tomatoPlant = new TomatoPlant();
+        Crop cornPlant = new CornPlant();
+        tomatoPlant.yield(new Tomato());
+        tomatoPlant.yield(new Tomato());
+        cornPlant.yield(new EarOfCorn());
+
+        //when
+        CropRow testRow = new CropRow();
+        testRow.addCrop(tomatoPlant);
+        testRow.addCrop(cornPlant);
+        int actual = testRow.getNumberofCropsPlanted();
+
+        //then
+        Assert.assertEquals(2, actual);
+
+    }
 
 }

@@ -1,9 +1,14 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
 import com.zipcodewilmington.froilansfarm.Botanist;
+import com.zipcodewilmington.froilansfarm.Food.Crop;
+import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
+import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
+import com.zipcodewilmington.froilansfarm.Mammal.Horse;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
+import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.Rider;
 import org.junit.Assert;
 import org.junit.Test;
@@ -33,6 +38,18 @@ public class FarmerTest {
     }
 
     @Test
+    public void testPlant() {
+        //given
+        TomatoPlant tomatoPlant = new TomatoPlant(0);
+        CropRow cropRow = new CropRow();
+        Farmer farmer = new Farmer();
+        //when
+        farmer.plant(tomatoPlant, cropRow);
+        //then
+        Assert.assertTrue(tomatoPlant.equals(cropRow.getCropById(0)));
+    }
+
+    @Test
     public void testMakeNoise() {
         //given
         String expected = "Howdy";
@@ -41,6 +58,31 @@ public class FarmerTest {
         String actual = farmer.makeNoise();
         //then
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMount() {
+        //given
+        Horse horse = new Horse();
+        Rideable expected = horse;
+        //when
+        Farmer farmer = new Farmer();
+        farmer.mount(horse);
+        Rideable actual = farmer.getIsRiding();
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testDismount() {
+        //given
+        Horse horse = new Horse();
+        //when
+        Farmer farmer = new Farmer();
+        farmer.mount(horse);
+        farmer.dismount(horse);
+        //then
+        Assert.assertNull(farmer.getIsRiding());
     }
 
     @Test

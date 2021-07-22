@@ -13,6 +13,13 @@ public abstract class Crop implements Produce {
         this.id = id;
     }
 
+    public Crop() {
+        this.fertilized = false;
+        this.isHarvested = false;
+        this.id = null;
+    }
+
+
     public void fertilize(){
         this.fertilized = true;
     }

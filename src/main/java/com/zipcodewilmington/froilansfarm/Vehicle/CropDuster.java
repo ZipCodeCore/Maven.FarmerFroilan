@@ -6,18 +6,38 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     public int numOfCropRows;
     public int numOfCropFert;
 
-    public CropDuster (){
-        toBeFertilized=false;
-        numOfCropFert=0;
-        numOfCropRows=0;
+    public CropDuster(boolean toBeFertilized, int numOfCropRows, int numOfCropFert) {
+        this.toBeFertilized = toBeFertilized;
+        this.numOfCropRows = numOfCropRows;
+        this.numOfCropFert = numOfCropFert;
     }
-    public CropDuster(int numOfCropRows, int numOfCropFert){
+
+    public boolean isToBeFertilized() {
+        return toBeFertilized;
     }
-    public void setNumOfCropRows(int expected){this.numOfCropRows=numOfCropRows;
+
+    public void setToBeFertilized(boolean toBeFertilized) {
+        this.toBeFertilized = toBeFertilized;
+    }
+
+    public int getNumOfCropFert() {
+        return numOfCropFert;
+    }
+
+    public void setNumOfCropFert(int numOfCropFert) {
+        this.numOfCropFert = numOfCropFert;
+    }
+
+
+    public void setNumOfCropRows(int numOfCropRows){this.numOfCropRows=numOfCropRows;
 
     }
     public int getNumOfCropRows(){ return this.numOfCropRows;
     }
+
+    public void setNumOfFertCrop(int numOfCropFert){this.numOfCropFert=numOfCropFert;}
+
+    public int getNumOfFertCrop() { return this.numOfCropFert; }
 
     public boolean needsToBeFertilized(int numOfCropRows, int numOfCropFert) {
         int numNonFertCrops= numOfCropRows-numOfCropFert;
@@ -27,10 +47,6 @@ public class CropDuster extends FarmVehicle implements Aircraft {
         }
         return toBeFertilized=false;}
 
-    public void setNumOfFertCrop(){this.numOfCropFert=numOfCropFert;}
-
-    public int getNumOfFertCrop() { return this.numOfCropFert;
-    }
     @Override
     public void fly(int distance) {
 

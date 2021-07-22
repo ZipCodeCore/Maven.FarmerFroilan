@@ -12,7 +12,7 @@ public class CropDusterTest {
         int numOfFertCrops=32;
         boolean toBeFertilized=true;
         //when
-        CropDuster crop = new CropDuster(numOfCropRows, numOfFertCrops);
+        CropDuster crop = new CropDuster(false, numOfCropRows, numOfFertCrops);
 
         //then
         Assert.assertNotEquals(numOfCropRows, crop.getNumOfCropRows());
@@ -27,17 +27,17 @@ public class CropDusterTest {
         int expectedNumOfFertCrop=4863826;
 
         //when
-        CropDuster crop = new CropDuster();
+        CropDuster crop = new CropDuster(true, 0, 0);
         //then
         Assert.assertNotEquals(expectedNumOfCrop, crop.getNumOfCropRows());
         Assert.assertNotEquals(expectedNumOfFertCrop, crop.getNumOfFertCrop());
-        Assert.assertNotEquals(expectedNumOfCrop, expectedNumOfFertCrop);
+        Assert.assertNotEquals(expectedFertilizer, crop.isToBeFertilized());
 
     }
     @Test
     public void getCropsTest1(){
         int expected= 15;
-        CropDuster crop = new CropDuster();
+        CropDuster crop = new CropDuster(false,0, 0);
         crop.setNumOfCropRows(expected);
         //when
         int actual = crop.getNumOfCropRows();
@@ -51,15 +51,22 @@ public class CropDusterTest {
         int fertCrop=4;
         boolean expected=true;
         //when
-        CropDuster crop =new CropDuster(cropNum, fertCrop);
+        CropDuster crop =new CropDuster(false, cropNum, fertCrop);
         boolean actual= crop.needsToBeFertilized(cropNum, fertCrop);
         //then
         Assert.assertEquals(expected, actual );
     }
 
     @Test
-    public void getFertCropsTest1(){}
-    @Test
-    public void getFertCropTest2(){}
+    public void getFertCropsTest1(){
+        int expectedFertCrop = 5;
+        CropDuster crop = new CropDuster(false, 0, 0);
+        crop.setNumOfFertCrop(expectedFertCrop);
+
+        int actual = crop.getNumOfFertCrop();
+
+        Assert.assertEquals(expectedFertCrop, actual);
+    }
+
 
 }

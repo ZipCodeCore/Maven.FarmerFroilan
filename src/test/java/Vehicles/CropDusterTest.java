@@ -36,17 +36,17 @@ public class CropDusterTest {
         Assert.assertTrue(actual);
     }
 
-    @Test
-    public void fertilizeTest(){
-        CropDuster duster = new CropDuster();
-
-        CropRow row = new CropRow();
-        duster.fertilizeCrop(row);
-
-        Boolean actual = row.checkFertilized();
-
-        Assert.assertTrue(actual);
-    }
+//    @Test
+//    public void fertilizeTest(){
+//        CropDuster duster = new CropDuster();
+//
+//        CropRow row = new CropRow();
+//        duster.fertilizeCrop(row);
+//
+//        Boolean actual = row.checkFertilized();
+//
+//        Assert.assertTrue(actual);
+//    }
 
     @Test
     public void shootTest(){

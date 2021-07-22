@@ -25,9 +25,7 @@ public abstract class Crop implements Produce {
     }
 
     @Override
-    public Edible yield() {
-        return null;
-    }
+    abstract public Edible yield();
 
     public Boolean checkFertilized() {
         return fertilized;
@@ -43,9 +41,5 @@ public abstract class Crop implements Produce {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

@@ -1,6 +1,11 @@
-package AnimalTest;
+package com.zipcodewilmington.froilansfarm.AnimalTest;
 
-import Animal.Barn;
+import com.zipcodewilmington.froilansfarm.Animal.Animal;
+import com.zipcodewilmington.froilansfarm.Animal.Barn;
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
+import com.zipcodewilmington.froilansfarm.storage.ChickenCoop;
+import com.zipcodewilmington.froilansfarm.storage.Stable;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,7 +16,7 @@ public class BarnTest {
 
     @Test
     public <T> void numberOfAnimalsTest() {
-        Barn barn = new Barn();
+        Barn barn = new ChickenCoop();
         List<T> animals = new ArrayList<T>();;
 
         //List<String> animals = new ArrayList<>();
@@ -25,7 +30,7 @@ public class BarnTest {
 
     @Test
     public void addTest() {
-        Barn barn = new Barn();
+        Barn barn = new ChickenCoop();
         List<String> animals = new ArrayList<>();
         animals.add("chicken");
         barn.setAnimals(animals);
@@ -36,19 +41,24 @@ public class BarnTest {
 
     @Test
     public void removeTest() {
-        Barn barn = new Barn();
-        List<String> animals = new ArrayList<>();
-        animals.add("chicken");
-        animals.add("horse");
+        Barn barn = new Stable();
+        List<Animal> animals = new ArrayList<>();
+        Animal horse=new Horse();
+        Animal horse2= new Horse();
+
+        animals.add(horse2);
+        animals.add(horse);
+
         barn.setAnimals(animals);
-        barn.remove(animals.get(0));
+
+        barn.getAnimals().remove(horse);
 
         Assert.assertEquals(1, barn.getAnimals().size());
     }
 
     @Test
     public void testGetAnimals() {
-        Barn barn = new Barn();
+        Barn barn = new Stable();
         List<String> animals = new ArrayList<>();
         animals.add("chicken");
         animals.add("horse");
@@ -59,7 +69,7 @@ public class BarnTest {
 
     @Test
     public void testSetAnimals() {
-        Barn barn = new Barn();
+        Barn barn = new ChickenCoop();
         List<String> animals = new ArrayList<>();
         animals.add("chicken");
         animals.add("horse");

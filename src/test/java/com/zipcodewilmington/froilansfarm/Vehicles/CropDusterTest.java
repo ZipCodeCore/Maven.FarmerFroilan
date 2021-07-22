@@ -12,7 +12,7 @@ public class CropDusterTest {
         int numOfFertCrops=32;
         boolean toBeFertilized=true;
         //when
-        CropDuster crop = new CropDuster(false, numOfCropRows, numOfFertCrops);
+        CropDuster crop = new CropDuster(false, 0, 0);
 
         //then
         Assert.assertNotEquals(numOfCropRows, crop.getNumOfCropRows());

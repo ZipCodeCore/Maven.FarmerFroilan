@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface Aircraft {
+import com.zipcodewilmington.froilansfarm.Vehilce.Vehicle;
+
+public interface Aircraft extends Vehicle {
 
     void fly(int distance);
 }

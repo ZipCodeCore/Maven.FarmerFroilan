@@ -2,7 +2,9 @@ package com.zipcodewilmington.froilansfarm.MammalTests;
 
 import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Mammal.Animal;
+import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
+import com.zipcodewilmington.froilansfarm.Rideable;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,8 +33,37 @@ public class HorseTest {
     }
 
     @Test
+    public void testMakeNoise() {
+        //given
+        String expected = "Neigh";
+        //when
+        Horse horse = new Horse();
+        String actual = horse.makeNoise();
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testRide() {
+        //given
+        Horse horse = new Horse();
+        Farmer farmer = new Farmer();
+        //when
+        horse.ride(farmer);
+        //then
+
+
+    }
+
+    @Test
     public void testInheritance() {
         Horse horse = new Horse("Harvey");
         Assert.assertTrue(horse instanceof Animal);
+    }
+
+    @Test
+    public void testImplementation() {
+        Horse horse = new Horse();
+        Assert.assertTrue(horse instanceof Rideable);
     }
 }

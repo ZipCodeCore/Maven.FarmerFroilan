@@ -1,8 +1,7 @@
-package AnimalTest;
+package com.zipcodewilmington.froilansfarm.AnimalTest;
 
 
-import Animal.Animal;
-import Animal.Person;
+import com.zipcodewilmington.froilansfarm.Animal.Person;
 import org.junit.Assert;
 import org.junit.Test;
 

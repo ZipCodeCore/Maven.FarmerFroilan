@@ -1,11 +1,15 @@
 package com.zipcodewilmington.froilansfarm.storage;
 
-import Animal.Chicken;
+
+import com.zipcodewilmington.froilansfarm.Animal.Barn;
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChickenCoop implements StorageInterface {
+public class ChickenCoop extends Barn {
 
     List<Chicken> listOfChicken;
 

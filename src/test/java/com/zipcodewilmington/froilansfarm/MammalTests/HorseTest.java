@@ -32,6 +32,6 @@ public class HorseTest {
     @Test
     public void testInheritance() {
         Horse horse = new Horse("Harvey");
-        Assert.assertTrue(horse instanceof Edible);
+        Assert.assertTrue(horse instanceof Animal);
     }
 }

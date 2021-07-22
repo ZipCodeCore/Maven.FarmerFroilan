@@ -9,10 +9,8 @@ import java.util.List;
 public class FarmHouse implements Shelter<Person> {
 
     List<Person> personList = new ArrayList<Person>();
-    Person person;
 
     public FarmHouse(Person person) {
-        this.person = person;
         this.personList = personList;
     }
 

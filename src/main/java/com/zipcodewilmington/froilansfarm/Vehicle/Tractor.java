@@ -28,10 +28,20 @@ public class Tractor extends FarmVehicle {
     }
 
     public int getNumOfHarvCrop() {
-        return 0;
+        return this.numOfHarvCrop;
     }
 
     public int getNumOfFertCrop() {
-        return 0;
+        return this.numOfFertCrop;
     }
+
+    public boolean needsToBeHarvested(int numOfFertCrop, int numOfHarvCrop) {
+        Tractor crop=new Tractor(false, numOfFertCrop, numOfHarvCrop);
+        int numNonHarvCrops= numOfFertCrop-numOfHarvCrop;
+        int cropWork = numOfFertCrop/3;
+        if(numNonHarvCrops>cropWork){
+            return toBeHarvested=true;
+        }
+        return toBeHarvested=false;}
 }
+

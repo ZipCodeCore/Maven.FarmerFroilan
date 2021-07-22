@@ -14,7 +14,7 @@ public class TractorTest {
         int numOfFertCrops=32;
         boolean toBeHarvested=true;
         //when
-        Tractor crop = new Tractor(false, numOfFertCrops, numOfHarvCrops);
+        Tractor crop = new Tractor(false, 0, 0);
 
         //then
         Assert.assertNotEquals(numOfHarvCrops, crop.getNumOfHarvCrop());
@@ -39,30 +39,53 @@ public class TractorTest {
     @Test
     public void getCropsTest1(){
         int expected= 15;
-        CropDuster crop = new CropDuster(false, 0, 0);
-        crop.setNumOfCropRows(expected);
+        Tractor crop = new Tractor(false, 0, 0);
+        crop.setNumOfFertCrop(expected);
         //when
-        int actual = crop.getNumOfCropRows();
+        int actual = crop.getNumOfFertCrop();
         //then
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void needsToBeFertilizedTest(){
+    public void needsToBeHarvestedTest(){
         //given
-        int cropNum=20;
-        int fertCrop=4;
+        int fertCropNum=20;
+        int HarvCrop=4;
         boolean expected=true;
         //when
-        CropDuster crop =new CropDuster(false, cropNum, fertCrop);
-        boolean actual= crop.needsToBeFertilized(cropNum, fertCrop);
+        Tractor crop =new Tractor(false, fertCropNum, HarvCrop);
+        boolean actual= crop.needsToBeHarvested(fertCropNum, HarvCrop);
         //then
         Assert.assertEquals(expected, actual );
     }
-
+    @Test
+    public void needsToBeHarvestedTest2(){
+        //given
+        int fertCropNum=3;
+        int HarvCrop=3;
+        boolean expected=false;
+        //when
+        Tractor crop =new Tractor(false, fertCropNum, HarvCrop);
+        boolean actual= crop.needsToBeHarvested(fertCropNum, HarvCrop);
+        //then
+        Assert.assertEquals(expected, actual );
+    }
+    @Test
+    public void needsToBeHarvestedTest3(){
+        //given
+        int fertCropNum=4;
+        int HarvCrop=15;
+        boolean expected=false;
+        //when
+        Tractor crop =new Tractor(false, fertCropNum, HarvCrop);
+        boolean actual= crop.needsToBeHarvested(fertCropNum, HarvCrop);
+        //then
+        Assert.assertEquals(expected, actual );
+    }
     @Test
     public void getFertCropsTest1(){
         int expectedFertCrop = 5;
-        CropDuster crop = new CropDuster(false,0, 0);
+        Tractor crop = new Tractor(false,0, 0);
         crop.setNumOfFertCrop(expectedFertCrop);
 
         int actual = crop.getNumOfFertCrop();

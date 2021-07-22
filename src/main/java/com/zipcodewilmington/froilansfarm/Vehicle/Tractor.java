@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.crops.CropRow;
+
 public class Tractor extends FarmVehicle {
     boolean toBeHarvested;
     int numOfFertCrop;
@@ -11,7 +13,7 @@ public class Tractor extends FarmVehicle {
         this.numOfHarvCrop = numOfHarvCrop;
     }
 
-    public boolean isToBeHarvested() {
+    public boolean isToBeHarvested(CropRow cropRow) {
         return toBeHarvested;
     }
 

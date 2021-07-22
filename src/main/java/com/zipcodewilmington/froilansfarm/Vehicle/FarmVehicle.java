@@ -5,11 +5,16 @@ public class FarmVehicle implements Vehicle{
     String offFarm;
     String location;
 
-    public FarmVehicle(){
-        onFarm="On Farm";
-        offFarm= "Off Farm";
-        location ="";
+    public FarmVehicle(String onFarm, String offFarm, String location) {
+        this.onFarm = onFarm;
+        this.offFarm = offFarm;
+        this.location = location;
     }
+
+    public FarmVehicle() {
+
+    }
+
     public void setLocation(String expected){ this.location=location;
     }
 

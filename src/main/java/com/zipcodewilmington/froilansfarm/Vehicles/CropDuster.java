@@ -1,11 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 
-public abstract class CropDuster extends Aircraft implements FarmVehicle{
+public class CropDuster extends Aircraft implements FarmVehicle{
 
    public void fertilizeCrop(CropRow row){
       row.fertilizeRow();
    }
 
+   @Override
+   public void operate(Farm farm) {
+
+   }
 }

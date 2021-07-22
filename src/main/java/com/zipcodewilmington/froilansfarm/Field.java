@@ -7,4 +7,12 @@ public class Field {
 
     private List<CropRow> myField;
 
+
+    public void add(CropRow row){
+        myField.add(row);
+    }
+
+    public List<CropRow> getMyField() {
+        return myField;
+    }
 }

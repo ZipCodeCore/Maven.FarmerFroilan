@@ -62,4 +62,15 @@ public class CornStalkTest {
         Assert.assertTrue(harvested);
     }
 
+    @Test
+    public void yieldNullTest(){
+        CornStalk cornStalk = new CornStalk();
+        //when
+        Edible harvest = cornStalk.yield();
+        Boolean harvested = cornStalk.checkHarvested();
+        //then
+        Assert.assertNull(harvest);
+        Assert.assertFalse(harvested);
+    }
+
 }

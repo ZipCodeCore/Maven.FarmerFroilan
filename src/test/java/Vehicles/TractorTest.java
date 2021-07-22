@@ -1,5 +1,6 @@
 package Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
@@ -34,5 +35,14 @@ public class TractorTest {
         String expected = "Chuggumgumgumgumgum";
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void tractorHarvestTest(){
+        Vehicle tractor = new Tractor();
+        Farmer farmer = new Farmer();
+
+        //Needs something testable in regards to tractor.ride
+        tractor.ride(farmer);
     }
 }

@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Food;
 
+import com.zipcodewilmington.froilansfarm.Edible;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,17 @@ public class CropRow {
     public void fertilizeRow(){
         cropList.forEach(Crop::fertilize);
     }
+
+    public ArrayList<Edible> harvestRow(){
+        ArrayList<Edible> harvest = new ArrayList<>();
+        for (Crop crop: cropList){
+            harvest.add(crop.yield());
+            crop.setHarvested(true);
+        }
+        return harvest;
+    }
+
+
 
 
 }

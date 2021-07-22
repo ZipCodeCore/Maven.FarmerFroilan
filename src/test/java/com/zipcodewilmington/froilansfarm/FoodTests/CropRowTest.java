@@ -1,8 +1,12 @@
 package com.zipcodewilmington.froilansfarm.FoodTests;
 
+import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Food.*;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CropRowTest {
 
@@ -64,5 +68,26 @@ public class CropRowTest {
         Assert.assertTrue(tomato1IsFertilized);
 
     }
+
+    @Test
+    public void harvestRowTest(){
+        //given
+        CropRow myCropRow = new CropRow();
+        Crop tomato1 = new TomatoPlant(1);
+        Crop corn = new CornStalk(2);
+        Crop tomato2 = new TomatoPlant(3);
+        myCropRow.plantCrop(corn);
+        myCropRow.plantCrop(tomato1);
+        myCropRow.plantCrop(tomato2);
+        myCropRow.fertilizeRow();
+        //when
+        ArrayList<Edible> basket = myCropRow.harvestRow();
+        for(Edible item: basket){
+            System.out.println(item.getClass().getSimpleName());
+        }
+        //then
+
+    }
+
 
 }

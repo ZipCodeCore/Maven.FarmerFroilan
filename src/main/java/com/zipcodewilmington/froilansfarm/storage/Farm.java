@@ -42,4 +42,15 @@ public class Farm <StorageInterface>{
         }
         return numOfOccurences;
     }
+
+    public int getAmountofStable(){
+        int numOfOccurences = 0;
+        for (StorageInterface s : farm) {
+            if (s instanceof Stable){
+                numOfOccurences++;
+            }
+
+        }
+        return numOfOccurences;
+    }
 }

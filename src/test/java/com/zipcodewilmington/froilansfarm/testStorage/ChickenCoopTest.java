@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.testStorage;
 
 
+import com.zipcodewilmington.froilansfarm.Animal.Barn;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.storage.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
@@ -8,6 +9,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ChickenCoopTest {
+
+    @Test
+    public void instanceOfBarnTest () {
+        ChickenCoop cc = new ChickenCoop();
+
+        Assert.assertTrue(cc instanceof Barn);
+    }
 
     @Test
     public void implementTest () {

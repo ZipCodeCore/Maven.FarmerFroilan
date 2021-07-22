@@ -26,11 +26,11 @@ public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
 
     @Override
     public void eat(T edible) {
-
     }
 
     @Override
-    public String makeNoise() {
-        return "Hello";
+    public String makeNoise(){
+        return "Hello, im suffering";
     }
+
 }

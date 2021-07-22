@@ -9,17 +9,29 @@ public class ChickenTest {
     @Test
     public void hasBeenFertilisedTest(){
         Chicken chicken =new Chicken();
-        Boolean isFertilised=false;
         Assert.assertFalse(chicken.hasBeenFertilized());
     }
     @Test
-    public void hasBeenHarvested(){
+    public void hasBeenHarvestedTest(){
         Chicken chicken =new Chicken();
         Assert.assertFalse(chicken.hasBeenHarvested());
     }
 
     @Test
-    public void makeNoise(){
+    public void yieldTest(){
+        Chicken chicken =new Chicken();
+        Edible object = new Edible() {
+            @Override
+            public boolean isEaten() {
+                return false;
+            }
+        };
+        chicken.yield(object);
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    public void makeNoiseTest(){
         Chicken chicken = new Chicken();
         String noise="Cluck!";
         String actual= chicken.makeNoise();

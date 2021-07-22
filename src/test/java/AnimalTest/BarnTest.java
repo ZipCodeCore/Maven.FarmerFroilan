@@ -10,14 +10,17 @@ import java.util.List;
 public class BarnTest {
 
     @Test
-    public void numberOfAnimalsTest() {
+    public <T> void numberOfAnimalsTest() {
         Barn barn = new Barn();
-        List<String> animals = new ArrayList<>();
-        animals.add("chicken");
-        animals.add("horse");
-        animals.add("chick");
+        List<T> animals = new ArrayList<T>();;
+
+        //List<String> animals = new ArrayList<>();
+        animals.add((T) "chicken");
+        animals.add((T) "horse");
+        animals.add((T) "chick");
         Integer expected = 3;
-        Assert.assertEquals(3, animals.size());
+        barn.setAnimals(animals);
+        Assert.assertEquals(expected, barn.numberOfAnimals(animals));
     }
 
     @Test
@@ -25,8 +28,9 @@ public class BarnTest {
         Barn barn = new Barn();
         List<String> animals = new ArrayList<>();
         animals.add("chicken");
-        animals.toArray();
-        Assert.assertEquals("chicken", animals.get(0));
+        barn.setAnimals(animals);
+        //animals.toArray();
+        Assert.assertEquals("chicken", barn.getAnimals().get(0));
 
     }
 
@@ -36,8 +40,31 @@ public class BarnTest {
         List<String> animals = new ArrayList<>();
         animals.add("chicken");
         animals.add("horse");
-        animals.remove(0);
-        animals.toArray();
-        Assert.assertEquals(1, animals.size());
+        barn.setAnimals(animals);
+        barn.remove(animals.get(0));
+
+        Assert.assertEquals(1, barn.getAnimals().size());
+    }
+
+    @Test
+    public void testGetAnimals() {
+        Barn barn = new Barn();
+        List<String> animals = new ArrayList<>();
+        animals.add("chicken");
+        animals.add("horse");
+        barn.setAnimals(animals);
+
+        Assert.assertEquals("chicken", barn.getAnimals().get(0));
+    }
+
+    @Test
+    public void testSetAnimals() {
+        Barn barn = new Barn();
+        List<String> animals = new ArrayList<>();
+        animals.add("chicken");
+        animals.add("horse");
+        barn.setAnimals(animals);
+
+        Assert.assertEquals("horse", barn.getAnimals().get(1));
     }
 }

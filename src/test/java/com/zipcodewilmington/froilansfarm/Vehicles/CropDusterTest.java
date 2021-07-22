@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,6 +68,9 @@ public class CropDusterTest {
 
         Assert.assertEquals(expectedFertCrop, actual);
     }
-
-
+    @Test
+    public void inheritenceTest(){
+        CropDuster crop = new CropDuster(false, 0, 0);
+        Assert.assertTrue(crop instanceof Vehicle);
+    }
 }

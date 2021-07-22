@@ -20,8 +20,11 @@ public class CropRow {
 
     public int getNumberofCropsPlanted() {return cropRow.size();}
 
+    public List<Crop> getCropRow() {
+        return cropRow;
+    }
 
-    public void addCrop(Crop crop,Integer numberOfCrops){
+    public void addCrop(Crop crop, Integer numberOfCrops){
         for (int i = 0; i < numberOfCrops; i++) {
             cropRow.add(crop);
         }
@@ -33,4 +36,13 @@ public class CropRow {
     public void removeCrop(Crop crop) {
         cropRow.remove(crop);
     }
+
+    public int getNumberOfEdibles() {
+        int sum = 0;
+        for (Crop crop : cropRow) {
+            sum += crop.getNumOfEdiblesYielded();
+        }
+        return sum;
+    }
+
 }

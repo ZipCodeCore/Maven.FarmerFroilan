@@ -85,4 +85,25 @@ public class CropRowTest {
 
     }
 
+    @Test
+    public void getTotalEdibles(){
+        //given
+        Crop tomatoPlant = new TomatoPlant();
+        Crop cornPlant = new CornPlant();
+        tomatoPlant.yield(new Tomato());
+        tomatoPlant.yield(new Tomato());
+        cornPlant.yield(new EarOfCorn());
+        int expected = 3;
+
+        //when
+        CropRow testRow = new CropRow();
+        testRow.addCrop(tomatoPlant);
+        testRow.addCrop(cornPlant);
+        int actual = testRow.getNumberOfEdibles();
+
+        //then
+        Assert.assertEquals(expected, actual);
+
+    }
+
 }

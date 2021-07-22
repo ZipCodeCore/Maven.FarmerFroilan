@@ -31,7 +31,7 @@ public class Tractor implements FarmVehicle{
     public void operate(Farm farm) {
         List<CropRow> rows = farm.getField().getMyField();
         for(int i = 0; i < rows.size(); i++){
-            rows.get(i).fertilizeRow();
+            //aList.add(rows.get(i));
         }
     }
 }

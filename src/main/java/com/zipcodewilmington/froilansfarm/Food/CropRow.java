@@ -26,6 +26,8 @@ public class CropRow {
         return result;
     }
 
+
+
     public void fertilizeRow(){
         cropList.forEach(Crop::fertilize);
     }

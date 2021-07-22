@@ -1,10 +1,10 @@
-package AnimalTest;
+package com.zipcodewilmington.froilansfarm.AnimalTest;
 
-import Animal.Horse;
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class horseTest {
+public class HorseTest {
     @Test
     public void makeNoiseTest() {
         Horse horse= new Horse(null,null,null);

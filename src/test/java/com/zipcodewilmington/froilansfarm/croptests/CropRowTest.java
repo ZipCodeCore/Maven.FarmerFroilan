@@ -51,4 +51,21 @@ public class CropRowTest {
 
     }
 
+    @Test
+    public void removeCrop(){
+        //given
+        CropRow testRow = new CropRow();
+        TomatoPlant tomato = new TomatoPlant(0);
+
+        //when
+        testRow.addCrop(tomato);
+        testRow.removeCrop(tomato);
+        int actual = testRow.getNumberofCropsPlanted();
+
+        //then
+        int expected = 0;
+        Assert.assertEquals(expected, actual);
+    }
+
+
 }

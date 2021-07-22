@@ -26,4 +26,11 @@ public class CropRow {
             cropRow.add(crop);
         }
     }
+     public void addCrop(Crop crop){
+        cropRow.add(crop);
+     }
+
+    public void removeCrop(Crop crop) {
+        cropRow.remove(crop);
+    }
 }

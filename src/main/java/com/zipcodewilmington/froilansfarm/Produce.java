@@ -2,7 +2,8 @@ package com.zipcodewilmington.froilansfarm;
 
 public interface Produce {
 
-    void yield();
+
+    void yield(Edible object);
 
     boolean hasBeenFertilized();
 

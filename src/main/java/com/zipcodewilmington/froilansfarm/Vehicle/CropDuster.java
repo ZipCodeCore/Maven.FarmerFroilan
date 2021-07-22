@@ -1,14 +1,10 @@
-package com.zipcodewilmington.froilansfarm.Vehilce;
-
-import com.zipcodewilmington.froilansfarm.Aircraft;
+package com.zipcodewilmington.froilansfarm.Vehicle;
 
 public class CropDuster extends FarmVehicle implements Aircraft {
 
     public boolean fertilizer;
     public int numOfCropRows;
     public int numOfCropFert;
-
-
 
     @Override
     public void fly(int distance) {

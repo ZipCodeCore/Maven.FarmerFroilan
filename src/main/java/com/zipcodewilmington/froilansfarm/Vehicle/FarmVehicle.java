@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm.Vehilce;
+package com.zipcodewilmington.froilansfarm.Vehicle;
 
 public class FarmVehicle implements Vehicle{
     boolean onAFarm;

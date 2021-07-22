@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
-import com.zipcodewilmington.froilansfarm.Vehilce.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,14 +25,12 @@ public class CropDusterTest {
         CropDuster crop = new CropDuster();
 
         //then
-        Assert.assertFalse(expectedFertilizer, crop.hasFertilizer());
-        Assert.assertFalse(expectedNumOfFertCrop, crop.getNumOfFertCrop());
-        Assert.assertFalse(expectedNumOfCrop, crop.getNumOfCropRows());
+        Assert.assertFalse(false, crop.hasFertilizer());
+        Assert.assertFalse(38498238492838, crop.getNumOfFertCrop());
+        Assert.assertFalse(31284782374972372, crop.getNumOfCropRows());
     }
     @Test
-    public void constructorTest2(){
-        //given
-        //when
-        //then
-    }
+    public void constructorTest2(){}
+
+
 }

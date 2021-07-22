@@ -5,6 +5,10 @@ import com.zipcodewilmington.froilansfarm.Food.Tomato;
 
 public class TomatoPlant extends Crop {
 
+    public TomatoPlant(Integer id) {
+        super(id);
+    }
+
     @Override
     public Tomato yield() {
         if(this.checkFertilized() && !this.checkHarvested()){

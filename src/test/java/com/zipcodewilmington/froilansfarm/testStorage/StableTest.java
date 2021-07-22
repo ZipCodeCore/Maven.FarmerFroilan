@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.testStorage;
 
-import com.zipcodewilmington.froilansfarm.Horse;
+import Animal.Horse;
 import com.zipcodewilmington.froilansfarm.storage.Stable;
 import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
 import org.junit.Assert;

@@ -1,7 +1,9 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
 import com.zipcodewilmington.froilansfarm.Edible;
+import com.zipcodewilmington.froilansfarm.Food.EarCorn;
 import com.zipcodewilmington.froilansfarm.Mammal.Animal;
+import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
 import com.zipcodewilmington.froilansfarm.Rideable;
@@ -53,6 +55,18 @@ public class HorseTest {
         //then
 
 
+    }
+
+    @Test
+    public void testEat() {
+        //given
+        Horse horse = new Horse();
+        //when
+        EarCorn earCorn = new EarCorn();
+        horse.eat(earCorn);
+        horse.getMealList();
+        //then
+        Assert.assertTrue(horse.meals.contains(earCorn));
     }
 
     @Test

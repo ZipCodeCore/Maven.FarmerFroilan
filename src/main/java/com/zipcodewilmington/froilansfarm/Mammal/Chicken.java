@@ -5,12 +5,9 @@ import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Food.Egg;
 import com.zipcodewilmington.froilansfarm.Food.Produce;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Chicken extends Animal<EarCorn> implements Edible, Produce {
     private Boolean isFertilized;
-    public List<Edible> meals = new ArrayList<>();
 
     public Chicken(String name) {
         super(name);
@@ -35,11 +32,5 @@ public class Chicken extends Animal<EarCorn> implements Edible, Produce {
         }
         return null;
     }
-
-    public void eat(EarCorn earCorn) {
-        meals.add(earCorn);
-    }
-
-    public List<Edible> getMealList() { return meals; }
 
 }

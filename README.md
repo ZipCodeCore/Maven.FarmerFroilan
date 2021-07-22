@@ -10,7 +10,7 @@
 	* `Eater` can `eat` an `Edible` object.
 	* `NoiseMaker` can `makeNoise`
 	* `Animal` is a `NoiseMaker` and `Eater`
-		* `Horse` is an `Animal` and `Rideable`
+		* `animal.Horse` is an `Animal` and `Rideable`
 		* `Chicken` is an `Animal` and a `Produce` which `yield` an `EdibleEgg` if `hasBeenFertilized` flag is `false`.
 
 	* `Rider` can `mount` and `dismount` a `Rideable` object.
@@ -32,7 +32,7 @@
 
 	* `Person` can `makeNoise` and can `eat` an `Edible` object.
 	* `Farmer` is an `Eater`, a `Rider`, a `Botanist`, and a `Person`.
-	* `Stable` stores many `Horse`.
+	* `Stable` stores many `animal.Horse`.
 	* `FarmHouse` stores many `Person`
 	* `ChickenCoop` stores many `Chicken`
 	* `Farm` stores many `Stable`, many `ChickenCoop`, and a single `FarmHouse`
@@ -46,7 +46,7 @@
 		* Row 3 and beyond grows arbitrary vegetation.
 
 	* 15 `Chicken` across 4 `ChickenCoop`
-	* 10 `Horse` across 3 `Stable`.
+	* 10 `animal.Horse` across 3 `Stable`.
 	* 2 `FarmVehicle`
 	* 1 `Aircraft`
 	* His sister, `Froilanda`, is a `Pilot` who uses a `CropDuster`.
@@ -61,8 +61,8 @@
 * Create a separate Test class for each day in the following scenario.
 	* As a farmer, Froilan must stick to a rigorous agricultural routine.
 		* Every morning, `Froilan` and `Froilanda` begin their morning by
-			* Riding each `Horse` in each `Stable`.
-			* Feeding each `Horse` 3 ear of `Corn`.
+			* Riding each `animal.Horse` in each `Stable`.
+			* Feeding each `animal.Horse` 3 ear of `Corn`.
 			* For breakfast,
 				* `Froilan` eats 1 `EarCorn`, 2 `Tomoato`, and 5 `Egg`.
 				* `Froilanda` eats 2 `EarCorn`, 1 `Tomoato`, and 2 `Egg`.

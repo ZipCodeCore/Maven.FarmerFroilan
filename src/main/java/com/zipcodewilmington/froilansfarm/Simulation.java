@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.EarCorn;
 import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
@@ -24,8 +25,13 @@ public class Simulation {
         Person froilanda = new Person("Froilanda");
 
         Field field = new Field();
+
+        EarCorn earCorn = new EarCorn();
+
         CropRow cropRow = new CropRow();
         ChickenCoop chickenCoop = new ChickenCoop();
+
+
 
         Chicken chicken1 = new Chicken();
         Chicken chicken2 = new Chicken();

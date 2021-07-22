@@ -1,4 +1,4 @@
-package Animal;
+package com.zipcodewilmington.froilansfarm.Animal;
 
 import com.zipcodewilmington.froilansfarm.Eater;
 import com.zipcodewilmington.froilansfarm.Edible;
@@ -7,7 +7,6 @@ import com.zipcodewilmington.froilansfarm.Rider;
 import com.zipcodewilmington.froilansfarm.Vehilce.Botanist;
 import com.zipcodewilmington.froilansfarm.crops.Crop;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 

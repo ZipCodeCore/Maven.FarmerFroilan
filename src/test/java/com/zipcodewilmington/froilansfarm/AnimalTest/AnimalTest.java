@@ -1,5 +1,5 @@
-package AnimalTest;
-import Animal.Animal;
+package com.zipcodewilmington.froilansfarm.AnimalTest;
+import com.zipcodewilmington.froilansfarm.Animal.Animal;
 import org.junit.Test;
 import org.junit.Assert;
 public class AnimalTest {

@@ -1,4 +1,4 @@
-package Animal;
+package com.zipcodewilmington.froilansfarm.Animal;
 
 public class Person {
     String name;

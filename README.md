@@ -9,9 +9,9 @@
 * Consider a system in which
 	* `Eater` can `eat` an `Edible` object.
 	* `NoiseMaker` can `makeNoise`
-	* `Animal` is a `NoiseMaker` and `Eater`
-		* `Horse` is an `Animal` and `Rideable`
-		* `Chicken` is an `Animal` and a `Produce` which `yield` an `EdibleEgg` if `hasBeenFertilized` flag is `false`.
+	* `com.zipcodewilmington.froilansfarm.Animal` is a `NoiseMaker` and `Eater`
+		* `Horse` is an `com.zipcodewilmington.froilansfarm.Animal` and `Rideable`
+		* `Chicken` is an `com.zipcodewilmington.froilansfarm.Animal` and a `Produce` which `yield` an `EdibleEgg` if `hasBeenFertilized` flag is `false`.
 
 	* `Rider` can `mount` and `dismount` a `Rideable` object.
 	* `Botanist` can `plant` a `Crop` in a `CropRow`.

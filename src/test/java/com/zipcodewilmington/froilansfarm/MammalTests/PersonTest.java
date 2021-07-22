@@ -4,6 +4,7 @@ import com.zipcodewilmington.froilansfarm.Eater;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
+import com.zipcodewilmington.froilansfarm.NoiseMaker;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -55,8 +56,14 @@ public class PersonTest {
     }
 
     @Test
-    public void testImplementation() {
-        Person person = new Person("Jonah");
+    public void testImplementationEater() {
+        Person person = new Person();
         Assert.assertTrue(person instanceof Eater);
+    }
+
+    @Test
+    public void testImplementationNoiseMaker() {
+        Person person = new Person();
+        Assert.assertTrue(person instanceof NoiseMaker);
     }
 }

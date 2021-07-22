@@ -10,7 +10,6 @@ public class FarmVehicle implements Vehicle{
         offFarm= "Off Farm";
         location ="";
     }
-    public
     public void setLocation(String expected){ this.location=location;
     }
 

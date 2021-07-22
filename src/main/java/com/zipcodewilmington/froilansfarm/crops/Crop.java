@@ -4,49 +4,36 @@ import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public abstract class Crop implements Produce {
-    Integer numOfEdiblesYielded;
-    Integer numOfCropsHarvested;
-    Integer numOfCropsFertilized;
-    Integer numOfCropsAvailableToEat;
+    Integer numOfEdiblesYielded;    //once fertilized
+    Integer numOfEdiblesHarvested; //once harvested
+    Integer numOfEdiblesEaten; //decrement if eaten
 
 
-    public Crop(Integer numOfCropsPlanted, Integer numOfCropsHarvested, Integer numOfCropsFertilized, Integer numOfCropsAvailableToEat) {
-        this.numOfEdiblesYielded = numOfCropsPlanted;
-        this.numOfCropsHarvested = numOfCropsHarvested;
-        this.numOfCropsFertilized = numOfCropsFertilized;
-        this.numOfCropsAvailableToEat = numOfCropsAvailableToEat;
+    public Crop(Integer numOfYield, Integer numOfCropsHarvested, Integer numOfEdiblesLeft) {
+        this.numOfEdiblesYielded = numOfYield;
+        this.numOfEdiblesHarvested = numOfCropsHarvested;
+        this.numOfEdiblesEaten = numOfEdiblesLeft;
+    }
+
+    public Crop() {
+        this.numOfEdiblesYielded = 0;
+        this.numOfEdiblesHarvested = 0;
+        this.numOfEdiblesEaten = 0;
     }
 
 
-    public Integer getNumOfCropsPlanted() {
+    public Integer getNumOfEdiblesYielded(){
         return numOfEdiblesYielded;
     }
 
-    public void setNumOfCropsPlanted(Integer numOfCropsPlanted) {
-        this.numOfEdiblesYielded = numOfCropsPlanted;
-    }
 
-    public Integer getNumOfCropsHarvested() {
-        return numOfCropsHarvested;
-    }
+    public Integer getNumberofHarvest(){
+        while(hasBeenHarvested()==true)
+        {return numOfEdiblesYielded ;}
+        return numOfEdiblesHarvested;
+    };
 
-    public void setNumOfCropsHarvested(Integer numOfCropsHarvested) {
-        this.numOfCropsHarvested = numOfCropsHarvested;
-    }
-
-    public Integer getNumOfCropsFertilized() {
-        return numOfCropsFertilized;
-    }
-
-    public void setNumOfCropsFertilized(Integer numOfCropsFertilized) {
-        this.numOfCropsFertilized = numOfCropsFertilized;
-    }
-
-    public Integer getNumOfCropsAvailableToEat() {
-        return numOfCropsAvailableToEat;
-    }
-
-    public void setNumOfCropsAvailableToEat(Integer numOfCropsAvailableToEat) {
-        this.numOfCropsAvailableToEat = numOfCropsAvailableToEat;
+    public Integer getFoodToEat(){
+        return numOfEdiblesHarvested-numOfEdiblesEaten;
     }
 }

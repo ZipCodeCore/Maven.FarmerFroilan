@@ -22,10 +22,11 @@ public class TomatoPlant extends Crop{
 
     @Override
     public void yield(Edible edible) {
-        if (hasBeenFertilized()==true) {
+        if (hasBeenFertilized() == true) {
             numOfEdiblesYielded++;
-        }
+            //}
 
+        }
     }
 
     @Override

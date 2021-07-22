@@ -1,14 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Food;
 
 public class CornStalk extends Crop {
-    Integer capacity = 0;
 
-
-
-    public EarCorn earCorn () {
-
-        EarCorn earCorn = new EarCorn();
-
-        return earCorn;
+    public CornStalk(){
     }
+
+    @Override
+    public EarCorn yield () {
+        if(this.checkFertilized() && this.checkHarvested()){
+            return new EarCorn();
+        }
+        return null;
+    }
+
 }

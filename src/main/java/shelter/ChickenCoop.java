@@ -1,4 +1,12 @@
 package shelter;
 
-public class ChickenCoop {
+
+import animal.Chicken;
+
+import java.util.ArrayList;
+
+public class ChickenCoop extends Shelter<Chicken>{
+    public ChickenCoop() {
+
+    }
 }

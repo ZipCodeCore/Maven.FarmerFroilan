@@ -9,6 +9,9 @@ public class TomatoPlant extends Crop {
         super(id);
     }
 
+    public TomatoPlant() {
+    }
+
     @Override
     public Tomato yield() {
         if(this.checkFertilized() && !this.checkHarvested()){

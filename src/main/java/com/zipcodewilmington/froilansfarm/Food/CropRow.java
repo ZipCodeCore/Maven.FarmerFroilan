@@ -1,7 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Food;
 
-import com.zipcodewilmington.froilansfarm.Food.Crop;
-
 import java.util.ArrayList;
 import java.util.List;
 

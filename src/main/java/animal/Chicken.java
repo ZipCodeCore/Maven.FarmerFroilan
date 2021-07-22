@@ -18,8 +18,9 @@ public class Chicken extends Animal implements Produce, NoiseMaker {
     }
 
 
-    public void makeNoise() {
+    public String makeNoise() {
 
+        return null;
     }
 
 

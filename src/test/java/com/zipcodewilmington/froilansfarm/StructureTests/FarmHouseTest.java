@@ -1,13 +1,40 @@
 package com.zipcodewilmington.froilansfarm.StructureTests;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import com.zipcodewilmington.froilansfarm.Shelter;
+import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class FarmHouseTest {
+
+    @Test
+    public void testConstructor() {
+        //given
+        String expected = "Froiland";
+        Farmer farmer = new Farmer(expected);
+        //when
+        FarmHouse farmhouse = new FarmHouse(farmer);
+        farmhouse.add(farmer);
+        //then
+        Assert.assertTrue(farmhouse.getPersonList().contains(farmer));
+    }
+
+    @Test
+    public void testGetObjectByName() {
+        //given
+        String name = "Frank";
+        Person expected = new Farmer(name);
+        //when
+        FarmHouse farmhouse = new FarmHouse(expected);
+        farmhouse.add(expected);
+        Person actual = farmhouse.getObjectByName(name);
+        //then
+        Assert.assertTrue(expected.equals(actual));
+    }
 
 
     @Test

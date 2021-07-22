@@ -9,6 +9,31 @@ import org.junit.Test;
 public class ChickenCoopTest {
 
     @Test
+    public void testConstructor() {
+        //given
+        String expected = "Frank";
+        Chicken chicken = new Chicken(expected);
+        //when
+        ChickenCoop chickenCoop = new ChickenCoop(chicken);
+        chickenCoop.add(chicken);
+        //then
+        Assert.assertTrue(chickenCoop.getChickenList().contains(chicken));
+    }
+
+    @Test
+    public void testGetObjectByName() {
+        //given
+        String name = "Frank";
+        Chicken expected = new Chicken(name);
+        //when
+        ChickenCoop chickenCoop = new ChickenCoop(expected);
+        chickenCoop.add(expected);
+        Chicken actual = chickenCoop.getObjectByName(name);
+        //then
+        Assert.assertTrue(expected.equals(actual));
+    }
+
+    @Test
     public void testAdd() {
         //given
         Chicken chicken = new Chicken("Harry");

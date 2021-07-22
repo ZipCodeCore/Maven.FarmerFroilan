@@ -23,13 +23,12 @@ public class Stable implements Shelter<Horse> {
     }
 
     public Horse getObjectByName(String name) {
-        Horse thisHorse = new Horse();
-        for(Horse horse : horseList) {
-            if(horse.equals(name)) {
-                thisHorse = horse;
+        for(Horse element : horseList) {
+            if(element.equals(name)) {
+                horse = element;
             }
         }
-        return thisHorse;
+        return horse;
     }
 
     public void remove(Horse horse) {

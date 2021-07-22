@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
+import com.zipcodewilmington.froilansfarm.crops.CropRow;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -51,9 +52,10 @@ public class CropDusterTest {
         int cropNum=20;
         int fertCrop=4;
         boolean expected=true;
+        CropRow cropRow = new CropRow();
         //when
         CropDuster crop =new CropDuster(false, cropNum, fertCrop);
-        boolean actual= crop.needsToBeFertilized(cropNum, fertCrop);
+        boolean actual= crop.needsToBeFertilized(cropRow);
         //then
         Assert.assertEquals(expected, actual );
     }

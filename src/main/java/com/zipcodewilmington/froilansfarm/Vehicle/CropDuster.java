@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+
+import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.crops.CropRow;
 
 public class CropDuster extends FarmVehicle implements Aircraft {
@@ -48,13 +50,13 @@ public class CropDuster extends FarmVehicle implements Aircraft {
         return this.numOfCropFert;
     }
 
-    public boolean needsToBeFertilized(CropRow crop, int numOfCropFert) {
-        int numNonFertCrops = numOfCropRows - numOfCropFert;
-        int cropWork = numOfCropRows / 3;
-        if (numNonFertCrops > cropWork) {
-            return toBeFertilized = true;
+    public boolean needsToBeFertilized(CropRow cropRow) {
+        for (Crop crop : cropRow.getCropRow()) {
+            if (crop.hasBeenFertilized()==false){
+                return true;
+            }
         }
-        return toBeFertilized = false;
+       return false;
     }
 
     @Override

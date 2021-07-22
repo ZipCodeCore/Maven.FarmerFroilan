@@ -10,8 +10,8 @@ public class EggTest {
 
     @Test
     public void eggTest() {
-        Egg egg = new Egg();
-
+        Edible egg = new Egg();
+        Assert.assertTrue(egg instanceof Egg);
     }
 
     @Test
@@ -19,4 +19,20 @@ public class EggTest {
         Egg egg = new Egg();
         Assert.assertTrue(egg instanceof Edible);
     }
+
+    @Test
+    public void isItFertilizedTest(){
+        Egg egg = new Egg();
+        Boolean fertilized = egg.isItFertilized();
+        Assert.assertFalse(fertilized);
+    }
+
+    @Test
+    public void setIsFertilizedTest(){
+        Egg egg = new Egg();
+        egg.setIsFertilized(true);
+        Boolean fertilized = egg.isItFertilized();
+        Assert.assertTrue(fertilized);
+    }
+
 }

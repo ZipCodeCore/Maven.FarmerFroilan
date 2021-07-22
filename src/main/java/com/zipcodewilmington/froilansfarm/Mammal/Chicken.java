@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Chicken extends Animal<EarCorn> implements Edible, Produce {
-
+    private Boolean isFertilized;
     public List<Edible> meals = new ArrayList<>();
 
     public Chicken(String name) {
@@ -24,9 +24,13 @@ public class Chicken extends Animal<EarCorn> implements Edible, Produce {
         return "Cluck Cluck";
     }
 
+    public void fertilize(){
+        this.isFertilized = true;
+    }
+
     @Override
     public Egg yield() {
-        if (!Egg.isFertilized){
+        if (isFertilized){
             return new Egg();
         }
         return null;

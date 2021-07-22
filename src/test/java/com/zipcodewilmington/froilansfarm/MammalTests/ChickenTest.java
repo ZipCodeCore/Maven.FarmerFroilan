@@ -44,14 +44,16 @@ public class ChickenTest {
         Assert.assertEquals(expected, actual);
     }
 
+
     @Test
     public void testYield() {
         //given
         Chicken chicken = new Chicken();
         //when
-        Egg egg = chicken.yield();
+        chicken.fertilize();
+        Edible egg = chicken.yield();
         //then
-        Assert.assertTrue(egg instanceof Edible);
+        Assert.assertTrue(egg instanceof Egg);
     }
 
     @Test

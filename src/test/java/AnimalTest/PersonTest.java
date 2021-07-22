@@ -1,6 +1,7 @@
 package AnimalTest;
 
 
+import Animal.Animal;
 import Animal.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -26,5 +27,33 @@ public class PersonTest {
         Integer expectedAmount=person.getAmountOfFoodEaten();
         //then
         Assert.assertEquals(expectedAmount,actualAmountOfFoodEaten);
+    }
+
+    @Test
+    public void setNameTest(){
+        String name = "Sutara";
+        String expected = "Sitara";
+        Integer amountOfFoodEaten = 2;
+        Person person=new Person(name,amountOfFoodEaten);
+        person.setName(expected);
+        //when
+        String actual=person.getName();
+
+        //then
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void setAmountOfFoodTest(){
+        String name = "Sitara";
+        Integer amountOfFoodEaten = 2;
+        Integer expected = 2;
+        Person person=new Person(name,amountOfFoodEaten);
+        person.setAmountOfFoodEaten(expected);
+        //when
+        Integer actual=person.getAmountOfFoodEaten();
+
+        //then
+        Assert.assertEquals(expected,actual);
     }
 }

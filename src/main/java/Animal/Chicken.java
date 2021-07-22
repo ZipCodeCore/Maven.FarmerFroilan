@@ -10,11 +10,8 @@ public class Chicken extends Animal implements Produce {
 public Chicken(){}
 
     public void yield(Edible object) {
-        if(isFertilized==true){
-            eggs+=1;
-        }
-        else {
-            isFertilized=false;
+        if(this.isFertilized==true){
+            this.eggs+=1;
         }
     }
 

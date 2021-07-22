@@ -20,16 +20,17 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
 
 
     public Farmer( Integer numberOfRidesTaken,Integer numberOfCropsPlanted,Integer numberOfEdiblesEaten
-            ,String name){
+            ,String name,ArrayList<Edible> thingsEaten){
         this.numberOfRidesTaken=numberOfRidesTaken;
         this.numberOfCropsPlanted=numberOfCropsPlanted;
         this.numberOfEdiblesEaten=numberOfEdiblesEaten;
         this.name=name;
+        this.thingsEaten = thingsEaten;
 
      }
 
      public Farmer(){
-         thingsEaten= new ArrayList<Edible>();
+         this.thingsEaten= new ArrayList<Edible>();
      }
 
     public String getName() {

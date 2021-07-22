@@ -9,7 +9,7 @@ public class Animal implements NoiseMaker, Eater {
     Integer age;
     Integer amountOfFoodEaten;
 
-    public Animal(String name,Integer Age,Integer amountOfFoodEaten){
+    public Animal(String name,Integer age,Integer amountOfFoodEaten){
         this.name=name;
         this.age=age;
         this.amountOfFoodEaten=amountOfFoodEaten;

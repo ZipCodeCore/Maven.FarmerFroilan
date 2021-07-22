@@ -15,12 +15,12 @@ public class CornPlant extends Crop{
 
     @Override
     public void yield(Edible edible) {
-
+        numOfEdiblesYielded++;
     }
 
     @Override
     public boolean hasBeenFertilized() {
-        return false;
+        return true;
     }
 
     @Override

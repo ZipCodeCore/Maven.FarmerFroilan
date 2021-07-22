@@ -1,6 +1,7 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.StructureTests;
 
 import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
+import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import org.junit.Assert;
 import org.junit.Test;

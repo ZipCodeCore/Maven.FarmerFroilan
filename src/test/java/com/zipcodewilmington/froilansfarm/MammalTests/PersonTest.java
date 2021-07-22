@@ -1,5 +1,6 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.MammalTests;
 
+import com.zipcodewilmington.froilansfarm.Eater;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import org.junit.Assert;
 import org.junit.Test;

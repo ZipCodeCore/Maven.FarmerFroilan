@@ -1,4 +1,6 @@
 package shelter;
 
-public class FarmHouse {
+import person.Person;
+
+public class FarmHouse extends Shelter<Person>{
 }

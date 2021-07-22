@@ -3,8 +3,15 @@ package com.zipcodewilmington.froilansfarm.Food;
 import com.zipcodewilmington.froilansfarm.Edible;
 
 public abstract class Crop implements Produce {
-    private Boolean fertilized = false;
-    private Boolean isHarvested = false;
+    private Boolean fertilized;
+    private Boolean isHarvested;
+    private Integer id;
+
+    public Crop(Integer id) {
+        this.fertilized = false;
+        this.isHarvested = false;
+        this.id = id;
+    }
 
     public void fertilize(){
         this.fertilized = true;
@@ -25,5 +32,13 @@ public abstract class Crop implements Produce {
 
     public void setHarvested(Boolean harvested) {
         isHarvested = harvested;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

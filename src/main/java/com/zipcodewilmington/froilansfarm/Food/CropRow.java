@@ -2,32 +2,35 @@ package com.zipcodewilmington.froilansfarm.Food;
 
 import com.zipcodewilmington.froilansfarm.Food.Crop;
 
-public class CropRow extends Crop {
-    private Integer amount;
-    private Crop crop;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CropRow {
+    private List<Crop> cropList;
 
     public CropRow(){
-        this.amount = 0;
-        this.crop = null;
+        cropList = new ArrayList<>();
     }
 
-    public void fertilize(){
-        super.fertilize();
+    public void plantCrop(Crop crop){
+        this.cropList.add(crop);
     }
 
-    public Integer getAmount() {
-        return amount;
+    public Integer getNumberOfCrops(){
+        return cropList.size();
     }
 
-    public void setAmount(Integer amount) {
-        this.amount = amount;
+    public Crop getCropById(Integer id){
+        Crop result = null;
+        for(Crop crop: cropList){
+            result = id == crop.getId() ? crop : null;
+        }
+        return result;
     }
 
-    public Crop getCrop() {
-        return crop;
+    public void fertilizeRow(){
+        cropList.forEach(Crop::fertilize);
     }
 
-    public void setCrop(Crop crop) {
-        this.crop = crop;
-    }
+
 }

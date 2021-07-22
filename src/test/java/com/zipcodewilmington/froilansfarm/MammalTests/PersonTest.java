@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
 import com.zipcodewilmington.froilansfarm.Eater;
+import com.zipcodewilmington.froilansfarm.Food.Tomato;
+import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import org.junit.Assert;
 import org.junit.Test;
@@ -38,6 +40,18 @@ public class PersonTest {
         String actual = person.makeNoise();
         //then
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testEat() {
+        //given
+        Person person = new Person();
+        //when
+        Tomato tomato = new Tomato();
+        person.eat(tomato);
+        person.getMealList();
+        //then
+        Assert.assertTrue(person.meals.contains(tomato));
     }
 
     @Test

@@ -4,9 +4,13 @@ import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Eater;
 import com.zipcodewilmington.froilansfarm.NoiseMaker;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
 
     private String name;
+    public List<Edible> meals = new ArrayList<>();
 
     public Person(String name) {
         this.name = name;
@@ -25,8 +29,9 @@ public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
     }
 
     @Override
-    public void eat(T edible) {
-    }
+    public void eat(T edible) { meals.add(edible); }
+
+    public List<Edible> getMealList() { return meals; }
 
     @Override
     public String makeNoise(){

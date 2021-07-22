@@ -1,11 +1,28 @@
 package com.zipcodewilmington.froilansfarm.AnimalTest;
 
+import com.zipcodewilmington.froilansfarm.Animal.Animal;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.Edible;
+import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ChickenTest {
+
+    @Test
+    public void instanceOfAnimal () {
+        Chicken chicken = new Chicken();
+
+        Assert.assertTrue(chicken instanceof Animal);
+    }
+
+    @Test
+    public void instanceOfProduce () {
+        Chicken chicken = new Chicken();
+
+        Assert.assertTrue(chicken instanceof Produce);
+    }
+
     @Test
     public void hasBeenFertilisedTest(){
         Chicken chicken =new Chicken();

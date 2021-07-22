@@ -44,6 +44,8 @@ public class Farmer extends Person<Edible> implements Botanist, Rider {
         this.isRiding = null;
     }
 
+    public Rideable getIsRiding() { return isRiding; }
+
     @Override
     public void eat(Edible edible) { meals.add(edible); }
 

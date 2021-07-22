@@ -12,7 +12,7 @@ public class Tractor implements FarmVehicle{
 
 
     public String makeNoise() {
-        return null;
+        return "Chuggumgumgumgumgum";
     }
 
 

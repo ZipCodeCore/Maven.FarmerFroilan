@@ -9,8 +9,10 @@ import java.util.List;
 public class FarmHouse implements Shelter<Person> {
 
     List<Person> personList = new ArrayList<Person>();
+    Person person;
 
     public FarmHouse(Person person) {
+        this.person = person;
         this.personList = personList;
     }
 
@@ -21,13 +23,12 @@ public class FarmHouse implements Shelter<Person> {
     }
 
     public Person getObjectByName(String name) {
-        Person thisPerson = new Person();
-        for(Person person : personList) {
-            if(person.equals(name)) {
-                thisPerson = person;
+        for(Person element : personList) {
+            if(element.equals(name)) {
+                person = element;
             }
         }
-        return thisPerson;
+        return person;
     }
 
     public void remove(Person person) {

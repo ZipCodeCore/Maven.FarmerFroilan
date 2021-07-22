@@ -17,7 +17,6 @@ public class ChickenCoop implements Shelter<Chicken> {
     }
 
     public ChickenCoop() {
-
     }
 
     public void add(Chicken chicken) {
@@ -25,13 +24,12 @@ public class ChickenCoop implements Shelter<Chicken> {
     }
 
     public Chicken getObjectByName(String name) {
-        Chicken thisChicken = new Chicken();
-        for(Chicken chicken : chickenList) {
-            if(chicken.equals(name)) {
-                thisChicken = chicken;
+        for(Chicken element : chickenList) {
+            if(element.equals(name)) {
+                chicken = element;
             }
         }
-        return thisChicken;
+        return chicken;
     }
 
     public void remove(Chicken chicken) {

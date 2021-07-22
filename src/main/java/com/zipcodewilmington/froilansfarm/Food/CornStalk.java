@@ -7,7 +7,8 @@ public class CornStalk extends Crop {
 
     @Override
     public EarCorn yield () {
-        if(this.checkFertilized() && this.checkHarvested()){  // does check harvested have to be false in order to harvest th corn?
+        if(this.checkFertilized() && !this.checkHarvested()){  // does check harvested have to be false in order to harvest th corn?
+            this.setHarvested(true);
             return new EarCorn();
         }
         return null;

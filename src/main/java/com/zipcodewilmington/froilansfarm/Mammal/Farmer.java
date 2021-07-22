@@ -15,6 +15,10 @@ public class Farmer extends Person<Produce> implements Botanist, Rider {
         super(name);
     }
 
+    public Farmer() {
+        super("Froilan");
+    }
+
     @Override
     public void plant(Crop crop, CropRow cropRow) {
 

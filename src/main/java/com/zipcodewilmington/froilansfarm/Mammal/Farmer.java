@@ -8,9 +8,13 @@ import com.zipcodewilmington.froilansfarm.Food.Produce;
 import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.Rider;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Farmer extends Person<Edible> implements Botanist, Rider {
 
     private Rideable isRiding = null;
+    public List<Edible> meals = new ArrayList<>();
 
     public Farmer(String name) {
         super(name);
@@ -41,4 +45,9 @@ public class Farmer extends Person<Edible> implements Botanist, Rider {
     public void dismount(Rideable rideable) {
         this.isRiding = null;
     }
+
+    @Override
+    public void eat(Edible edible) { meals.add(edible); }
+
+    public List<Edible> getMealList() { return meals; }
 }

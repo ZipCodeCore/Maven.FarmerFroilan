@@ -30,7 +30,8 @@ public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
 
     @Override
     public String makeNoise(){
-        return "Hello, im suffering";
+        return "Hello";
     }
+
 
 }

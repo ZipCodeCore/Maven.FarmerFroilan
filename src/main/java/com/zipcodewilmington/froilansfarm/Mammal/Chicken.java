@@ -34,7 +34,6 @@ public class Chicken extends Animal<EarCorn> implements Edible, Produce {
 
     public void eat(EarCorn earCorn) {
         meals.add(earCorn);
-        //need a way to remove EarCorn count as well
     }
 
     public List<Edible> getMealList() { return meals; }

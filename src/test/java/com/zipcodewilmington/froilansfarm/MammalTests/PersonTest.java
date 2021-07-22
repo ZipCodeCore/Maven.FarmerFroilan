@@ -30,6 +30,17 @@ public class PersonTest {
     }
 
     @Test
+    public void testMakeNoise() {
+        //given
+        String expected = "Hello";
+        Person person = new Person();
+        //when
+        String actual = person.makeNoise();
+        //then
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testImplementation() {
         Person person = new Person("Jonah");
         Assert.assertTrue(person instanceof Eater);

@@ -35,15 +35,11 @@ public class CropRow {
 
     public ArrayList<Edible> harvestRow() {
         ArrayList<Edible> harvest = new ArrayList<>();
-
         cropList.forEach(crop -> {
             harvest.add(crop.yield());
             crop.setHarvested(true);
         });
-
         return harvest;
-
-
     }
 
 

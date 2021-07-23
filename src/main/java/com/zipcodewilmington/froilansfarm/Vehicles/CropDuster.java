@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Farm;
+import com.zipcodewilmington.froilansfarm.Field;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 
 public class CropDuster extends Aircraft implements FarmVehicle{
@@ -9,8 +10,10 @@ public class CropDuster extends Aircraft implements FarmVehicle{
       row.fertilizeRow();
    }
 
-   @Override
-   public void operate(Farm farm) {
 
+   public void operate(Farm farm) {
+      for(CropRow element : farm.getField().getMyField()){
+         element.fertilizeRow();
+      }
    }
 }

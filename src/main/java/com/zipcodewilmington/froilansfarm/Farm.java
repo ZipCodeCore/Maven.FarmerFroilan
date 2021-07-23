@@ -10,10 +10,10 @@ import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
 
 public class Farm {
-    private static Shelter<Person> farmhouse = new FarmHouse();
-    private static Shelter<Horse> stable = new Stable();
-    private static Shelter<Chicken> chickenCoop = new ChickenCoop();
-    private static Field field = new Field();
+    private  Shelter<Person> farmhouse = new FarmHouse();
+    private  Shelter<Horse> stable = new Stable();
+    private  Shelter<Chicken> chickenCoop = new ChickenCoop();
+    private  Field field = new Field();
 
     public Farm(){
         farmhouse.add(new Farmer("Froilan"));
@@ -26,19 +26,19 @@ public class Farm {
         field.add(new CropRow());
     }
 
-    public static Shelter<Person> getFarmhouse() {
+    public  Shelter<Person> getFarmhouse() {
         return farmhouse;
     }
 
-    public static Shelter<Horse> getStable() {
+    public  Shelter<Horse> getStable() {
         return stable;
     }
 
-    public static Shelter<Chicken> getChickenCoop() {
+    public  Shelter<Chicken> getChickenCoop() {
         return chickenCoop;
     }
 
-    public static Field getField(){
+    public Field getField(){
         return field;
     }
 }

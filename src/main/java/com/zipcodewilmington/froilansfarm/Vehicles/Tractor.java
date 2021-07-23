@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.Crop;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
@@ -10,9 +11,9 @@ import java.util.List;
 
 public class Tractor implements FarmVehicle{
     private Rider rider;
-    private List<Crop> aList = new ArrayList<>();
+    private List<Edible> aList = new ArrayList<>();
 
-    public void harvest(Crop crop){
+    public void harvest(Edible crop){
         aList.add(crop);
     }
 
@@ -22,17 +23,22 @@ public class Tractor implements FarmVehicle{
     }
 
 
-    @Override
+
     public void ride(Rider rider) {
         this.rider = rider;
     }
 
-    @Override
     public void operate(Farm farm) {
         List<CropRow> rows = farm.getField().getMyField();
         for(int i = 0; i < rows.size(); i++){
-            //aList.add(rows.get(i));
+            ArrayList<Edible> listOfCrops =  rows.get(i).harvestRow();
+            for(int j = 0; j < listOfCrops.size(); j++){
+                harvest(listOfCrops.get(j));
+            }
         }
     }
 
+    public List<Edible> getaList() {
+        return aList;
+    }
 }

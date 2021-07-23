@@ -1,4 +1,11 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-public class Tractor {
+import com.zipcodewilmington.froilansfarm.crops.Crop;
+
+public class Tractor implements FarmVehicle<Object>{
+
+    @Override
+    public void operate(Object vehicle) {
+
+    }
 }

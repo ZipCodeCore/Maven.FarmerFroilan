@@ -1,9 +1,9 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-public interface FarmVehicle <T> {
+public interface FarmVehicle <T extends Vehicle> {
 
 
-    public default void operate(T vehicle){
-
-    }
+//    public default void operate(){
+//
+//    }
 }

@@ -4,5 +4,5 @@ import com.zipcodewilmington.froilansfarm.crops.Edible;
 
 public interface Eater {
 
-    public void eat(Edible food);
+    public Boolean eat(Edible food);
 }

@@ -3,7 +3,9 @@ package com.zipcodewilmington.froilansfarm.vehicle;
 public abstract class Aircraft implements FarmVehicle {
 
 
-    public void fly(){
+    public boolean fly(){
+        return true;
+
 
     }
     public void operate(Object vehicle) {

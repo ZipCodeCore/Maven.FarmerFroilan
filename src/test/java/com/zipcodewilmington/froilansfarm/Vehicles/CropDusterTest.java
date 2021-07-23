@@ -1,15 +1,10 @@
-package Vehicles;
+package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Farm;
-import com.zipcodewilmington.froilansfarm.Field;
-import com.zipcodewilmington.froilansfarm.Food.Crop;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
-import com.zipcodewilmington.froilansfarm.Vehicles.*;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 public class CropDusterTest {
 
@@ -40,17 +35,20 @@ public class CropDusterTest {
         Assert.assertTrue(actual);
     }
 
-//    @Test
-//    public void fertilizeTest(){
-//        CropDuster duster = new CropDuster();
-//
-//        CropRow row = new CropRow();
-//        duster.fertilizeCrop(row);
-//
-//        Boolean actual = row.checkFertilized();
-//
-//        Assert.assertTrue(actual);
-//    }
+    @Test
+    public void fertilizeTest(){
+        CropDuster duster = new CropDuster();
+        Farm farm = new Farm();
+        TomatoPlant plant = new TomatoPlant();
+        CropRow row = new CropRow();
+        row.plantCrop(plant);
+        farm.getField().add(row);
+        duster.operate(farm);
+
+        Boolean actual = plant.checkFertilized();
+
+        Assert.assertTrue(actual);
+    }
 
     @Test
     public void shootTest(){

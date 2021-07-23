@@ -1,9 +1,14 @@
-package Vehicles;
+package com.zipcodewilmington.froilansfarm.Vehicles;
 
-import com.zipcodewilmington.froilansfarm.Vehicles.Aircraft;
-import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
+import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
+import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
+import com.zipcodewilmington.froilansfarm.Mammal.Froilanda;
+import com.zipcodewilmington.froilansfarm.Pilot;
+import com.zipcodewilmington.froilansfarm.Rider;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.awt.*;
 
 public class AircraftTest {
 
@@ -25,4 +30,6 @@ public class AircraftTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    
 }

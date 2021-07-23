@@ -1,10 +1,9 @@
 package com.zipcodewilmington.froilansfarm;
 
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
+import com.zipcodewilmington.froilansfarm.Mammal.Person;
 
-public class Pilot extends Farmer {
+public interface Pilot {
 
-    public void fly() {
-
-    }
+    public void fly();
 }

@@ -23,9 +23,10 @@ public class Simulation implements Runnable {
 
     public void run() {
 
+
+        // Person froilan = new Farmer("Froilan");
+        // Rider<CropDuster> froilanda = new Pilot();
         Farm farm = new Farm();
-        Person froilan = new Farmer("Froilan");
-        Rider<CropDuster> froilanda = new Pilot();
         Field field = new Field();
         EarCorn earCorn = new EarCorn();
         CropRow cropRow = new CropRow();

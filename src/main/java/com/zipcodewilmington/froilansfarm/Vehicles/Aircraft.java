@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 import com.zipcodewilmington.froilansfarm.Rider;
 
 public class Aircraft implements Vehicle{
-
+    Rider rider;
     public void fly(){}
 
     public String makeNoise() {
@@ -14,12 +14,12 @@ public class Aircraft implements Vehicle{
         return "BULLETS";
     }
 
-    public void ride() {
-
-    }
-
     @Override
     public void ride(Rider rider) {
+        rider = rider;
+    }
 
+    public Rider getRider() {
+        return rider;
     }
 }

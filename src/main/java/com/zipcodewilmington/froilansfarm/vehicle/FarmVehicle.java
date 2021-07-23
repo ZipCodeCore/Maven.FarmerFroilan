@@ -1,4 +1,9 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-public interface FarmVehicle {
+public interface FarmVehicle <T> {
+
+
+    public default void operate(T vehicle){
+
+    }
 }

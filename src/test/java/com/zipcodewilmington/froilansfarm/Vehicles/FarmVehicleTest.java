@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
@@ -27,6 +28,6 @@ public class FarmVehicleTest {
     @Test
     public void inheritenceCropDustTest1(){
         FarmVehicle car = new FarmVehicle();
-        Assert.assertTrue(car instanceof Vehicle);
+        Assert.assertTrue(car instanceof Rideable);
     }
 }

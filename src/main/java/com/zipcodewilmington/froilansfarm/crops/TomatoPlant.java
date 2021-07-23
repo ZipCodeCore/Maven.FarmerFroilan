@@ -1,4 +1,7 @@
 package com.zipcodewilmington.froilansfarm.crops;
 
-public class TomatoPlant {
+public class TomatoPlant extends Crop{
+    public void yield() {
+
+    }
 }

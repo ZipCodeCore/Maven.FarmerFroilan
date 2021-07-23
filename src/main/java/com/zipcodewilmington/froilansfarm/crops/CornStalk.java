@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm.crops;
 
-public class CornStalk implements Edible{
-    public boolean IsEdible() {
-        return true;
+public class CornStalk extends Crop{
+    public void yield() {
+
     }
 }

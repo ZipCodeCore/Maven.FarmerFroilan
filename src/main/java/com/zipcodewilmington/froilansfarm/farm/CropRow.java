@@ -1,4 +1,7 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
-public class CropRow {
+import com.zipcodewilmington.froilansfarm.crops.Crop;
+
+public class CropRow <someType extends Crop> {
+
 }

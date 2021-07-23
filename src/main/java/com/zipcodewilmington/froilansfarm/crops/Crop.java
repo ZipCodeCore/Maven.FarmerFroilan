@@ -33,6 +33,7 @@ public abstract class Crop implements Produce {
 
     public void harvest() {
         this.hasBeenHarvested = true;
+        numOfEdiblesHarvested++;
     }
 
     public Integer getNumOfEdiblesYielded() {
@@ -44,6 +45,7 @@ public abstract class Crop implements Produce {
         if (hasBeenHarvested) {
             return numOfEdiblesYielded;
         }
+
         return numOfEdiblesHarvested;
     }
 

@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
+
 import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Food.EarCorn;
 import com.zipcodewilmington.froilansfarm.Food.Egg;
@@ -85,4 +86,5 @@ public class ChickenTest {
         Chicken chicken = new Chicken();
         Assert.assertTrue(chicken instanceof Produce);
     }
+
 }

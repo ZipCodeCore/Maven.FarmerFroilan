@@ -41,4 +41,8 @@ public class Tractor implements FarmVehicle{
     public List<Edible> getaList() {
         return aList;
     }
+
+    public Rider getRider() {
+        return rider;
+    }
 }

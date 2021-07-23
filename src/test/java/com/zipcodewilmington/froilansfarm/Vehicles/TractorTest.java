@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -41,15 +42,25 @@ public class TractorTest {
         Tractor tractor = new Tractor();
 
         Farm farm = new Farm();
-        CropRow row = new CropRow();
-        row.plantCrop(new TomatoPlant());
-        farm.getField().add(row);
         tractor.operate(farm);
 
         Integer actual = tractor.getaList().size();
-        Integer expected = 1;
+        Integer expected = 5;
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void rideTest(){
+        Froilan froi = new Froilan();
+        Tractor tractor = new Tractor();
+
+        tractor.ride(froi);
+
+        Boolean actual = tractor.getRider() != null;
+
+        Assert.assertTrue(actual);
+    }
+
 
 }

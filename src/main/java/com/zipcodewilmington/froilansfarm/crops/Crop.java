@@ -19,7 +19,9 @@ public abstract class Crop <someType extends Edible> implements Produce<someType
         return hasBeenHarvested;
     }
 
-    protected abstract someType getEdible();
+    public someType getEdible() {
+        return null;
+    }
 
     public someType yield() {
         if(hasBeenFertilized() && hasBeenHarvested()) {

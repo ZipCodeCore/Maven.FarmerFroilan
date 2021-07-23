@@ -1,9 +1,12 @@
 package com.zipcodewilmington.froilansfarm.crops;
 
-public class PotatoRoot extends Crop {
+public class PotatoRoot extends Crop<Potato> {
 
-    public void yield() {
-
+    public PotatoRoot(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        super(hasBeenHarvested, hasBeenFertilized);
     }
 
+    public Potato getEdible() {
+        return new Potato();
+    }
 }

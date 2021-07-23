@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Farm;
+import com.zipcodewilmington.froilansfarm.Field;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Pilot;
 import com.zipcodewilmington.froilansfarm.Rider;
@@ -21,5 +22,9 @@ public class CropDuster<T extends Rider> extends Aircraft implements FarmVehicle
    @Override
    public void operate(Farm farm) {
 
+   public void operate(Farm farm) {
+      for(CropRow element : farm.getField().getMyField()){
+         element.fertilizeRow();
+      }
    }
 }

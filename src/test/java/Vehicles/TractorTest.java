@@ -1,14 +1,16 @@
 package Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Farm;
+import com.zipcodewilmington.froilansfarm.Field;
 import com.zipcodewilmington.froilansfarm.Food.Crop;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
-import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
-import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
-import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
+import com.zipcodewilmington.froilansfarm.Vehicles.*;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class TractorTest {
 
@@ -42,15 +44,18 @@ public class TractorTest {
 
     @Test
     public void tractorHarvestTest(){
-        Vehicle tractor = new Tractor();
-        Farmer farmer = new Farmer();
-        Crop crop = new TomatoPlant();
-        CropRow rows = new CropRow();
-        rows.plantCrop(crop);
-        //Needs something testable in regards to tractor.ride
-        tractor.ride(farmer);
-        //tractor;
+        Tractor tractor = new Tractor();
 
+        Farm farm = new Farm();
+        CropRow row = new CropRow();
+        row.plantCrop(new TomatoPlant());
+        farm.getField().add(row);
+        tractor.operate(farm);
+
+        Integer actual = tractor.getaList().size();
+        Integer expected = 1;
+
+        Assert.assertEquals(expected, actual);
     }
 
 }

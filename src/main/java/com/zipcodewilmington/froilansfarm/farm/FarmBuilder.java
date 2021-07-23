@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm.farm;
 
 import com.zipcodewilmington.froilansfarm.vehicle.Vehicle;
 
-import java.util.List;
+import java.util.*;
 
 public class FarmBuilder {
 
@@ -12,28 +12,28 @@ public class FarmBuilder {
     private List<Field> fields;
     private List<Vehicle> vehicles;
 
-    public FarmBuilder setFarmhouses(List<FarmHouse> farmhouses) {
-        this.farmhouses = farmhouses;
+    public FarmBuilder setFarmhouses(FarmHouse farmhouses) {
+        this.farmhouses = new ArrayList<>(Arrays.asList(farmhouses));
         return this;
     }
 
-    public FarmBuilder setStables(List<Stable> stables) {
-        this.stables = stables;
+    public FarmBuilder setStables(Stable... stables) {
+        this.stables = new ArrayList<>(Arrays.asList(stables));
         return this;
     }
 
-    public FarmBuilder setChickenCoops(List<ChickenCoop> chickenCoops) {
-        this.chickenCoops = chickenCoops;
+    public FarmBuilder setChickenCoops(ChickenCoop... chickenCoops) {
+        this.chickenCoops = new ArrayList<>(Arrays.asList(chickenCoops));
         return this;
     }
 
-    public FarmBuilder setFields(List<Field> fields) {
-        this.fields = fields;
+    public FarmBuilder setFields(Field... fields) {
+        this.fields = new ArrayList<>(Arrays.asList(fields));
         return this;
     }
 
-    public FarmBuilder setVehicles(List<Vehicle> vehicles) {
-        this.vehicles = vehicles;
+    public FarmBuilder setVehicles(Vehicle... vehicles) {
+        this.vehicles = new ArrayList<>(Arrays.asList(vehicles));
         return this;
     }
 

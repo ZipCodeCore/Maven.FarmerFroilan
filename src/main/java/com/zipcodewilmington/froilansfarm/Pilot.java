@@ -5,5 +5,5 @@ import com.zipcodewilmington.froilansfarm.Mammal.Person;
 
 public interface Pilot {
 
-    public void fly();
+    public void fly(Farm farm);
 }

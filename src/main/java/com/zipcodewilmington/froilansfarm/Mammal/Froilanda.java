@@ -1,14 +1,18 @@
 package com.zipcodewilmington.froilansfarm.Mammal;
 
+import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.EarCorn;
 import com.zipcodewilmington.froilansfarm.Food.Egg;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
 import com.zipcodewilmington.froilansfarm.Pilot;
 import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.Rider;
+import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
 
 public class Froilanda extends Farmer implements Pilot {
     private static final Froilanda froilanda = new Froilanda();
+    private Rideable rideable;
 
     public static Froilanda getInstance(){
         return froilanda;
@@ -24,13 +28,18 @@ public class Froilanda extends Farmer implements Pilot {
 
     @Override
     public void mount(Rideable rideable) {
+        this.rideable = rideable;
     }
 
     @Override
     public void dismount(Rideable rideable) {
+        this.rideable = null;
     }
 
     @Override
-    public void fly() {
+    public void fly(Farm farm) {
+        if(rideable instanceof CropDuster){
+            ((CropDuster<?>) rideable).fly(farm.getField());
+        }
     }
 }

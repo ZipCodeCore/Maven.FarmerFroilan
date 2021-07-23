@@ -12,4 +12,8 @@ public abstract class Aircraft implements FarmVehicle {
 
     }
 
+    @Override
+    public boolean operate() {
+        return false;
+    }
 }

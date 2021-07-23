@@ -1,36 +1,32 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
+import com.sun.scenario.effect.Crop;
 import com.zipcodewilmington.froilansfarm.crops.Crop;
+import com.zipcodewilmington.froilansfarm.crops.Tomato;
 
 public class Tractor implements FarmVehicle<Vehicle>{
 
 
 
-    private int crop;
+     private Crop;
 
-    public Tractor(int crop) {
-        this.crop = crop;
+
+    public Tractor() {
+
     }
 
-    public int getCrop() {
-        return crop;
-    }
 
-    public void setCrop(int crop) {
-        crop = crop;
-    }
-
-    public boolean harvest(int crop){
+    public boolean harvest(Crop crop) {
         return true;
 
     }
 
-    @Override
-
-
-    public void operate(Object vehicle) {
+    public boolean harvest(){
+        return true;
 
     }
-
-
+    @Override
+    public boolean operate() {
+        return true;
+    }
 }

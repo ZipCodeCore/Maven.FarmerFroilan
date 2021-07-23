@@ -1,7 +1,12 @@
 package com.zipcodewilmington.froilansfarm.crops;
 
-public class TomatoPlant extends Crop{
-    public void yield() {
+public class TomatoPlant extends Crop<Tomato>{
 
+    public TomatoPlant(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        super(hasBeenHarvested, hasBeenFertilized);
+    }
+
+    protected Tomato getEdible() {
+        return new Tomato();
     }
 }

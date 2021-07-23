@@ -2,17 +2,30 @@ package com.zipcodewilmington.froilansfarm.crops;
 
 import com.zipcodewilmington.froilansfarm.farm.Produce;
 
-public abstract class Crop <cropType extends Edible> implements Produce {
+public abstract class Crop <someType extends Edible> implements Produce<someType> {
+    private boolean hasBeenHarvested;
+    private boolean hasBeenFertilized;
+
+    public Crop(boolean hasBeenHarvested, boolean hasBeenFertilized) {
+        this.hasBeenHarvested = hasBeenHarvested;
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
 
     public boolean hasBeenFertilized() {
-        return false;
+        return hasBeenFertilized;
     }
 
-    public void addCrop() {
-        // crop.add();
+    public boolean hasBeenHarvested() {
+        return hasBeenHarvested;
     }
 
-    public void removeCrop() {
-        // crop.remove();
+    protected abstract someType getEdible();
+
+    public someType yield() {
+        if(hasBeenFertilized() && hasBeenHarvested()) {
+            return getEdible();
+        }
+        return null;
     }
+
 }

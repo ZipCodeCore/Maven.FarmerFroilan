@@ -13,18 +13,4 @@ public class CornPlant extends Crop{
         super();
     }
 
-    @Override
-    public void yield(Edible edible) {
-        numOfEdiblesYielded++;
-    }
-
-    @Override
-    public boolean hasBeenFertilized() {
-        return true;
-    }
-
-    @Override
-    public boolean hasBeenHarvested() {
-        return false;
-    }
 }

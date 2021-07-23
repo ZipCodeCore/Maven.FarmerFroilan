@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.crops;
 
+import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public abstract class Crop implements Produce {
@@ -15,7 +16,7 @@ public abstract class Crop implements Produce {
         this.numOfEdiblesHarvested = numOfCropsHarvested;
         this.numOfEdiblesEaten = numOfEdiblesLeft;
         this.hasBeenFertilized = hasBeenFertilized;
-        this.hasBeenHarvested =  hasBeenHarvested;
+        this.hasBeenHarvested = hasBeenHarvested;
     }
 
     public Crop(Integer numOfYield, Integer numOfCropsHarvested, Integer numOfEdiblesLeft) {
@@ -30,7 +31,7 @@ public abstract class Crop implements Produce {
         this.hasBeenFertilized = true;
     }
 
-    public void harvest(){
+    public void harvest() {
         this.hasBeenHarvested = true;
     }
 
@@ -40,13 +41,27 @@ public abstract class Crop implements Produce {
 
 
     public Integer getNumberofHarvest() {
-        while (hasBeenHarvested() == true) {
+        if (hasBeenHarvested) {
             return numOfEdiblesYielded;
         }
         return numOfEdiblesHarvested;
     }
 
-    ;
+    public void yield(Edible edible) {
+        if (hasBeenFertilized) {
+            numOfEdiblesYielded++;
+        } else {
+            throw new UnsupportedOperationException("Must be fertilized first!");
+        }
+    }
+
+    public boolean hasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public boolean hasBeenHarvested() {
+        return hasBeenHarvested;
+    }
 
     public Integer getFoodToEat() {
         return numOfEdiblesHarvested - numOfEdiblesEaten;

@@ -66,6 +66,10 @@ public abstract class Crop implements Produce {
     }
 
     public Integer getFoodToEat() {
-        return numOfEdiblesHarvested - numOfEdiblesEaten;
+        if (hasBeenHarvested) {
+            return numOfEdiblesHarvested - numOfEdiblesEaten;
+        } else {
+            throw new UnsupportedOperationException("Food must be harvested first!");
+        }
     }
 }

@@ -145,4 +145,20 @@ public class CropTest {
         Assert.assertEquals(expected, actual);
 
     }
+
+    @Test (expected = UnsupportedOperationException.class)
+    public void AvailableToEatImpossibleTest(){
+        //given
+        Crop tomatoPlant = new TomatoPlant();
+        Tomato tomato = new Tomato();
+        int expected = 1;
+
+        //when
+        tomatoPlant.fertilize(); //sets fertilized equal to true
+        tomatoPlant.yield(tomato); //preps for harvest
+
+        //then
+        tomatoPlant.getFoodToEat();
+
+    }
 }

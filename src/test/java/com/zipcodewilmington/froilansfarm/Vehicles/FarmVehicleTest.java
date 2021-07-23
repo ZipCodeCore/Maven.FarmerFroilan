@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Vehicles;
 
+import com.zipcodewilmington.froilansfarm.Rideable;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
+import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,9 +20,14 @@ public class FarmVehicleTest {
         //then
         Assert.assertEquals(expected, actual);
     }
-    public void operateTest(){
-
-
+    @Test
+    public void inheritenceCropDustTest(){
+        FarmVehicle car = new FarmVehicle();
+        Assert.assertTrue(car instanceof Vehicle);
     }
-
+    @Test
+    public void inheritenceCropDustTest1(){
+        FarmVehicle car = new FarmVehicle();
+        Assert.assertTrue(car instanceof Rideable);
+    }
 }

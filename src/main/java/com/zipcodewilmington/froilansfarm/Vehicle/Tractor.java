@@ -1,11 +1,15 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.crops.Crop;
+import com.zipcodewilmington.froilansfarm.crops.CropRow;
+
 public class Tractor extends FarmVehicle {
     boolean toBeHarvested;
     int numOfFertCrop;
     int numOfHarvCrop;
 
     public Tractor(boolean toBeHarvested, int numOfFertCrop, int numOfHarvCrop) {
+        super();
         this.toBeHarvested = toBeHarvested;
         this.numOfFertCrop = numOfFertCrop;
         this.numOfHarvCrop = numOfHarvCrop;
@@ -35,13 +39,13 @@ public class Tractor extends FarmVehicle {
         return this.numOfFertCrop;
     }
 
-    public boolean needsToBeHarvested(int numOfFertCrop, int numOfHarvCrop) {
-        Tractor crop=new Tractor(false, numOfFertCrop, numOfHarvCrop);
-        int numNonHarvCrops= numOfFertCrop-numOfHarvCrop;
-        int cropWork = numOfFertCrop/3;
-        if(numNonHarvCrops>cropWork){
-            return toBeHarvested=true;
+    public boolean needsToBeHarvested(CropRow cropRow) {
+        for (Crop crop : cropRow.getCropRow()) {
+            if (crop.hasBeenHarvested() == false) {
+                return true;
+            }
         }
-        return toBeHarvested=false;}
+        return false;
+    }
 }
 

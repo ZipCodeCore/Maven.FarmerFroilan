@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Eater;
 import com.zipcodewilmington.froilansfarm.NoiseMaker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
@@ -26,6 +27,13 @@ public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void eat(T ... edibles) {
+        for (int i = 0; i < edibles.length; i++) {
+            T edible = edibles[i];
+            eat(edible);
+        }
     }
 
     @Override

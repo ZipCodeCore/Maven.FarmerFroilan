@@ -15,6 +15,13 @@ public abstract class Animal <T extends Edible> implements Eater<T>, NoiseMaker 
         name = "";
     }
 
+    public void eat(T ... edibles) {
+        for (int i = 0; i < edibles.length; i++) {
+            T edible = edibles[i];
+            eat(edible);
+        }
+    }
+
     public void eat(T edible) { meals.add(edible); }
 
     public List<T> getMealList() { return meals; }

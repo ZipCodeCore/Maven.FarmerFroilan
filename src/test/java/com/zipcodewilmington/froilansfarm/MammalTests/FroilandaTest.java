@@ -1,12 +1,8 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
-import com.zipcodewilmington.froilansfarm.Botanist;
 import com.zipcodewilmington.froilansfarm.Farm;
-import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
-import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
-import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
 import com.zipcodewilmington.froilansfarm.Mammal.Froilanda;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
 import com.zipcodewilmington.froilansfarm.Pilot;

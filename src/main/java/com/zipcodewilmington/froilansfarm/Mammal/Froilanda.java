@@ -12,7 +12,6 @@ import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
 
 public class Froilanda extends Farmer implements Pilot {
     private static final Froilanda froilanda = new Froilanda();
-    private Rideable rideable;
 
     public static Froilanda getInstance(){
         return froilanda;
@@ -26,20 +25,11 @@ public class Froilanda extends Farmer implements Pilot {
     public void eatBreakfast(EarCorn earCorn, Tomato tomato, Egg egg){
     }
 
-    @Override
-    public void mount(Rideable rideable) {
-        this.rideable = rideable;
-    }
-
-    @Override
-    public void dismount(Rideable rideable) {
-        this.rideable = null;
-    }
 
     @Override
     public void fly(Farm farm) {
-        if(rideable instanceof CropDuster){
-            ((CropDuster<?>) rideable).fly(farm.getField());
+        if(getIsRiding() instanceof CropDuster){
+            ((CropDuster<?>) getIsRiding()).fly(farm.getField());
         }
     }
 }

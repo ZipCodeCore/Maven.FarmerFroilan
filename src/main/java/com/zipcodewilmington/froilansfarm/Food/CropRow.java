@@ -42,5 +42,7 @@ public class CropRow {
         return harvest;
     }
 
-
+    public List<Crop> getCropList() {
+        return cropList;
+    }
 }

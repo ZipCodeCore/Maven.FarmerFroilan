@@ -15,17 +15,18 @@ public class CropDuster<T extends Rider> extends Aircraft implements FarmVehicle
       }
    }
 
-   public void fertilizeCrop(CropRow row){
-      row.fertilizeRow();
-   }
 
    @Override
    public void ride(Rider rider) {
-      this.pilot = pilot;
+      this.pilot = (Pilot)rider;
    }
 
    @Override
    public void operate(Farm farm) {
       this.fly(farm.getField());
+   }
+
+   public Pilot getPilot() {
+      return pilot;
    }
 }

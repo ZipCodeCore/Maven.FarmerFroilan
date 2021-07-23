@@ -4,7 +4,6 @@ import com.zipcodewilmington.froilansfarm.Rider;
 
 public abstract class Aircraft implements Vehicle{
 
-    Rider rider;
 
 
     public String makeNoise() {
@@ -15,12 +14,5 @@ public abstract class Aircraft implements Vehicle{
         return "BULLETS";
     }
 
-    @Override
-    public void ride(Rider rider) {
-        rider = rider;
-    }
-
-    public Rider getRider() {
-        return rider;
-    }
+    
 }

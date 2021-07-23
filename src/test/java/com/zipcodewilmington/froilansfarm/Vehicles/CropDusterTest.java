@@ -4,7 +4,10 @@ import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
+import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.crops.CropRow;
+import com.zipcodewilmington.froilansfarm.crops.Tomato;
+import com.zipcodewilmington.froilansfarm.crops.TomatoPlant;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -35,7 +38,7 @@ public class CropDusterTest {
         //then
         Assert.assertNotEquals(expectedNumOfCrop, crop.getNumOfCropRows());
         Assert.assertNotEquals(expectedNumOfFertCrop, crop.getNumOfFertCrop());
-        Assert.assertNotEquals(expectedFertilizer, crop.isToBeFertilized());
+        Assert.assertNotEquals(expectedFertilizer, crop.getToBeFertilized());
 
     }
     @Test
@@ -49,7 +52,7 @@ public class CropDusterTest {
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void needsToBeFertilizedTest(){
+    public void needsToBeFertilizedTest1(){
         //given
         int cropNum=20;
         int fertCrop=4;
@@ -86,5 +89,66 @@ public class CropDusterTest {
     public void inheritenceTest2(){
         CropDuster crop = new CropDuster(false, 0, 0);
         Assert.assertTrue(crop instanceof FarmVehicle);
+    }
+
+    @Test
+    public void needsToBeFertilized () {
+        CropDuster cd = new CropDuster(false,
+                0, 0);
+        Crop crop = new TomatoPlant();
+        CropRow cropRow = new CropRow();
+        Boolean expected = true;
+        crop.hasBeenFertilized();
+        cropRow.addCrop(crop);
+
+        Boolean actual = cd.needsToBeFertilized(cropRow);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void noiseMakerTest () {
+        CropDuster cd = new CropDuster(false,
+                0,0);
+        String expected = "Ppbd Ppbd";
+
+        String actual = cd.noiseMaker();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void hasbeenRidenTest () {
+        CropDuster cd = new CropDuster(false,
+                0,0);
+        Boolean expected = false;
+
+        Boolean actual = cd.hasBeenRiden();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getNumOfCropFertTest () {
+        CropDuster cd = new CropDuster(false,
+                0 ,100);
+        Integer expected = 56;
+
+        cd.setNumOfFertCrop(56);
+        Integer actual = cd.getNumOfFertCrop();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void fertilizedTest () {
+        CropDuster cd = new CropDuster(false,
+                0, 0);
+        Boolean expected = true;
+
+        cd.setToBeFertilized(true);
+        Boolean actual = cd.getToBeFertilized();
+
+        Assert.assertEquals(expected, actual);
     }
 }

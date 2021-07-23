@@ -6,7 +6,7 @@ public class TomatoPlant extends Crop<Tomato>{
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    protected Tomato getEdible() {
+    public Tomato getEdible() {
         return new Tomato();
     }
 }

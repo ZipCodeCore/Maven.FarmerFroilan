@@ -6,7 +6,7 @@ public class PotatoRoot extends Crop<Potato> {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    protected Potato getEdible() {
+    public Potato getEdible() {
         return new Potato();
     }
 }

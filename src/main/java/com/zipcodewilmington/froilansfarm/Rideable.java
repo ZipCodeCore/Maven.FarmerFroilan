@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface Rideable <Rider>{
+import com.zipcodewilmington.froilansfarm.animals.person.Rider;
+
+public interface Rideable <T extends Rider>{
      void move();
 
 }

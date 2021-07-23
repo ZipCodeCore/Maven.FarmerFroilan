@@ -5,6 +5,14 @@ import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 
 public class Farmer extends Person implements Rider, Botanist {
+//    private String name;
+   public Farmer(){
+
+   }
+
+    public Farmer(String name) {
+        super(name);
+    }
 
     public void mount(Rideable rideable) {
 
@@ -16,5 +24,9 @@ public class Farmer extends Person implements Rider, Botanist {
 
     public void plant(Crop crop, CropRow row) {
 
+    }
+
+    public String makeNoise(){
+        return "YeeHaw!";
     }
 }

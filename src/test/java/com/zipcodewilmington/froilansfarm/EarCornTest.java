@@ -4,6 +4,7 @@ import com.zipcodewilmington.froilansfarm.crops.EarCorn;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class EarCornTest {
 
     @Test

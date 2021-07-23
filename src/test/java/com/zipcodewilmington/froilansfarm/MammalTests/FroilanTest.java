@@ -1,11 +1,11 @@
 package com.zipcodewilmington.froilansfarm.MammalTests;
 
 import com.zipcodewilmington.froilansfarm.Botanist;
-import com.zipcodewilmington.froilansfarm.Food.Crop;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.Tomato;
 import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
+import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import com.zipcodewilmington.froilansfarm.Rideable;
@@ -13,15 +13,15 @@ import com.zipcodewilmington.froilansfarm.Rider;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class FarmerTest {
+public class FroilanTest {
 
     @Test
     public void testconstructor() {
         //given
-        String expected = "Froilanda";
+        String expected = "Froilan";
         //when
-        Farmer farmer = new Farmer(expected);
-        String actual = farmer.getName();
+        Froilan froilan = new Froilan(expected);
+        String actual = froilan.getName();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -30,11 +30,23 @@ public class FarmerTest {
     public void testSetName() {
         //given
         String expected = "Froiland";
-        Person person = new Farmer(expected);
+        Froilan froilan = new Froilan(expected);
         //when
-        String actual = person.getName();
+        String actual = froilan.getName();
         //then
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPlant() {
+        //given
+        TomatoPlant tomatoPlant = new TomatoPlant(0);
+        CropRow cropRow = new CropRow();
+        Froilan farmer = new Froilan();
+        //when
+        farmer.plant(tomatoPlant, cropRow);
+        //then
+        Assert.assertTrue(tomatoPlant.equals(cropRow.getCropById(0)));
     }
 
     @Test
@@ -42,8 +54,8 @@ public class FarmerTest {
         //given
         String expected = "Howdy";
         //when
-        Farmer farmer = new Farmer();
-        String actual = farmer.makeNoise();
+        Froilan froilan = new Froilan();
+        String actual = froilan.makeNoise();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -54,9 +66,9 @@ public class FarmerTest {
         Horse horse = new Horse();
         Rideable expected = horse;
         //when
-        Farmer farmer = new Farmer();
-        farmer.mount(horse);
-        Rideable actual = farmer.getIsRiding();
+        Froilan froilan = new Froilan();
+        froilan.mount(horse);
+        Rideable actual = froilan.getIsRiding();
         //then
         Assert.assertEquals(expected, actual);
     }
@@ -66,40 +78,35 @@ public class FarmerTest {
         //given
         Horse horse = new Horse();
         //when
-        Farmer farmer = new Farmer();
-        farmer.mount(horse);
-        farmer.dismount(horse);
+        Froilan froilan = new Froilan();
+        froilan.mount(horse);
+        froilan.dismount(horse);
         //then
-        Assert.assertNull(farmer.getIsRiding());
+        Assert.assertNull(froilan.getIsRiding());
     }
 
     @Test
     public void testEat() {
         //given
-        Farmer farmer = new Farmer();
+        Froilan froilan = new Froilan();
         //when
         Tomato tomato = new Tomato();
-        farmer.eat(tomato);
-        farmer.getMealList();
+        froilan.eat(tomato);
+        froilan.getMealList();
         //then
-        Assert.assertTrue(farmer.meals.contains(tomato));
+        Assert.assertTrue(froilan.meals.contains(tomato));
     }
 
     @Test
     public void testInheritance() {
-        Farmer farmer = new Farmer("Annette");
-        Assert.assertTrue(farmer instanceof Person);
+        Froilan froilan = new Froilan();
+        Assert.assertTrue(froilan instanceof Farmer);
     }
 
     @Test
     public void testImplementationBotanist() {
-        Farmer farmer = new Farmer("Joe");
-        Assert.assertTrue(farmer instanceof Botanist);
+        Froilan froilan = new Froilan("Joe");
+        Assert.assertTrue(froilan instanceof Botanist);
     }
 
-    @Test
-    public void testImplementationRider() {
-        Farmer farmer = new Farmer("Joe");
-        Assert.assertTrue(farmer instanceof Rider);
-    }
 }

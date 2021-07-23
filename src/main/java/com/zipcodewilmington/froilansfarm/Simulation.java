@@ -34,19 +34,37 @@ public class Simulation implements Runnable {
         FarmVehicle tractor2 = new Tractor();
         Aircraft cropDuster = new Aircraft();
 
-
-
-        Stable stable = new Stable();
-        ChickenCoop chickenCoop = new ChickenCoop();
-        Arrays
-                .asList("Felipe", "Oscar", "Marvey", "Lorraine", "Sally",
-                        "Eggetha Christie", "Dr. Bawk", "Chicklette", "Mz. Cluck",
-                        "Lil peep", "Harry", "Meghen", "Amantha", "Christephanie", "Henrietta")
-                .forEach(name -> chickenCoop.add(new Chicken(name)));
+        Stable stable1 = new Stable();
+        Stable stable2 = new Stable();
+        Stable stable3 = new Stable();
+        ChickenCoop chickenCoop1 = new ChickenCoop();
+        ChickenCoop chickenCoop2 = new ChickenCoop();
+        ChickenCoop chickenCoop3 = new ChickenCoop();
 
         Arrays
-                .asList("Party Skips Frank Greta Harry Milo Hoovey Yorgle Tom Sarah".split(" "))
-                .forEach(name -> stable.add(new Horse(name)));
+                .asList("Felipe", "Oscar", "Marvey", "Lorraine", "Sally", "Lil peep")
+                .forEach(name ->chickenCoop1.add(new Chicken(name)));
+
+        Arrays
+                .asList("Eggetha Christie Dr. Bawk Chicklette Mz. Cluck".split(""))
+                .forEach(name -> chickenCoop2.add(new Chicken(name)));
+
+        Arrays
+                .asList("Harry Meghen Amantha Christephanie Henrietta".split(" "))
+                .forEach(name -> chickenCoop3.add(new Chicken(name)));
+
+        Arrays
+                .asList("Party Skips Frank Greta".split(" "))
+                .forEach(name -> stable1.add(new Horse(name)));
+
+        Arrays
+                .asList("Yorgle Tom Sarah".split(" "))
+                .forEach(name -> stable2.add(new Horse(name)));
+
+
+        Arrays
+                .asList("Harry Milo Hoovey".split(" "))
+                .forEach(name -> stable3.add(new Horse(name)));
 
     }
 }

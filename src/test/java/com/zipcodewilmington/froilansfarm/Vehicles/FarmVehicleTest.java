@@ -25,7 +25,7 @@ public class FarmVehicleTest {
         Assert.assertTrue(car instanceof Vehicle);
     }
     @Test
-    public void inheritenceCropDustTest(){
+    public void inheritenceCropDustTest1(){
         FarmVehicle car = new FarmVehicle();
         Assert.assertTrue(car instanceof Vehicle);
     }

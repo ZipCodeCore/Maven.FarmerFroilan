@@ -16,8 +16,9 @@ public class ShelterTest {
     @Test
     public void chickenCoopConstructorTest() {
         // Given
-        List<Chicken> expectedChickens = new ArrayList<>(Arrays.asList(new Chicken(), new Chicken(), new Chicken(), new Chicken()));
-        ChickenCoop chickenCoop = new ChickenCoop(expectedChickens);
+        Chicken[] chickens = new Chicken[] {new Chicken(), new Chicken(), new Chicken(), new Chicken()};
+        ChickenCoop chickenCoop = new ChickenCoop(chickens);
+        List<Chicken> expectedChickens = new ArrayList<>(Arrays.asList(chickens));
 
 
         // When
@@ -30,8 +31,9 @@ public class ShelterTest {
     @Test
     public void stableConstructorTest() {
         // Given
-        List<Horse> expectedHorses = new ArrayList<>(Arrays.asList(new Horse(), new Horse(), new Horse(), new Horse()));
-        Stable stable = new Stable(expectedHorses);
+        Horse[] horses = new Horse[] {new Horse(), new Horse(), new Horse(), new Horse()};
+        Stable stable = new Stable(horses);
+        List<Horse> expectedHorses = new ArrayList<>(Arrays.asList(horses));
 
 
         // When
@@ -44,8 +46,9 @@ public class ShelterTest {
     @Test
     public void farmHouseConstructorTest() {
         // Given
-        List<Person> expectedPeople = new ArrayList<>(Arrays.asList(new Person(), new Person(), new Person(), new Person()));
-        FarmHouse farmHouse = new FarmHouse(expectedPeople);
+        Person[] people = new Person[] {new Person(), new Person(), new Person(), new Person()};
+        FarmHouse farmHouse = new FarmHouse(people);
+        List<Person> expectedPeople = new ArrayList<>(Arrays.asList(people));
 
 
         // When
@@ -76,7 +79,7 @@ public class ShelterTest {
         // Given
         Person person1 = new Person();
         Person person2 = new Person();
-        FarmHouse farmHouse = new FarmHouse(new ArrayList<>(Arrays.asList(person1, person2)));
+        FarmHouse farmHouse = new FarmHouse(person1, person2);
         Integer expectedNumberOfPeople = 1;
 
 

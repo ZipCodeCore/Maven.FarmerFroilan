@@ -1,7 +1,12 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-//import com.sun.scenario.effect.Crop;
-import com.zipcodewilmington.froilansfarm.crops.Potato;
+
+import com.zipcodewilmington.froilansfarm.crops.Crop;
+import com.zipcodewilmington.froilansfarm.farm.CropRow;
+import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
+
+public class Tractor extends Vehicle implements FarmVehicle<Vehicle>{
+
 
 
 public class Tractor implements FarmVehicle<Vehicle>{
@@ -11,13 +16,27 @@ public class Tractor implements FarmVehicle<Vehicle>{
      public Tractor(int crop){
          this.crop = crop;
 
-     }
-     public boolean harvest(int crop) {
-        return true;
+
+//    public void harvest(CropRow cropRow){
+//        FarmStorage storage = FarmStorage.getInstance();
+//        storage.add(cropRow.getCrop());
+//    }
+
+
+
+    public void operate(Object vehicle) {
 
     }
+
+
     @Override
-    public boolean operate() {
-        return true;
+    public String makeNoise() {
+        return null;
     }
+
+    @Override
+    public void move() {
+
+    }
+
 }

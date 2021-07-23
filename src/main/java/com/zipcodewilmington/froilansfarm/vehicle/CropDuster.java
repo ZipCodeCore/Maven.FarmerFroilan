@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.vehicle;
 import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 
-public class CropDuster implements FarmVehicle {
+public class CropDuster extends Vehicle implements FarmVehicle {
 
 
 
@@ -16,5 +16,15 @@ public class CropDuster implements FarmVehicle {
     @Override
     public boolean operate() {
         return false;
+    }
+
+    @Override
+    public String makeNoise() {
+        return null;
+    }
+
+    @Override
+    public void move() {
+
     }
 }

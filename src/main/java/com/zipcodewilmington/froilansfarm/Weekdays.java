@@ -8,11 +8,17 @@ import com.zipcodewilmington.froilansfarm.Mammal.Froilanda;
 import com.zipcodewilmington.froilansfarm.Mammal.Horse;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
+import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
 import org.graalvm.compiler.hotspot.replacements.InstanceOfSnippets;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Weekdays {
+
+    Farm farm = new Farm();
 
     Froilan froilan = new Froilan();
     Froilanda froilanda = Froilanda.getInstance();
@@ -22,34 +28,64 @@ public class Weekdays {
 
     EarCorn earCorn = new EarCorn();
     CornStalk cornStalk = new CornStalk();
+    TomatoPlant tomatoPlant = new TomatoPlant();
+    CropRow cropRow = new CropRow();
+
+    CropDuster cropDuster = new CropDuster();
+    Tractor tractor = new Tractor();
 
     public void sunday() {
+        List<CropRow> cropRows = farm.getField().getMyField();
         morningRoutine();
-        froilan.plant(cornStalk, );
+        froilan.plantRows(farm.getField());
+        lunch();
+        dinner();
     }
 
     public void monday() {
-
+        morningRoutine();
+        froilanda.mount(cropDuster);
+        froilanda.fly(farm);
+        lunch();
+        dinner();
     }
 
     public void tuesday() {
-
+        morningRoutine();
+        froilan.mount(tractor);
+        tractor.operate(farm);
+        lunch();
+        dinner();
     }
 
     public void wednesday() {
-
+        List<CropRow> cropRows = farm.getField().getMyField();
+        morningRoutine();
+        froilan.plantRows(farm.getField());
+        lunch();
+        dinner();
     }
 
     public void thursday() {
-
+        morningRoutine();
+        froilan.mount(tractor);
+        tractor.operate(farm);
+        lunch();
+        dinner();
     }
 
     public void friday() {
-
+        List<CropRow> cropRows = farm.getField().getMyField();
+        morningRoutine();
+        froilan.plantRows(farm.getField());
+        lunch();
+        dinner();
     }
 
     public void saturday() {
-
+        morningRoutine();
+        lunch();
+        dinner();
     }
 
     public void morningRoutine() {

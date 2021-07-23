@@ -53,7 +53,7 @@
 
 
 
-# The Plot <strike>Thickens...</strike> Chickens
+# The Plot <strike>Thickens</strike> Chickens...
 * Create test cases which simulate a typical work-week for `Froilan` and `Froilanda`.
 	* The accumulation of your test cases should ensure at least 80% test coverage.
 

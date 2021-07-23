@@ -9,16 +9,18 @@ public class Animal implements NoiseMaker, Eater {
     Integer age;
     Integer amountOfFoodEaten;
 
-    public Animal(String name,Integer age,Integer amountOfFoodEaten){
-        this.name=name;
-        this.age=age;
-        this.amountOfFoodEaten=amountOfFoodEaten;
+    public Animal(String name, Integer age, Integer amountOfFoodEaten) {
+        this.name = name;
+        this.age = age;
+        this.amountOfFoodEaten = amountOfFoodEaten;
     }
-public Animal(){
-        this.name="";
-        this.age=0;
-        this.amountOfFoodEaten=0;
-}
+
+    public Animal() {
+        this.name = "";
+        this.age = 0;
+        this.amountOfFoodEaten = 0;
+    }
+
     public String getName() {
         return name;
     }

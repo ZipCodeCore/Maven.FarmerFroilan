@@ -8,12 +8,12 @@ public class Horse extends Animal implements Rideable {
     Integer age;
     Integer amountOfFoodEaten;
 
-    public Horse(String name,Integer age,Integer amountOfFoodEaten){
-        super(name,age,amountOfFoodEaten);
+    public Horse(String name, Integer age, Integer amountOfFoodEaten) {
+        super(name, age, amountOfFoodEaten);
     }
 
 
-    public Horse () {
+    public Horse() {
         this.name = "";
         this.age = 0;
         this.amountOfFoodEaten = 0;

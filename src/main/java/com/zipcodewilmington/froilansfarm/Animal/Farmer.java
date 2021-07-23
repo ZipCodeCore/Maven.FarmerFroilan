@@ -39,23 +39,27 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
     }
 
     public void mount(Rideable object) {
-        this.vehicle=object;
-        this.numberOfRidesTaken=0;
+        this.vehicle = object;
+        this.numberOfRidesTaken = 0;
         if (object.hasBeenRiden()) {
             numberOfRidesTaken++;
         }
     }
+
     public Integer getNumberOfRidesTaken() {
         return numberOfRidesTaken;
     }
 
     public void dismount(Rideable object) {
-    this.vehicle=null;
+        this.vehicle = null;
     }
 
     public void eat(Edible object) {
-        object.isEaten();
-        numberOfEdiblesEaten++;
+        if (object.isEaten()) {
+            numberOfEdiblesEaten++;
+        } else {
+            throw new UnsupportedOperationException("No new produce to eat:(");
+        }
     }
 
     public boolean hasEaten() {

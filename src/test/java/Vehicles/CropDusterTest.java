@@ -1,11 +1,15 @@
 package Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Farm;
+import com.zipcodewilmington.froilansfarm.Field;
 import com.zipcodewilmington.froilansfarm.Food.Crop;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Vehicles.*;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class CropDusterTest {
 
@@ -57,4 +61,6 @@ public class CropDusterTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+
 }

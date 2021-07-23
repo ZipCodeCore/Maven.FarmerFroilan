@@ -18,9 +18,9 @@ public class FarmTest {
      Horse horse1 = new Horse();
      Integer expected = 2;
 
-     farm.add(horse);
-     farm.add(horse1);
-     Integer actual = farm.amount();
+     farm.addShelter(horse);
+     farm.addShelter(horse1);
+     Integer actual = farm.amountShelter();
 
      Assert.assertEquals(expected, actual);
     }
@@ -32,10 +32,10 @@ public class FarmTest {
         Horse horse1 = new Horse();
         Integer expected = 1;
 
-        farm.add(horse);
-        farm.add(horse1);
-        farm.remove(horse1);
-        Integer actual = farm.amount();
+        farm.addShelter(horse);
+        farm.addShelter(horse1);
+        farm.removeShelter(horse1);
+        Integer actual = farm.amountShelter();
 
         Assert.assertEquals(expected, actual);
     }
@@ -47,9 +47,9 @@ public class FarmTest {
         Horse horse1 = new Horse();
         Integer expected = 2;
 
-        farm.add(horse);
-        farm.add(horse1);
-        Integer actual = farm.amount();
+        farm.addShelter(horse);
+        farm.addShelter(horse1);
+        Integer actual = farm.amountShelter();
 
         Assert.assertEquals(expected, actual);
     }
@@ -64,11 +64,11 @@ public class FarmTest {
         Stable stable2 = new Stable();
         Integer expected = 2;
 
-        farm.add(chicken);
-        farm.add(chicken1);
-        farm.add(stable);
-        farm.add(stable1);
-        farm.add(stable2);
+        farm.addShelter(chicken);
+        farm.addShelter(chicken1);
+        farm.addShelter(stable);
+        farm.addShelter(stable1);
+        farm.addShelter(stable2);
         Integer actual = farm.getAmountofCoops();
 
         Assert.assertEquals(expected, actual);
@@ -84,11 +84,11 @@ public class FarmTest {
         Stable stable2 = new Stable();
         Integer expected = 3;
 
-        farm.add(chicken);
-        farm.add(chicken1);
-        farm.add(stable);
-        farm.add(stable1);
-        farm.add(stable2);
+        farm.addShelter(chicken);
+        farm.addShelter(chicken1);
+        farm.addShelter(stable);
+        farm.addShelter(stable1);
+        farm.addShelter(stable2);
         Integer actual = farm.getAmountofStable();
 
         Assert.assertEquals(expected, actual);

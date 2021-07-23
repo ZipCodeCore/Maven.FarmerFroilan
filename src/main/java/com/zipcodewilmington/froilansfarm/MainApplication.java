@@ -1,9 +1,11 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.zipcodewilmington.froilansfarm.storage.ChickenCoop;
-import com.zipcodewilmington.froilansfarm.storage.Farm;
-import com.zipcodewilmington.froilansfarm.storage.Stable;
-import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
+import com.zipcodewilmington.froilansfarm.Animal.Animal;
+import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
+import com.zipcodewilmington.froilansfarm.storage.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by leon on 2/26/18.
@@ -21,22 +23,32 @@ import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
         Stable stable1= new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
-        farm.add(stable1);
-        farm.add(stable2);
-        farm.add(stable3);
+        farm.addShelter(stable1);
+        farm.addShelter(stable2);
+        farm.addShelter(stable3);
         ChickenCoop coop1 = new ChickenCoop();
         ChickenCoop coop2= new ChickenCoop();
         ChickenCoop coop3= new ChickenCoop();
         ChickenCoop coop4 = new ChickenCoop();
-        farm.add(coop1);
-        farm.add(coop2);
-        farm.add(coop3);
-        farm.add(coop4);
-        int size = farm.amount();
+        farm.addShelter(coop1);
+        farm.addShelter(coop2);
+        farm.addShelter(coop3);
+        farm.addShelter(coop4);
+        int size = farm.amountShelter();
         int coops = farm.getAmountofCoops();
 
         System.out.println(size);
         System.out.println(coops);
 
 }
+    public void createFarm(Field field, List<StorageInterface> shelters, List<Animal> mammals, List <Vehicle> vehicles){
+        Farm instance = new Farm(field, shelters, mammals, vehicles);
+        ChickenCoop coop1 = new ChickenCoop();
+        ChickenCoop coop2= new ChickenCoop();
+        ChickenCoop coop3= new ChickenCoop();
+        ChickenCoop coop4 = new ChickenCoop();
+        shelters.add(coop1);
+        shelters.add(coop2); //this is a bit tedious
+
+    }
 }

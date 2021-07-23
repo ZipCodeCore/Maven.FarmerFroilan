@@ -21,10 +21,10 @@ public class MainApplicationTest {
         int expected = 3;
 
         //when
-        farm.add(stable1);
-        farm.add(stable2);
-        farm.add(stable3);
-        int actual = farm.amount();
+        farm.addShelter(stable1);
+        farm.addShelter(stable2);
+        farm.addShelter(stable3);
+        int actual = farm.amountShelter();
 
         //then
         Assert.assertEquals(expected, actual);

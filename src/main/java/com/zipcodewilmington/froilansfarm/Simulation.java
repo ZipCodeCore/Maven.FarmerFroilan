@@ -10,21 +10,22 @@ import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
 import com.zipcodewilmington.froilansfarm.Vehicles.Aircraft;
+import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicles.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
 
 import java.util.Arrays;
 
-public class Simulation {
+public class Simulation implements Runnable {
     public static void main(String[] args) {
-        run();
+        new Simulation().run();
     }
 
-    public static void run() {
+    public void run() {
 
         Farm farm = new Farm();
         Person froilan = new Farmer("Froilan");
-        Person froilanda = new Pilot();
+        Rider<CropDuster> froilanda = new Pilot();
         Field field = new Field();
         EarCorn earCorn = new EarCorn();
         CropRow cropRow = new CropRow();
@@ -58,6 +59,7 @@ public class Simulation {
         Arrays
                 .asList("Yorgle Tom Sarah".split(" "))
                 .forEach(name -> stable2.add(new Horse(name)));
+
 
         Arrays
                 .asList("Harry Milo Hoovey".split(" "))

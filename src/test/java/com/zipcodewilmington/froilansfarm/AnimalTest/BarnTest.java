@@ -17,7 +17,8 @@ public class BarnTest {
     @Test
     public <T> void numberOfAnimalsTest() {
         Barn barn = new ChickenCoop();
-        List<T> animals = new ArrayList<T>();;
+        List<T> animals = new ArrayList<T>();
+        ;
 
         //List<String> animals = new ArrayList<>();
         animals.add((T) "chicken");
@@ -43,8 +44,8 @@ public class BarnTest {
     public void removeTest() {
         Barn barn = new Stable();
         List<Animal> animals = new ArrayList<>();
-        Animal horse=new Horse();
-        Animal horse2= new Horse();
+        Animal horse = new Horse();
+        Animal horse2 = new Horse();
 
         animals.add(horse2);
         animals.add(horse);

@@ -1,7 +1,5 @@
-package Vehicles;
+package com.zipcodewilmington.froilansfarm.Vehicles;
 
-import com.zipcodewilmington.froilansfarm.Vehicles.Aircraft;
-import com.zipcodewilmington.froilansfarm.Vehicles.Vehicle;
 import org.junit.Assert;
 import org.junit.Test;
 

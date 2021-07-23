@@ -91,26 +91,13 @@ public class Farm {
     }
 
     private void populateField(){
-        CropRow row1 = new CropRow();
-        row1.plantCrop(new CornStalk());
-        field.add(row1);
-
-        CropRow row2 = new CropRow();
-        row2.plantCrop(new TomatoPlant());
-        field.add(row2);
-
-        CropRow row3 = new CropRow();
-        row3.plantCrop(new CarrotFlower());
-        field.add(row3);
-
-        CropRow row4 = new CropRow();
-        row4.plantCrop(new CornStalk());
-        field.add(row4);
-
-        CropRow row5 = new CropRow();
-        row5.plantCrop(new TomatoPlant());
-        field.add(row5);
-
+        Arrays
+                .asList(new CornStalk(),new TomatoPlant(), new CarrotFlower(), new CornStalk(), new TomatoPlant())
+                .forEach(crop -> {
+                    CropRow row = new CropRow();
+                    row.plantCrop(crop);
+                    field.add(row);
+                });
     }
 
     public void populateFarmHouse(){

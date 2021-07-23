@@ -14,7 +14,7 @@ public class AircraftTest {
 
     @Test
     public void constructor(){
-        Vehicle aircraft = new Aircraft();
+        Vehicle aircraft = new CropDuster<>();
 
         Boolean actual = aircraft instanceof Vehicle;
 
@@ -23,7 +23,7 @@ public class AircraftTest {
 
     @Test
     public void aircraftTest(){
-        Vehicle aircraft = new Aircraft();
+        Vehicle aircraft = new CropDuster<>();
 
         String actual = aircraft.makeNoise();
         String expected = "Bzzzzeewwwwwwwwwww Rat-tat-tat-tat-tat";

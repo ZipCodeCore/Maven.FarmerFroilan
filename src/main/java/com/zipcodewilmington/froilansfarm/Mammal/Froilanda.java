@@ -7,29 +7,30 @@ import com.zipcodewilmington.froilansfarm.Pilot;
 import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.Rider;
 
-public class Froilanda extends Farmer implements Rider, Pilot {
+public class Froilanda extends Farmer implements Pilot {
+    private static final Froilanda froilanda = new Froilanda();
 
-    Froilanda froilanda = new Froilanda();
-
-
-    public void eatBreakfast(EarCorn earCorn, Tomato tomato, Egg egg){
-
+    public static Froilanda getInstance(){
+        return froilanda;
     }
 
+    private Froilanda() {
+        super("Froilanda");
+    }
+//this is a singleton
 
+    public void eatBreakfast(EarCorn earCorn, Tomato tomato, Egg egg){
+    }
 
     @Override
     public void mount(Rideable rideable) {
-
     }
 
     @Override
     public void dismount(Rideable rideable) {
-
     }
 
     @Override
     public void fly() {
-
     }
 }

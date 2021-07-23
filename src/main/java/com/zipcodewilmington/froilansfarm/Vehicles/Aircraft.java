@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Rider;
 
-public class Aircraft implements Vehicle{
+public abstract class Aircraft implements Vehicle{
 
     Rider rider;
 

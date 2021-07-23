@@ -11,21 +11,27 @@ import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
+import com.zipcodewilmington.froilansfarm.Vehicles.Aircraft;
+import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Farm {
     private Shelter<Person> farmhouse = new FarmHouse();
-
-    private Shelter<Horse> stable1 = new Stable();
-    private Shelter<Horse> stable2 = new Stable();
-    private Shelter<Horse> stable3 = new Stable();
-
-    private Shelter<Chicken> chickenCoop1 = new ChickenCoop();
-    private Shelter<Chicken> chickenCoop2 = new ChickenCoop();
-    private Shelter<Chicken> chickenCoop3 = new ChickenCoop();
-
+    private List<Shelter<Horse>>  stables = Arrays.asList(
+            new Stable(),
+            new Stable(),
+            new Stable());
+    private List<Shelter<Chicken>> chickenCoops = Arrays.asList(
+            new ChickenCoop(),
+            new ChickenCoop(),
+            new ChickenCoop());
     private Field field = new Field();
+    private CropDuster cropDuster = new CropDuster();
+    private Tractor tractor = new Tractor();
+    private Tractor johnDeer = new Tractor();
 
     public Farm(){
         populateFarmHouse();
@@ -38,56 +44,52 @@ public class Farm {
         return farmhouse;
     }
 
-    public Shelter<Horse> getStable1() {
-        return stable1;
+    public List<Shelter<Horse>> getStables() {
+        return stables;
     }
 
-    public Shelter<Horse> getStable2() {
-        return stable2;
-    }
-
-    public Shelter<Horse> getStable3() {
-        return stable3;
-    }
-
-    public Shelter<Chicken> getChickenCoop1() {
-        return chickenCoop1;
-    }
-
-    public Shelter<Chicken> getChickenCoop2() {
-        return chickenCoop2;
-    }
-
-    public Shelter<Chicken> getChickenCoop3() {
-        return chickenCoop3;
+    public List<Shelter<Chicken>> getChickenCoops() {
+        return chickenCoops;
     }
 
     public Field getField(){
         return field;
     }
 
+    public CropDuster getCropDuster() {
+        return cropDuster;
+    }
+
+    public Tractor getTractor() {
+        return tractor;
+    }
+
+    public Tractor getJohnDeer() {
+        return johnDeer;
+    }
+
     private void populateAllStables(){
         Arrays
                 .asList("Party Skips Frank Greta".split(" "))
-                .forEach(name -> stable1.add(new Horse(name)));
+                .forEach(name -> stables.get(0).add(new Horse(name)));
         Arrays
                 .asList("Yorgle Spoon Fork".split(" "))
-                .forEach(name -> stable2.add(new Horse(name)));
+                .forEach(name -> stables.get(1).add(new Horse(name)));
         Arrays
                 .asList("Harry Milo Hoovey".split(" "))
-                .forEach(name -> stable3.add(new Horse(name)));
+                .forEach(name -> stables.get(2).add(new Horse(name)));
     }
 
     private void populateAllChickenCoops(){
         Arrays
                 .asList("Felipe", "Oscar", "Marvey", "Lorraine", "Sally", "Lil peep")
-                .forEach(name ->chickenCoop1.add(new Chicken(name)));
+                .forEach(name ->chickenCoops.get(0).add(new Chicken(name)));
         Arrays
                 .asList("Eggetha Christie Dr. Bawk Chicklette Mz. Cluck Chicolate".split(""))
-                .forEach(name -> chickenCoop2.add(new Chicken(name)));
+                .forEach(name -> chickenCoops.get(1).add(new Chicken(name)));
         Arrays
                 .asList("Harry Meghen Amantha Christephanie Henrietta Eggward".split(" "))
-                .forEach(name -> chickenCoop3.add(new Chicken(name)));
+                .forEach(name -> chickenCoops.get(2).add(new Chicken(name)));
     }
 
     private void populateField(){

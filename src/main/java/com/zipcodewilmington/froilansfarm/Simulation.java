@@ -32,7 +32,7 @@ public class Simulation implements Runnable {
         CropRow cropRow = new CropRow();
         FarmVehicle tractor1 = new Tractor();
         FarmVehicle tractor2 = new Tractor();
-        Aircraft cropDuster = new Aircraft();
+        Aircraft cropDuster = new CropDuster<>();
 
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();

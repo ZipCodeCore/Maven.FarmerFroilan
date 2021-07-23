@@ -21,8 +21,6 @@ public class CropDuster<T extends Rider> extends Aircraft implements FarmVehicle
 
    @Override
    public void operate(Farm farm) {
-
-   public void operate(Farm farm) {
       for(CropRow element : farm.getField().getMyField()){
          element.fertilizeRow();
       }

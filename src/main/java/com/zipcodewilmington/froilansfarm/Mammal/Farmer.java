@@ -11,7 +11,7 @@ import com.zipcodewilmington.froilansfarm.Rider;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Farmer extends Person<Edible> implements Botanist, Rider {
+public class Farmer extends Person<Edible> implements Rider {
 
     private Rideable isRiding = null;
 
@@ -24,10 +24,6 @@ public class Farmer extends Person<Edible> implements Botanist, Rider {
         super("Froilan");
     }
 
-    @Override
-    public void plant(Crop crop, CropRow cropRow) {
-        cropRow.plantCrop(crop);
-    }
 
     @Override
     public String makeNoise(){

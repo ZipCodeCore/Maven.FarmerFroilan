@@ -93,12 +93,24 @@ public class FroilandaTest {
         Froilanda froilanda = Froilanda.getInstance();
         CropDuster cropDuster = new CropDuster();
         Farm farm = new Farm();
-        Assert.assertFalse(farm.getField().getMyField().get(0).getCropList().get(0).checkFertilized());
+        Assert.assertFalse(farm
+                .getField()
+                .getMyField()
+                .get(0)
+                .getCropList()
+                .get(0)
+                .checkFertilized());
         //when
         froilanda.mount(cropDuster);
         froilanda.fly(farm);
         //then
-        Assert.assertTrue(farm.getField().getMyField().get(0).getCropList().get(0).checkFertilized());
+        Assert.assertTrue(farm
+                .getField()
+                .getMyField()
+                .get(0)
+                .getCropList()
+                .get(0)
+                .checkFertilized());
     }
 
     @Test

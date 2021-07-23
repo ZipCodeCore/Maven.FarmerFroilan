@@ -9,12 +9,6 @@ import java.util.List;
 public class Stable implements Shelter<Horse> {
 
     List<Horse> horseList = new ArrayList<Horse>();
-    Horse horse;
-
-    public Stable(Horse horse) {
-        this.horse = horse;
-        this.horseList = horseList;
-    }
 
     public Stable() {}
 
@@ -23,12 +17,12 @@ public class Stable implements Shelter<Horse> {
     }
 
     public Horse getObjectByName(String name) {
-        for(Horse element : horseList) {
-            if(element.equals(name)) {
-                horse = element;
+        for(Horse horse : horseList) {
+            if(horse.getName().equals(name)) {
+                return horse;
             }
         }
-        return horse;
+        return null;
     }
 
     public void remove(Horse horse) {

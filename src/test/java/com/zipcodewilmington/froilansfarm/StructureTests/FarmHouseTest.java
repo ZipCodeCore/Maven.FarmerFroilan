@@ -17,7 +17,7 @@ public class FarmHouseTest {
         String expected = "Froiland";
         Farmer farmer = new Farmer(expected);
         //when
-        FarmHouse farmhouse = new FarmHouse(farmer);
+        FarmHouse farmhouse = new FarmHouse();
         farmhouse.add(farmer);
         //then
         Assert.assertTrue(farmhouse.getPersonList().contains(farmer));
@@ -29,7 +29,7 @@ public class FarmHouseTest {
         String name = "Frank";
         Person expected = new Farmer(name);
         //when
-        FarmHouse farmhouse = new FarmHouse(expected);
+        FarmHouse farmhouse = new FarmHouse();
         farmhouse.add(expected);
         Person actual = farmhouse.getObjectByName(name);
         //then
@@ -66,6 +66,22 @@ public class FarmHouseTest {
     public void testImplementation() {
         FarmHouse farmhouse = new FarmHouse();
         Assert.assertTrue(farmhouse instanceof Shelter);
+    }
+
+    @Test
+    public void elementTest() {
+
+        //Given
+        FarmHouse farmHouse = new FarmHouse();
+        Person actual = farmHouse.getObjectByName("Froilan");
+        Assert.assertNull(actual);
+        farmHouse.add(new Person("Froilan"));
+
+        //When
+        actual = farmHouse.getObjectByName("Froilan");
+
+        //Then
+        Assert.assertNotNull(actual);
     }
 
 //    @Test

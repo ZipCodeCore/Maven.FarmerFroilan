@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.StructureTests;
 
+import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
 import com.zipcodewilmington.froilansfarm.Shelter;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
@@ -14,7 +15,7 @@ public class ChickenCoopTest {
         String expected = "Frank";
         Chicken chicken = new Chicken(expected);
         //when
-        ChickenCoop chickenCoop = new ChickenCoop(chicken);
+        ChickenCoop chickenCoop = new ChickenCoop();
         chickenCoop.add(chicken);
         //then
         Assert.assertTrue(chickenCoop.getChickenList().contains(chicken));
@@ -26,7 +27,7 @@ public class ChickenCoopTest {
         String name = "Frank";
         Chicken expected = new Chicken(name);
         //when
-        ChickenCoop chickenCoop = new ChickenCoop(expected);
+        ChickenCoop chickenCoop = new ChickenCoop();
         chickenCoop.add(expected);
         Chicken actual = chickenCoop.getObjectByName(name);
         //then
@@ -62,5 +63,21 @@ public class ChickenCoopTest {
     public void testImplementation() {
         ChickenCoop chickenCoop = new ChickenCoop();
         Assert.assertTrue(chickenCoop instanceof Shelter);
+    }
+
+    @Test
+    public void elementTest() {
+
+        //Given
+        ChickenCoop chickenCoop = new ChickenCoop();
+        Chicken actual = chickenCoop.getObjectByName("Felipe");
+        Assert.assertNull(actual);
+        chickenCoop.add(new Chicken("Felipe"));
+
+        //When
+        actual = chickenCoop.getObjectByName("Felipe");
+
+        //Then
+        Assert.assertNotNull(actual);
     }
 }

@@ -9,12 +9,6 @@ import java.util.List;
 public class FarmHouse implements Shelter<Person> {
 
     List<Person> personList = new ArrayList<Person>();
-    Person person;
-
-    public FarmHouse(Person person) {
-        this.person = person;
-        this.personList = personList;
-    }
 
     public FarmHouse() {}
 
@@ -23,12 +17,12 @@ public class FarmHouse implements Shelter<Person> {
     }
 
     public Person getObjectByName(String name) {
-        for(Person element : personList) {
-            if(element.equals(name)) {
-                person = element;
+        for(Person person : personList) {
+            if(person.getName().equals(name)) {
+                return person;
             }
         }
-        return person;
+        return null;
     }
 
     public void remove(Person person) {

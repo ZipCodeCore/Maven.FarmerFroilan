@@ -9,12 +9,8 @@ import java.util.List;
 public class ChickenCoop implements Shelter<Chicken> {
 
     List<Chicken> chickenList = new ArrayList<Chicken>();
-    Chicken chicken;
 
-    public ChickenCoop(Chicken chicken) {
-        this.chicken = chicken;
-        this.chickenList = chickenList;
-    }
+
 
     public ChickenCoop() {
     }
@@ -24,12 +20,12 @@ public class ChickenCoop implements Shelter<Chicken> {
     }
 
     public Chicken getObjectByName(String name) {
-        for(Chicken element : chickenList) {
-            if(element.equals(name)) {
-                chicken = element;
+        for(Chicken chicken : chickenList) {
+            if(chicken.getName().equals(name)) {
+                return chicken;
             }
         }
-        return chicken;
+        return null;
     }
 
     public void remove(Chicken chicken) {

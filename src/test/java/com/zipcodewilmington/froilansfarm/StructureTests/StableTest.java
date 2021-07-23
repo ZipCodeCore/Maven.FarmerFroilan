@@ -16,7 +16,7 @@ public class StableTest {
         String expected = "Judy";
         Horse horse = new Horse(expected);
         //when
-        Stable stable = new Stable(horse);
+        Stable stable = new Stable();
         stable.add(horse);
         //then
         Assert.assertTrue(stable.getHorseList().contains(horse));
@@ -28,7 +28,7 @@ public class StableTest {
         String name = "Frank";
         Horse expected = new Horse(name);
         //when
-        Stable stable = new Stable(expected);
+        Stable stable = new Stable();
         stable.add(expected);
         Horse actual = stable.getObjectByName(name);
         //then
@@ -64,5 +64,20 @@ public class StableTest {
     public void testImplementation() {
         Stable stable = new Stable();
         Assert.assertTrue(stable instanceof Shelter);
+    }
+    @Test
+    public void elementTest() {
+
+        //Given
+        Stable stable = new Stable();
+        Horse actual = stable.getObjectByName("Spoon");
+        Assert.assertNull(actual);
+        stable.add(new Horse("Spoon"));
+
+        //When
+        actual = stable.getObjectByName("Spoon");
+
+        //Then
+        Assert.assertNotNull(actual);
     }
 }

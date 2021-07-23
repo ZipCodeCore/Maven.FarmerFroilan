@@ -8,9 +8,7 @@ public abstract class Aircraft implements FarmVehicle {
 
 
     }
-    public void operate(Object vehicle) {
 
-    }
 
     @Override
     public boolean operate() {

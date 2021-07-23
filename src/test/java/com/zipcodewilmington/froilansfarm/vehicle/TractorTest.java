@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-import com.zipcodewilmington.froilansfarm.crops.Crop;
+import com.sun.scenario.effect.Crop;
+
+import com.zipcodewilmington.froilansfarm.crops.Egg;
+import com.zipcodewilmington.froilansfarm.crops.Potato;
 import com.zipcodewilmington.froilansfarm.crops.Tomato;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -14,10 +17,10 @@ class TractorTest {
 
     @Test
     void harvest() {
-        Tractor t = new Tractor();
+        Tractor t = new Tractor(6);
 
         boolean expected = true;
-        boolean actual = t.harvest();
+        boolean actual = t.harvest(6);
 
         Assert.assertEquals(expected,actual);
 

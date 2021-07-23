@@ -5,12 +5,34 @@ import com.zipcodewilmington.froilansfarm.crops.Edible;
 
 public class Person extends Animal {
 
+    private String name;
+
+    public Person() {
+
+    }
+
+    public Person (String name){
+        setName(name);
+    }
+
+
     public String makeNoise() {
+
+       return null;
+    }
+
+    public Boolean eat(Edible food) {
+
         return null;
     }
 
-    @Override
-    public void eat(Edible food) {
-
+    public void setName(String name){
+       this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+
 }

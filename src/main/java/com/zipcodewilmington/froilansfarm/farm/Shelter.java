@@ -6,7 +6,7 @@ import java.util.*;
 
 public abstract class Shelter <SomeType extends Animal> {
 
-    private List<SomeType> animals = new ArrayList<>();
+    private List<SomeType> animals = new ArrayList<SomeType>();
 
     public void add(SomeType animal) {
         animals.add(animal);

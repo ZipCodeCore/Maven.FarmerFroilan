@@ -1,4 +1,5 @@
 package com.zipcodewilmington.froilansfarm.animals.person;
 
-public class Pilot <Person>{
+public interface Pilot <Person>{
+    void fly();
 }

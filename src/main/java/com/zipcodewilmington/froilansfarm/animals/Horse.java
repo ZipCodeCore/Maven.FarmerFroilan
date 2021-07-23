@@ -5,8 +5,9 @@ import com.zipcodewilmington.froilansfarm.Rideable;
 import com.zipcodewilmington.froilansfarm.crops.Edible;
 
 public class Horse extends Animal implements Rideable {
+
     public String makeNoise() {
-        return null;
+        return "neigh!";
     }
 
     public void move() {
@@ -14,8 +15,8 @@ public class Horse extends Animal implements Rideable {
     }
 
 
-    @Override
-    public void eat(Edible food) {
+    public Boolean eat(Edible food) {
 
+        return null;
     }
 }

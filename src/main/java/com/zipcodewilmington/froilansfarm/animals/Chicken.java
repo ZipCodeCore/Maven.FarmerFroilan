@@ -2,25 +2,25 @@ package com.zipcodewilmington.froilansfarm.animals;
 
 
 import com.zipcodewilmington.froilansfarm.crops.Edible;
-import com.zipcodewilmington.froilansfarm.farm.Produce;
+//import com.zipcodewilmington.froilansfarm.farm.Produce;
 
-public class Chicken extends Animal implements Produce {
+public class Chicken extends Animal {
     public String makeNoise() {
+
+        return "cluck!" ;
+    }
+
+    public Boolean eat(Edible food) {
+
         return null;
     }
 
-    @Override
-    public void eat(Edible food) {
+    public void yield() {
 
     }
 
-    @Override
-    public Edible yield() {
-        return null;
-    }
-
-    @Override
     public boolean hasBeenFertilized() {
+
         return false;
     }
 }

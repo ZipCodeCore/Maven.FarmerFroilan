@@ -1,25 +1,22 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
+import com.zipcodewilmington.froilansfarm.crops.Crop;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CropDusterTest {
+class TractorTest {
+
 
     @Test
-    void fertilize() {
-        CropDuster cropDus = new CropDuster();
+    void harvest() {
+        Tractor t = new Tractor(4);
 
         boolean expected = true;
-        boolean actual = cropDus.fertilize(5);
+        boolean actual = t.harvest(4);
 
         Assert.assertEquals(expected,actual);
 
-
-    }
-
-    @Test
-    void operate() {
     }
 }

@@ -6,11 +6,13 @@ public class CropDuster implements FarmVehicle {
 
 
 
-    public void fertilize(CropRow row){
+    public boolean fertilize(int row){
+        return true;
 
     }
 
     public void operate(Object vehicle) {
+
 
     }
 }

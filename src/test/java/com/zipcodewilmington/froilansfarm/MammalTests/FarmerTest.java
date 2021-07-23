@@ -92,12 +92,6 @@ public class FarmerTest {
     }
 
     @Test
-    public void testImplementationBotanist() {
-        Farmer farmer = new Farmer("Joe");
-        Assert.assertTrue(farmer instanceof Botanist);
-    }
-
-    @Test
     public void testImplementationRider() {
         Farmer farmer = new Farmer("Joe");
         Assert.assertTrue(farmer instanceof Rider);

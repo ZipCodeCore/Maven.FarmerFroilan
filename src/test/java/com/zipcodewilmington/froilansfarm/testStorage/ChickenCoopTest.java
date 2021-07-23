@@ -11,6 +11,16 @@ import org.junit.Test;
 public class ChickenCoopTest {
 
     @Test
+    public void nullaryConstructorTest () {
+        ChickenCoop cc = new ChickenCoop();
+        Integer expected = 0;
+
+        Integer actual = cc.getListOfChicken().size();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void instanceOfBarnTest () {
         ChickenCoop cc = new ChickenCoop();
 
@@ -31,7 +41,7 @@ public class ChickenCoopTest {
         Integer expected = 1;
 
         cc.add(chicken);
-        Integer actual = cc.getListOfChicken();
+        Integer actual = cc.getListOfChicken().size();
 
         Assert.assertEquals(expected, actual);
     }
@@ -46,7 +56,7 @@ public class ChickenCoopTest {
         cc.add(chicken);
         cc.add(chicken1);
         cc.remove(chicken);
-        Integer actual = cc.getListOfChicken();
+        Integer actual = cc.getListOfChicken().size();
 
         Assert.assertEquals(expected, actual);
         // I return an extra chicken, oops
@@ -61,7 +71,7 @@ public class ChickenCoopTest {
 
         cc.add(chicken);
         cc.add(chicken1);
-        Integer actual = cc.getListOfChicken();
+        Integer actual = cc.getListOfChicken().size();
 
         Assert.assertEquals(expected, actual);
     }
@@ -75,7 +85,7 @@ public class ChickenCoopTest {
 
         cc.add(chicken);
         cc.add(chicken1);
-        Integer actual = cc.getListOfChicken();
+        Integer actual = cc.getListOfChicken().size();
 
         Assert.assertEquals(expected, actual);
     }

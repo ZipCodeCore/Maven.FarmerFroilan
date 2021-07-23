@@ -31,7 +31,7 @@ public class Stable extends Barn {
         return listOfHorses.size();
     }
 
-    public Integer getListOfHorses () {
-        return listOfHorses.size();
+    public List<Horse> getListOfHorses () {
+        return listOfHorses;
     }
 }

@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.testStorage;
 
 
+import com.zipcodewilmington.froilansfarm.Animal.Barn;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.storage.Stable;
 import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
@@ -16,6 +17,13 @@ public class StableTest {
     }
 
     @Test
+    public void instanceOfBarn () {
+        Stable stable = new Stable();
+
+        Assert.assertTrue(stable instanceof Barn);
+    }
+
+    @Test
     public void addTest() {
         Stable stable = new Stable();
         Horse horse = new Horse();
@@ -24,7 +32,7 @@ public class StableTest {
 
         stable.add(horse);
         stable.add(horse1);
-        Integer actual = stable.getListOfHorses();
+        Integer actual = stable.getListOfHorses().size();
 
         Assert.assertEquals(expected, actual);
     }
@@ -39,7 +47,7 @@ public class StableTest {
         stable.add(horse);
         stable.add(horse1);
         stable.remove(horse);
-        Integer actual = stable.getListOfHorses();
+        Integer actual = stable.getListOfHorses().size();
 
         Assert.assertEquals(expected, actual);
     }
@@ -54,7 +62,7 @@ public class StableTest {
         stable.add(horse);
         stable.add(horse1);
         stable.remove(horse);
-        Integer actual = stable.getListOfHorses();
+        Integer actual = stable.getListOfHorses().size();
 
         Assert.assertEquals(expected, actual);
     }

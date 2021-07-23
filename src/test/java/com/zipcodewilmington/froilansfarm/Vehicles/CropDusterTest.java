@@ -53,7 +53,7 @@ public class CropDusterTest {
         //given
         int cropNum=20;
         int fertCrop=4;
-        boolean expected=true;
+        boolean expected= false;
         CropRow cropRow = new CropRow();
         //when
         CropDuster crop =new CropDuster(false, cropNum, fertCrop);

@@ -4,6 +4,8 @@ import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.crops.CropRow;
+import com.zipcodewilmington.froilansfarm.crops.Tomato;
+import com.zipcodewilmington.froilansfarm.crops.TomatoPlant;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -56,14 +58,43 @@ public class TractorTest {
         //given
         int cropNum = 20;
         int fertCrop = 4;
-        boolean expected = true;
+        boolean expected = false;
         CropRow cropRow = new CropRow();
         //when
         Tractor crop = new Tractor(false, cropNum, fertCrop);
         boolean actual = crop.needsToBeHarvested(cropRow);
         //then
         Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void doesNotNeedToBeHarvested () {
+        Tractor tractor = new Tractor(true,
+                200, 10);
+        CropRow cr = new CropRow();
+        Crop crop = new TomatoPlant();
+        crop.fertilize();
+        Boolean expected = true;
 
+        cr.addCrop(crop);
+        Boolean actual = tractor.needsToBeHarvested(cr);
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void needsToBeHarvested () {
+        Tractor tractor = new Tractor(true,
+                200, 10);
+        CropRow cr = new CropRow();
+        Crop crop = new TomatoPlant();
+        crop.fertilize();
+        crop.harvest();
+        Boolean expected = false;
+
+        cr.addCrop(crop);
+        Boolean actual = tractor.needsToBeHarvested(cr);
+
+        Assert.assertEquals(expected, actual);
     }
 }

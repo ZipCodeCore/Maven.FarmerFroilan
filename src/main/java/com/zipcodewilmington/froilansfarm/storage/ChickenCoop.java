@@ -32,7 +32,9 @@ public class ChickenCoop extends Barn {
         return listOfChicken.size();
     }
 
-    public Integer getListOfChicken() {
-        return listOfChicken.size();
+    public List<Chicken> getListOfChicken() {
+        return listOfChicken;
     }
+
+
 }

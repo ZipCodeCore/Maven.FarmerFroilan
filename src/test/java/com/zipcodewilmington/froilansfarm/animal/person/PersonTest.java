@@ -1,24 +1,23 @@
 package com.zipcodewilmington.froilansfarm.animal.person;
 
 import com.zipcodewilmington.froilansfarm.animals.person.Person;
-import org.apache.commons.lang3.ClassUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PersonTest {
 
-    private Person person;
+    private Person person = new Person();
 
-    @BeforeEach
-    void setUp() {
-         this.person = new Person();
-    }
+//    @BeforeEach
+//    void setUp() {
+//         this.person = new Person();
+//    }
 
    @Test
    public void testConstructor(){
         String actualName = person.getName();
-        String expectedName = "";
+        String expectedName = null;
        Assertions.assertEquals(expectedName, actualName);
    }
 

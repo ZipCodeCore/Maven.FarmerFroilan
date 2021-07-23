@@ -1,29 +1,21 @@
 package com.zipcodewilmington.froilansfarm.animal.person;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import com.sun.prism.impl.FactoryResetException;
 import com.zipcodewilmington.froilansfarm.animals.person.Botanist;
 import com.zipcodewilmington.froilansfarm.animals.person.Farmer;
 import com.zipcodewilmington.froilansfarm.animals.person.Person;
 import com.zipcodewilmington.froilansfarm.animals.person.Rider;
-import com.zipcodewilmington.froilansfarm.crops.Crop;
-import com.zipcodewilmington.froilansfarm.crops.Egg;
-import com.zipcodewilmington.froilansfarm.farm.CropRow;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 public class FarmerTest {
-
-
-    private Farmer farmer;
+    private Farmer farmer = new Farmer();
 
     @BeforeEach
     void setUp() {
-        Farmer farmer = new Farmer();
+        this.farmer = new Farmer();
     }
-
 
     @Test
     public void testInstanceOf(){

@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 
 public class Farmer extends Person implements Rider, Botanist {
-
+//    private String name;
    public Farmer(){
 
    }

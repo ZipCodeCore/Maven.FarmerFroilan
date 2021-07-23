@@ -4,6 +4,8 @@ import com.zipcodewilmington.froilansfarm.Rider;
 
 public class Aircraft implements Vehicle{
 
+    Rider rider;
+
 
     public String makeNoise() {
         return "Bzzzzeewwwwwwwwwww Rat-tat-tat-tat-tat";

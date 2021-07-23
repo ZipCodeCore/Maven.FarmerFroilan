@@ -1,4 +1,4 @@
 package com.zipcodewilmington.froilansfarm.animals.person;
 
-public class Pilot {
+public class Pilot <Person>{
 }

@@ -1,19 +1,21 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
+import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 
 public class CropDuster extends Vehicle implements FarmVehicle {
 
 
 
-    public boolean fertilize(int row){
-        return true;
+    public void fertilize(CropRow row){
+
+
 
     }
 
-    public void operate(Object vehicle) {
-
-
+    @Override
+    public boolean operate() {
+        return false;
     }
 
     @Override

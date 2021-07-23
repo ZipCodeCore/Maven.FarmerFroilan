@@ -1,5 +1,10 @@
 package com.zipcodewilmington.froilansfarm;
 
+
+
+
+
+
 import com.zipcodewilmington.froilansfarm.animals.Chicken;
 import com.zipcodewilmington.froilansfarm.animals.Horse;
 import com.zipcodewilmington.froilansfarm.animals.person.Farmer;
@@ -37,5 +42,6 @@ public class Froilan extends Farmer {
                     new ChickenCoop(new Chicken(), new Chicken(), new Chicken()))
             .setVehicles(new Tractor(5), new CropDuster())
             .build();
+
 
 }

@@ -2,8 +2,9 @@ package com.zipcodewilmington.froilansfarm.vehicle;
 
 public interface FarmVehicle <T extends Vehicle> {
 
+   public boolean operate();
 
-//    public default void operate(){
-//
-//    }
+
 }
+
+//in test class use tractor

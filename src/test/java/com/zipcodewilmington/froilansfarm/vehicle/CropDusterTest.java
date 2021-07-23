@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
+import com.zipcodewilmington.froilansfarm.farm.CropRow;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ class CropDusterTest {
         CropDuster cropDus = new CropDuster();
 
         boolean expected = true;
-        boolean actual = cropDus.fertilize(5);
+        boolean actual = cropDus.fertilize(CropRow);
 
         Assert.assertEquals(expected,actual);
 

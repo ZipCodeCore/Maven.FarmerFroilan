@@ -133,10 +133,12 @@ public class CropTest {
         //given
         Crop tomatoPlant = new TomatoPlant();
         Tomato tomato = new Tomato();
-        int expected = 0;
+        int expected = 1;
 
         //when
-        tomatoPlant.yield(tomato);
+        tomatoPlant.fertilize(); //sets fertilized equal to true
+        tomatoPlant.yield(tomato); //preps for harvest
+        tomatoPlant.harvest(); //makes food available to eat
         int actual = tomatoPlant.getFoodToEat();
 
         //then

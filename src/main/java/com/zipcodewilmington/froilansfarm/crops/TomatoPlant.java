@@ -20,22 +20,5 @@ public class TomatoPlant extends Crop{
         return new Tomato();
     }
 
-    @Override
-    public void yield(Edible edible) {
-        if (hasBeenFertilized() == true) {
-            numOfEdiblesYielded++;
-            //}
 
-        }
-    }
-
-    @Override
-    public boolean hasBeenFertilized() {
-        return false;
-    }
-
-    @Override
-    public boolean hasBeenHarvested() {
-        return false;
-    }
 }

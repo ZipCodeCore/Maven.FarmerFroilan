@@ -2,8 +2,7 @@ package com.zipcodewilmington.froilansfarm.Mammal;
 
 import com.zipcodewilmington.froilansfarm.Botanist;
 import com.zipcodewilmington.froilansfarm.Field;
-import com.zipcodewilmington.froilansfarm.Food.Crop;
-import com.zipcodewilmington.froilansfarm.Food.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.*;
 
 public class Froilan extends Farmer implements Botanist {
 
@@ -18,6 +17,10 @@ public class Froilan extends Farmer implements Botanist {
     }
 
     public void plantRows(Field field) {
-        field.getMyField().get(0);
+        this.plant(new CornStalk(), field.getMyField().get(0));
+        this.plant(new TomatoPlant(), field.getMyField().get(1));
+        this.plant(new CarrotFlower(), field.getMyField().get(2));
+        this.plant(new CornStalk(), field.getMyField().get(3));
+        this.plant(new TomatoPlant(), field.getMyField().get(4));
     }
 }

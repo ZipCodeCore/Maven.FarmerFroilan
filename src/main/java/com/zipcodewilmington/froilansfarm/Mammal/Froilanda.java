@@ -29,7 +29,7 @@ public class Froilanda extends Farmer implements Pilot {
     @Override
     public void fly(Farm farm) {
         if(getIsRiding() instanceof CropDuster){
-            ((CropDuster<?>) getIsRiding()).fly(farm.getField());
+            ((CropDuster<?>) getIsRiding()).operate(farm);
         }
     }
 }

@@ -10,34 +10,35 @@ import org.junit.Test;
 
 public class FarmerTest {
     @Test
-    public void constructorTest(){
-        Farmer farmer= new Farmer();
-        String actualName="Froilan";
-        Assert.assertEquals(farmer.getName(),actualName);
+    public void constructorTest() {
+        Farmer farmer = new Farmer();
+        String actualName = "Froilan";
+        Assert.assertEquals(farmer.getName(), actualName);
     }
+
     @Test
-    public void hasEatenTest(){
-        Farmer farmer= new Farmer();
-        Boolean actual=false;
+    public void hasEatenTest() {
+        Farmer farmer = new Farmer();
+        Boolean actual = false;
         Assert.assertFalse(farmer.hasEaten());
     }
 
     @Test
-    public void plantTest(){
-        Farmer farmer= new Farmer();
-        CropRow cropRow=new CropRow();
-        Integer numberOfCrops=0;
-        Crop crop=new CornPlant();
-Integer expected=1;
+    public void plantTest() {
+        Farmer farmer = new Farmer();
+        CropRow cropRow = new CropRow();
+        Integer numberOfCrops = 0;
+        Crop crop = new CornPlant();
+        Integer expected = 1;
 //        cropRow.addCrop(crop);
-farmer.plant(crop);
-        Assert.assertEquals(expected,farmer.getNumberOfCropsPlanted());
+        farmer.plant(crop);
+        Assert.assertEquals(expected, farmer.getNumberOfCropsPlanted());
 
     }
 
     @Test
-    public void mountTest(){
-        Farmer farmer= new Farmer();
+    public void mountTest() {
+        Farmer farmer = new Farmer();
         Integer expected = 1;
 
         Rideable vehicle = new Rideable() {
@@ -48,7 +49,7 @@ farmer.plant(crop);
         };
         farmer.mount(vehicle);
 
-        Assert.assertEquals(expected,farmer.getNumberOfRidesTaken());
+        Assert.assertEquals(expected, farmer.getNumberOfRidesTaken());
 
     }
 

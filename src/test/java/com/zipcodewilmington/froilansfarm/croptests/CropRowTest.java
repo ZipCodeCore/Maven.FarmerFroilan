@@ -90,6 +90,30 @@ public class CropRowTest {
         //given
         Crop tomatoPlant = new TomatoPlant();
         Crop cornPlant = new CornPlant();
+        CropRow testRow = new CropRow();
+        testRow.addCrop(tomatoPlant);
+        testRow.addCrop(cornPlant);
+        tomatoPlant.fertilize();
+        cornPlant.fertilize();
+
+        int expected = 3;
+
+        //when
+        tomatoPlant.yield(new Tomato());
+        tomatoPlant.yield(new Tomato());
+        cornPlant.yield(new EarOfCorn());
+        int actual = testRow.getNumberOfEdibles();
+
+        //then
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test (expected = UnsupportedOperationException.class)
+    public void getTotalEdiblesExceptionTest() {
+        //given
+        Crop tomatoPlant = new TomatoPlant();
+        Crop cornPlant = new CornPlant();
         tomatoPlant.yield(new Tomato());
         tomatoPlant.yield(new Tomato());
         cornPlant.yield(new EarOfCorn());
@@ -99,11 +123,11 @@ public class CropRowTest {
         CropRow testRow = new CropRow();
         testRow.addCrop(tomatoPlant);
         testRow.addCrop(cornPlant);
+        tomatoPlant.fertilize();
+        cornPlant.fertilize();
         int actual = testRow.getNumberOfEdibles();
 
         //then
         Assert.assertEquals(expected, actual);
-
     }
-
 }

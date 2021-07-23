@@ -4,10 +4,7 @@ import com.zipcodewilmington.froilansfarm.Food.CarrotFlower;
 import com.zipcodewilmington.froilansfarm.Food.CornStalk;
 import com.zipcodewilmington.froilansfarm.Food.CropRow;
 import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
-import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
-import com.zipcodewilmington.froilansfarm.Mammal.Farmer;
-import com.zipcodewilmington.froilansfarm.Mammal.Horse;
-import com.zipcodewilmington.froilansfarm.Mammal.Person;
+import com.zipcodewilmington.froilansfarm.Mammal.*;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
@@ -103,7 +100,8 @@ public class Farm {
     }
 
     public void populateFarmHouse(){
+        Froilanda msFroid = Froilanda.getInstance();
+        farmhouse.add(msFroid);
         farmhouse.add(new Farmer("Froilan"));
-        farmhouse.add(new Farmer("Froilanda"));
     }
 }

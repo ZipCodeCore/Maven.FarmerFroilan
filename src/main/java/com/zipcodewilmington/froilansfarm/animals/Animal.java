@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.animals;
 
-public abstract class Animal {
+import com.zipcodewilmington.froilansfarm.NoiseMaker;
+
+public abstract class Animal implements NoiseMaker, Eater {
 
 }

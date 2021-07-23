@@ -9,6 +9,11 @@ import com.zipcodewilmington.froilansfarm.Rider;
 public class CropDuster<T extends Rider> extends Aircraft implements FarmVehicle {
    private Pilot pilot;
 
+   public void fly(Field field) {
+      for(CropRow element : field.getMyField()){
+         element.fertilizeRow();
+      }
+   }
 
    public void fertilizeCrop(CropRow row){
       row.fertilizeRow();
@@ -21,8 +26,6 @@ public class CropDuster<T extends Rider> extends Aircraft implements FarmVehicle
 
    @Override
    public void operate(Farm farm) {
-      for(CropRow element : farm.getField().getMyField()){
-         element.fertilizeRow();
-      }
+      this.fly(farm.getField());
    }
 }

@@ -39,5 +39,6 @@ public class Farm {
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
+
 }
 

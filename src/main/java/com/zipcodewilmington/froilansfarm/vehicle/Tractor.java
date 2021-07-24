@@ -8,9 +8,11 @@ import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 public class Tractor extends Vehicle implements FarmVehicle<Vehicle> {
 
 
+
     private int crop;
 
      public Tractor(int crop) {
+
          this.crop = crop;
      }
 
@@ -18,8 +20,10 @@ public class Tractor extends Vehicle implements FarmVehicle<Vehicle> {
 //        FarmStorage storage = FarmStorage.getInstance();
 //        storage.add(cropRow.getCrop());
 //    }
+
 //
     public void operate (Object vehicle){
+
 
     }
 

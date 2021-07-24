@@ -5,38 +5,38 @@ import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 
-public class Tractor extends Vehicle implements FarmVehicle<Vehicle>{
+public class Tractor extends Vehicle implements FarmVehicle<Vehicle> {
 
-
-
-public class Tractor implements FarmVehicle<Vehicle>{
 
     private int crop;
 
-     public Tractor(int crop){
+     public Tractor(int crop) {
          this.crop = crop;
-
+     }
 
 //    public void harvest(CropRow cropRow){
 //        FarmStorage storage = FarmStorage.getInstance();
 //        storage.add(cropRow.getCrop());
 //    }
-
-
-
-    public void operate(Object vehicle) {
+//
+    public void operate (Object vehicle){
 
     }
 
 
     @Override
-    public String makeNoise() {
-        return null;
+    public String makeNoise () {
+         return null;
     }
 
     @Override
-    public void move() {
+    public void move () {
 
     }
 
+
+    @Override
+    public boolean operate() {
+        return false;
+    }
 }

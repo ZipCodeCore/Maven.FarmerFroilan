@@ -34,7 +34,7 @@ public class FarmStorage <SomeEdible extends Edible> {
         list.remove(foodItem);
     }
 
-    public void populateMap() {
+    private void populateMap() {
         Tomato tomato = new Tomato();
         Potato potato = new Potato();
         Egg egg = new Egg();
@@ -45,7 +45,7 @@ public class FarmStorage <SomeEdible extends Edible> {
         map.put((Class<SomeEdible>) earCorn.getClass(), null);
     }
 
-    public Map<Class<SomeEdible>, List<SomeEdible>> constructMap() {
+    private Map<Class<SomeEdible>, List<SomeEdible>> constructMap() {
         map = new HashMap<>();
         populateMap();
         return map;

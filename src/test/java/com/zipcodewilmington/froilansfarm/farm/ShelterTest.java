@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
+import com.zipcodewilmington.froilansfarm.Froilan;
+import com.zipcodewilmington.froilansfarm.FroilansFarm;
 import com.zipcodewilmington.froilansfarm.animals.Chicken;
 import com.zipcodewilmington.froilansfarm.animals.Horse;
 import com.zipcodewilmington.froilansfarm.animals.person.Person;
@@ -89,5 +91,15 @@ public class ShelterTest {
 
         // Then
         Assert.assertEquals(expectedNumberOfPeople, actualNumberOfPeople);
+    }
+
+    @Test
+    public void test() {
+//        FroilansFarm farm = FroilansFarm.INSTANCE;
+//        System.out.println(farm);
+        Froilan froilan = new Froilan();
+        Farm farm = froilan.getFarm();
+        System.out.println(farm);
+
     }
 }

@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
+import com.zipcodewilmington.froilansfarm.crops.Tomato;
+import com.zipcodewilmington.froilansfarm.crops.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -13,9 +15,9 @@ class CropDusterTest {
         CropDuster cropDus = new CropDuster();
 
         boolean expected = true;
-        boolean actual = cropDus.fertilize(CropRow);
+        cropDus.fertilize(new CropRow(new TomatoPlant(true, true)));
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertTrue(expected);
 
 
     }

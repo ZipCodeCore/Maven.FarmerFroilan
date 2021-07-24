@@ -11,9 +11,9 @@ public class Tractor extends Vehicle implements FarmVehicle<Vehicle>{
 
 public class Tractor implements FarmVehicle<Vehicle>{
 
-    private int crop;
+    private Crop crop;
 
-     public Tractor(int crop){
+     public Tractor(Crop crop){
          this.crop = crop;
 
 
@@ -23,8 +23,7 @@ public class Tractor implements FarmVehicle<Vehicle>{
 //    }
 
 
-
-    public void operate(Object vehicle) {
+         public void operate(Object vehicle) {
 
     }
 

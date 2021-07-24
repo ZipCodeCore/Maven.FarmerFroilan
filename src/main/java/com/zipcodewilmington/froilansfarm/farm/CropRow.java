@@ -10,6 +10,10 @@ public class CropRow <SomeCrop extends Crop> {
 
     private List<SomeCrop> cropsInRow = new ArrayList<>();
 
+    public CropRow() {
+
+    }
+
     public CropRow(SomeCrop someCrop) {
         for (int i = 0; i < 15; i++) {
             cropsInRow.add(someCrop);

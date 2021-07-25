@@ -19,8 +19,16 @@ public class Simulation implements Runnable {
     }
 
     public void run() {
+    Weekdays weekdays = new Weekdays(new Farm());
+    weekdays.tuesday();
+    weekdays.wednesday();
+    weekdays.thursday();
+    weekdays.friday();
+    weekdays.saturday();
+    weekdays.sunday();
+    weekdays.monday();
 
-
+        System.out.println("some stuff");
     }
 }
 

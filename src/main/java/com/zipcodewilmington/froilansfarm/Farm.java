@@ -104,8 +104,9 @@ public class Farm {
 
     public void populateFarmHouse(){
         Froilanda msFroid = Froilanda.getInstance();
+        Froilan mrFroid = Froilan.getInstance();
         farmhouse.add(msFroid);
-        farmhouse.add(new Farmer("Froilan"));
+        farmhouse.add(mrFroid);
     }
 
     public Pantry getPantry() {

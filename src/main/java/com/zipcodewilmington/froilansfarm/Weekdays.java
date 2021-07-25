@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Weekdays {
-    private Farm farm;
+    private Farm farm = new Farm();
 
     public Weekdays(Farm farm){
         this.farm = farm;

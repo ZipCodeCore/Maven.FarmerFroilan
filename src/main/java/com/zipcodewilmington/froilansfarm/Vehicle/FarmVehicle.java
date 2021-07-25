@@ -38,4 +38,12 @@ public class FarmVehicle implements Vehicle{
     public boolean hasBeenRiden() {
         return false;
     }
+
+    public String getOnFarm() {
+        return onFarm;
+    }
+
+    public void setOnFarm(String onFarm) {
+        this.onFarm = onFarm;
+    }
 }

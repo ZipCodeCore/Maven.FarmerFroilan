@@ -4,14 +4,15 @@ import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
-    Boolean isFertilized=false;
+    Boolean isFertilized = false;
     Integer eggs;
 
-public Chicken(){}
+    public Chicken() {
+    }
 
     public void yield(Edible object) {
-        if(this.isFertilized==true){
-            this.eggs+=1;
+        if (this.isFertilized == true) {
+            this.eggs += 1;
         }
     }
 
@@ -23,11 +24,11 @@ public Chicken(){}
         return false;
     }
 
-    public String makeNoise(){
+    public String makeNoise() {
         return "Cluck!";
     }
 
-    public void eat(Edible Object){
+    public void eat(Edible Object) {
 
     }
 }

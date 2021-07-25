@@ -28,7 +28,7 @@ public class Field implements StorageInterface {
         return listOfCropRow.size();
     }
 
-    public Integer getListOfCropRow() {
-        return listOfCropRow.size();
+    public List<CropRow> getListOfCropRow() {
+        return listOfCropRow;
     }
 }

@@ -4,14 +4,14 @@ public class Person {
     String name;
     int amountOfFoodEaten;
 
-    public Person(String name,int amountOfFoodEaten){
-        this.name=name;
-        this.amountOfFoodEaten=amountOfFoodEaten;
+    public Person(String name, int amountOfFoodEaten) {
+        this.name = name;
+        this.amountOfFoodEaten = amountOfFoodEaten;
     }
 
-    public Person(){
- this.name="";
- this.amountOfFoodEaten=0;
+    public Person() {
+        this.name = "";
+        this.amountOfFoodEaten = 0;
     }
 
     public String getName() {

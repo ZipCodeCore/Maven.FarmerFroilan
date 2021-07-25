@@ -16,7 +16,7 @@ public class CropDuster extends FarmVehicle implements Aircraft {
         this.numOfCropFert = numOfCropFert;
     }
 
-    public boolean isToBeFertilized() {
+    public boolean getToBeFertilized() {
         return toBeFertilized;
     }
 
@@ -24,13 +24,6 @@ public class CropDuster extends FarmVehicle implements Aircraft {
         this.toBeFertilized = toBeFertilized;
     }
 
-    public int getNumOfCropFert() {
-        return numOfCropFert;
-    }
-
-    public void setNumOfCropFert(int numOfCropFert) {
-        this.numOfCropFert = numOfCropFert;
-    }
 
 
     public void setNumOfCropRows(int numOfCropRows) {

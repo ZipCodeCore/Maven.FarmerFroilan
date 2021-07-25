@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.StructureTests;
 
+import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Food.Carrot;
 import com.zipcodewilmington.froilansfarm.Structure.Pantry;
@@ -21,6 +22,20 @@ public class PantryTest {
         Assert.assertEquals(expected,actual);
 
         //System.out.println(twoCarrots.length + " " + twoCarrots.getClass().getSimpleName());
+
+    }
+
+    @Test
+    public void storeCarrotTest(){
+        //given
+        Pantry myPantry = new Pantry();
+        Edible myCarrot = new Carrot();
+        //when
+        myPantry.storeCarrot(myCarrot);
+        Integer actual = myPantry.countCarrots();
+        Integer expected = 101;
+        //then
+        Assert.assertEquals(expected,actual);
 
     }
 }

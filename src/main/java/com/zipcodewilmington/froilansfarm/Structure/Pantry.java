@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Pantry {
+public class Pantry<T extends Edible> {
     private List<Carrot> carrotsBasket = new ArrayList<>();
     private List<EarCorn> earCornsBasket = new ArrayList<>();
     private List<Egg> eggsBasket = new ArrayList<>();
@@ -27,8 +27,8 @@ public class Pantry {
         return carrotsBasket.size();
     }
 
-    public void storeCarrot(Carrot carrot) {
-        this.carrotsBasket.add(carrot);
+    public void storeCarrot(T carrot) {
+        this.carrotsBasket.add((Carrot) carrot);
     }
 
     public List<Edible> takeCarrot(Integer count){
@@ -43,8 +43,8 @@ public class Pantry {
         return earCornsBasket.size();
     }
 
-    public void storeEarCorn(EarCorn earCorn) {
-        this.earCornsBasket.add(earCorn);
+    public void storeEarCorn(T earCorn) {
+        this.earCornsBasket.add((EarCorn) earCorn);
     }
 
     public List<Edible> takeEarCorn(Integer count){
@@ -59,8 +59,8 @@ public class Pantry {
         return eggsBasket.size();
     }
 
-    public void storeEgg(Egg egg) {
-        this.eggsBasket.add(egg);
+    public void storeEgg(T egg) {
+        this.eggsBasket.add((Egg) egg);
     }
 
     public List<Edible> takeEgg(Integer count){
@@ -75,8 +75,8 @@ public class Pantry {
         return tomatoesBasket.size();
     }
 
-    public void storeTomato(Tomato tomato) {
-        this.tomatoesBasket.add(tomato);
+    public void storeTomato(T tomato) {
+        this.tomatoesBasket.add((Tomato) tomato);
     }
 
     public List<Edible> takeTomato(Integer count){
@@ -89,22 +89,22 @@ public class Pantry {
 
     public void populateCarrots(){
         for (int i = 0; i < 100; i++) {
-            this.storeCarrot(new Carrot());
+            this.storeCarrot((T) new Carrot());
         }
     }
     public void populateEarCorns(){
         for (int i = 0; i < 100; i++) {
-            this.storeEarCorn(new EarCorn());
+            this.storeEarCorn((T) new EarCorn());
         }
     }
     public void populateEggs(){
         for (int i = 0; i < 100; i++) {
-            this.storeEgg(new Egg());
+            this.storeEgg((T) new Egg());
         }
     }
     public void populateTomatoes(){
         for (int i = 0; i < 100; i++) {
-            this.storeTomato(new Tomato());
+            this.storeTomato((T) new Tomato());
         }
     }
 }

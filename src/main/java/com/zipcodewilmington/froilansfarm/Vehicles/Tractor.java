@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm.Vehicles;
 
 import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.Farm;
-import com.zipcodewilmington.froilansfarm.Food.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.*;
 import com.zipcodewilmington.froilansfarm.Rider;
 
 import java.util.ArrayList;
@@ -33,6 +33,23 @@ public class Tractor implements FarmVehicle{
             ArrayList<Edible> listOfCrops =  rows.get(i).harvestRow();
             for(int j = 0; j < listOfCrops.size(); j++){
                 harvest(listOfCrops.get(j));
+            }
+        }
+    }
+
+    public void storeHarvest(Farm farm){
+        for(Edible edible: aList){
+            if(edible instanceof EarCorn){
+                farm.getPantry().storeEarCorn(edible);
+            }
+            if(edible instanceof Egg){
+                farm.getPantry().storeEgg(edible);
+            }
+            if(edible instanceof Tomato){
+                farm.getPantry().storeTomato(edible);
+            }
+            if(edible instanceof Carrot){
+                farm.getPantry().storeCarrot(edible);
             }
         }
     }

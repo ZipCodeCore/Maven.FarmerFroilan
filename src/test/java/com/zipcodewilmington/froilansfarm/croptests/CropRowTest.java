@@ -65,8 +65,8 @@ public class CropRowTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void getTotalPlants(){
+    @Test (expected = UnsupportedOperationException.class)
+    public void getTotalPlantsNegative(){
         //given
         Crop tomatoPlant = new TomatoPlant();
         Crop cornPlant = new CornPlant();
@@ -83,6 +83,23 @@ public class CropRowTest {
         //then
         Assert.assertEquals(2, actual);
 
+    }
+
+    @Test
+    public void getTotalPlantsPositive() {
+        //given
+        Crop tomatoPlant = new TomatoPlant();
+        Crop cornPlant = new CornPlant();
+        CropRow testRow = new CropRow();
+
+        //when
+        Assert.assertEquals(0, testRow.getNumberofCropsPlanted());
+        testRow.addCrop(tomatoPlant);
+        testRow.addCrop(cornPlant);
+        int actual = testRow.getNumberofCropsPlanted();
+
+        //then
+        Assert.assertEquals(2, actual);
     }
 
     @Test

@@ -1,12 +1,20 @@
 package com.zipcodewilmington.froilansfarm.storage;
 
-import java.lang.reflect.Type;
+import java.util.List;
 
 public interface StorageInterface <TypeToStore> {
+    List<TypeToStore> getList();
 
-    void add(TypeToStore thingYouAreStoring);
+    default Integer getSize(){
+        return getList().size();
+    }
 
-    void remove(TypeToStore thingYouAreStoring);
 
-    int amount(TypeToStore thingYouAreStoring);
+    default void add(TypeToStore animal) {
+        getList().add(animal);
+    }
+
+    default void remove(TypeToStore animal) {
+        getList().remove(animal);
+    }
 }

@@ -5,18 +5,18 @@ import com.zipcodewilmington.froilansfarm.storage.StorageInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Barn<T> implements StorageInterface {
+public abstract class Barn<T extends Animal> implements StorageInterface <T> {
     List<T> animals;
 
     public Barn() {
-        animals = new ArrayList<T>();
+        animals = new ArrayList<>();
     }
-
-    public Integer numberOfAnimals(T animal){
-    return animals.size();
-    }
-
-
+//
+//    public Integer numberOfAnimals(){
+//    return animals.size();
+//    }
+//
+//
 //    public void add(T animal) {
 //        animals.add(animal);
 //    }
@@ -25,11 +25,13 @@ public abstract class Barn<T> implements StorageInterface {
 //        animals.remove(animal);
 //    }
 
-    public List<T> getAnimals() {
+    public List<T> getList() {
         return animals;
     }
 
     public void setAnimals(List<T> animals) {
         this.animals = new ArrayList<>(animals);
     }
+
+
 }

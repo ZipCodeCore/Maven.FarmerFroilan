@@ -15,7 +15,7 @@ public class ChickenCoopTest {
         ChickenCoop cc = new ChickenCoop();
         Integer expected = 0;
 
-        Integer actual = cc.getListOfChicken().size();
+        Integer actual = cc.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -41,7 +41,7 @@ public class ChickenCoopTest {
         Integer expected = 1;
 
         cc.add(chicken);
-        Integer actual = cc.getListOfChicken().size();
+        Integer actual = cc.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -56,7 +56,7 @@ public class ChickenCoopTest {
         cc.add(chicken);
         cc.add(chicken1);
         cc.remove(chicken);
-        Integer actual = cc.getListOfChicken().size();
+        Integer actual = cc.getSize();
 
         Assert.assertEquals(expected, actual);
         // I return an extra chicken, oops
@@ -71,7 +71,7 @@ public class ChickenCoopTest {
 
         cc.add(chicken);
         cc.add(chicken1);
-        Integer actual = cc.getListOfChicken().size();
+        Integer actual = cc.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -85,7 +85,7 @@ public class ChickenCoopTest {
 
         cc.add(chicken);
         cc.add(chicken1);
-        Integer actual = cc.getListOfChicken().size();
+        Integer actual = cc.getSize();
 
         Assert.assertEquals(expected, actual);
     }

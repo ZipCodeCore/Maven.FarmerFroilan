@@ -76,7 +76,7 @@ public class TractorTest {
         crop.fertilize();
         Boolean expected = true;
 
-        cr.addCrop(crop);
+        cr.add(crop);
         Boolean actual = tractor.needsToBeHarvested(cr);
 
         Assert.assertEquals(expected, actual);
@@ -92,7 +92,7 @@ public class TractorTest {
         crop.harvest();
         Boolean expected = false;
 
-        cr.addCrop(crop);
+        cr.add(crop);
         Boolean actual = tractor.needsToBeHarvested(cr);
 
         Assert.assertEquals(expected, actual);

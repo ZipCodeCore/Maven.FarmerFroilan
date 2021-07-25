@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Farmer extends Person implements Rider, Eater, Botanist {
-    CropRow cropRow = new CropRow();
     int numberOfRidesTaken;
     int numberOfCropsPlanted;
     int numberOfEdiblesEaten;
@@ -40,9 +39,8 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
 
     public void mount(Rideable object) {
         this.vehicle = object;
-        this.numberOfRidesTaken = 0;
         if (object.hasBeenRiden()) {
-            numberOfRidesTaken++;
+            incrementRidesTaken();
         }
     }
 
@@ -56,7 +54,7 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
 
     public void eat(Edible object) {
         if (object.isEaten()) {
-            numberOfEdiblesEaten++;
+            incrementFoodEaten();
         } else {
             throw new UnsupportedOperationException("No new produce to eat:(");
         }
@@ -66,23 +64,33 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
         return false;
     }
 
-    public void plant(Crop Object) {
-        cropRow.addCrop(Object);
-       numberOfCropsPlanted++;
+    public void plant(CropRow cropRow, Crop crop) {
+        cropRow.add(crop);
+       incrementNumberOfPlants();
 
     }
 
     public Integer getNumberOfCropsPlanted() {
-        return cropRow.getCropRow().size();
+        return numberOfCropsPlanted;
     }
 
-    @Deprecated
     public void setNumberOfPlants(Integer num) {
-
-        throw new RuntimeException("Deprecated");
+        this.numberOfCropsPlanted = num;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void incrementNumberOfPlants(){
+        setNumberOfPlants(getNumberOfCropsPlanted()+1);
+    }
+
+    public void incrementFoodEaten(){
+        setAmountOfFoodEaten(getAmountOfFoodEaten()+1);
+    }
+    public void incrementRidesTaken(){
+        numberOfRidesTaken++;
+
     }
 }

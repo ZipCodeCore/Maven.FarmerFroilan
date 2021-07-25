@@ -44,7 +44,7 @@ public class CropDuster extends FarmVehicle implements Aircraft {
     }
 
     public boolean needsToBeFertilized(CropRow cropRow) {
-        for (Crop crop : cropRow.getCropRow()) {
+        for (Crop crop : cropRow.getList()) {
             if (crop.hasBeenFertilized()==false){
                 return true;
             }

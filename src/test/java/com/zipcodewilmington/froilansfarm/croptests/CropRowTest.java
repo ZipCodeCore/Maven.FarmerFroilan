@@ -11,7 +11,7 @@ public class CropRowTest {
         CropRow testRow = new CropRow();
 
         //when
-        int actual = testRow.getNumberofCropsPlanted();
+        int actual = testRow.getSize();
 
         //then
         int expected = 0;
@@ -25,7 +25,7 @@ public class CropRowTest {
         CropRow testRow = new CropRow();
 
         //when
-        int actual = testRow.getNumberofCropsPlanted();
+        int actual = testRow.getSize();
 
         //then
         int expected = 0;
@@ -41,7 +41,7 @@ public class CropRowTest {
 
         //when
         testRow.addCrop(tomato, 2);
-        int actual = testRow.getNumberofCropsPlanted();
+        int actual = testRow.getSize();
 
         //then
         int expected = 2;
@@ -56,9 +56,9 @@ public class CropRowTest {
         TomatoPlant tomato = new TomatoPlant(0);
 
         //when
-        testRow.addCrop(tomato);
-        testRow.removeCrop(tomato);
-        int actual = testRow.getNumberofCropsPlanted();
+        testRow.add(tomato);
+        testRow.remove(tomato);
+        int actual = testRow.getSize();
 
         //then
         int expected = 0;
@@ -76,9 +76,9 @@ public class CropRowTest {
 
         //when
         CropRow testRow = new CropRow();
-        testRow.addCrop(tomatoPlant);
-        testRow.addCrop(cornPlant);
-        int actual = testRow.getNumberofCropsPlanted();
+        testRow.add(tomatoPlant);
+        testRow.add(cornPlant);
+        int actual = testRow.getSize();
 
         //then
         Assert.assertEquals(2, actual);
@@ -93,10 +93,11 @@ public class CropRowTest {
         CropRow testRow = new CropRow();
 
         //when
-        Assert.assertEquals(0, testRow.getNumberofCropsPlanted());
-        testRow.addCrop(tomatoPlant);
-        testRow.addCrop(cornPlant);
-        int actual = testRow.getNumberofCropsPlanted();
+        int before = testRow.getSize();
+        Assert.assertEquals(0, before);
+        testRow.add(tomatoPlant);
+        testRow.add(cornPlant);
+        int actual = testRow.getSize();
 
         //then
         Assert.assertEquals(2, actual);
@@ -108,8 +109,8 @@ public class CropRowTest {
         Crop tomatoPlant = new TomatoPlant();
         Crop cornPlant = new CornPlant();
         CropRow testRow = new CropRow();
-        testRow.addCrop(tomatoPlant);
-        testRow.addCrop(cornPlant);
+        testRow.add(tomatoPlant);
+        testRow.add(cornPlant);
         tomatoPlant.fertilize();
         cornPlant.fertilize();
 
@@ -138,8 +139,8 @@ public class CropRowTest {
 
         //when
         CropRow testRow = new CropRow();
-        testRow.addCrop(tomatoPlant);
-        testRow.addCrop(cornPlant);
+        testRow.add(tomatoPlant);
+        testRow.add(cornPlant);
         tomatoPlant.fertilize();
         cornPlant.fertilize();
         int actual = testRow.getNumberOfEdibles();

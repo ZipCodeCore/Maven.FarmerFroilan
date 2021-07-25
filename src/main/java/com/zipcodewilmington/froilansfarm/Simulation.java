@@ -20,14 +20,6 @@ public class Simulation implements Runnable {
 
     public void run() {
 
-        Farm farm = new Farm();
-        CropDuster cropDuster = new CropDuster();
-
-        Froilanda msFroid = Froilanda.getInstance();
-
-        msFroid.mount(cropDuster);
-
-        msFroid.fly(farm);
 
     }
 }

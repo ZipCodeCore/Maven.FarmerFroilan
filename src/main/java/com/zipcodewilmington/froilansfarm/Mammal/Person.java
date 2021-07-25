@@ -29,20 +29,30 @@ public class Person<T extends Edible> implements Eater<T>, NoiseMaker {
         this.name = name;
     }
 
-    public void eat(T ... edibles) {
-        for (int i = 0; i < edibles.length; i++) {
-            T edible = edibles[i];
+    public void eat(List<T> edibles) {
+        for (T edible : edibles) {
             eat(edible);
         }
     }
 
-    @Override
-    public void eat(T edible) { meals.add(edible); }
-
-    public List<Edible> getMealList() { return meals; }
 
     @Override
-    public String makeNoise(){
+    public void eat(T edible){
+        getMealList().add(edible);
+    }
+
+    public void eat(T... edible) {
+        eat(Arrays.asList(edible));
+    }
+
+
+
+    public List<Edible> getMealList() {
+        return meals;
+    }
+
+    @Override
+    public String makeNoise() {
         return "Hello";
     }
 

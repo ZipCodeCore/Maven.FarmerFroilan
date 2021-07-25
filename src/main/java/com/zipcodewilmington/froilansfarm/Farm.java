@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Food.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Mammal.*;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.FarmHouse;
+import com.zipcodewilmington.froilansfarm.Structure.Pantry;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
 import com.zipcodewilmington.froilansfarm.Vehicles.Aircraft;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
@@ -29,12 +30,14 @@ public class Farm {
     private CropDuster cropDuster = new CropDuster();
     private Tractor tractor = new Tractor();
     private Tractor johnDeer = new Tractor();
+    private Pantry pantry;
 
     public Farm(){
         populateFarmHouse();
         populateAllChickenCoops();
         populateAllStables();
         populateField();
+        this.pantry = new Pantry();
     }
 
     public Shelter<Person> getFarmhouse() {
@@ -103,5 +106,9 @@ public class Farm {
         Froilanda msFroid = Froilanda.getInstance();
         farmhouse.add(msFroid);
         farmhouse.add(new Farmer("Froilan"));
+    }
+
+    public Pantry getPantry() {
+        return pantry;
     }
 }

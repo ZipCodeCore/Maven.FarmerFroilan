@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Edible;
 import com.zipcodewilmington.froilansfarm.NoiseMaker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Animal <T extends Edible> implements Eater<T>, NoiseMaker {
@@ -15,14 +16,22 @@ public abstract class Animal <T extends Edible> implements Eater<T>, NoiseMaker 
         name = "";
     }
 
-    public void eat(T ... edibles) {
-        for (int i = 0; i < edibles.length; i++) {
-            T edible = edibles[i];
+    public void eat(List<T> edibles) {
+        for (T edible : edibles) {
             eat(edible);
         }
     }
 
-    public void eat(T edible) { meals.add(edible); }
+
+    public void eat(T edible){
+        getMealList().add(edible);
+    }
+
+    public void eat(T... edible) {
+        eat(Arrays.asList(edible));
+    }
+
+    //public void eat(T edible) { meals.add(edible); }
 
     public List<T> getMealList() { return meals; }
 

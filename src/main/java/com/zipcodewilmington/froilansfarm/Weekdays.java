@@ -36,14 +36,14 @@ public class Weekdays {
 
     public void sunday() {
         List<CropRow> cropRows = farm.getField().getMyField();
-        morningRoutine();
+        morningRoutine(farm);
         froilan.plantRows(farm.getField());
         lunch();
         dinner();
     }
 
     public void monday() {
-        morningRoutine();
+        morningRoutine(farm);
         froilanda.mount(cropDuster);
         froilanda.fly(farm);
         lunch();
@@ -51,7 +51,7 @@ public class Weekdays {
     }
 
     public void tuesday() {
-        morningRoutine();
+        morningRoutine(farm);
         froilan.mount(tractor);
         tractor.operate(farm);
         lunch();
@@ -60,14 +60,14 @@ public class Weekdays {
 
     public void wednesday() {
         List<CropRow> cropRows = farm.getField().getMyField();
-        morningRoutine();
+        morningRoutine(farm);
         froilan.plantRows(farm.getField());
         lunch();
         dinner();
     }
 
     public void thursday() {
-        morningRoutine();
+        morningRoutine(farm);
         froilan.mount(tractor);
         tractor.operate(farm);
         lunch();
@@ -76,19 +76,19 @@ public class Weekdays {
 
     public void friday() {
         List<CropRow> cropRows = farm.getField().getMyField();
-        morningRoutine();
+        morningRoutine(farm);
         froilan.plantRows(farm.getField());
         lunch();
         dinner();
     }
 
     public void saturday() {
-        morningRoutine();
+        morningRoutine(farm);
         lunch();
         dinner();
     }
 
-    public void morningRoutine() {
+    public void morningRoutine(Farm farm) {
         for(Horse horse : stable.getHorseList()) {
             froilan.mount(horse);
             horse.ride(froilan);
@@ -96,21 +96,42 @@ public class Weekdays {
         for(Horse horse : stable.getHorseList()) {
             horse.eat(new EarCorn(), new EarCorn(), new EarCorn());
         }
-        for(Chicken chicken : chickenCoop.getChickenList()) {
-            chicken.eat(earCorn);
-        }
-        froilan.eat(new EarCorn(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg(), new Egg(), new Egg());
-        froilanda.eat(new EarCorn(), new EarCorn(), new Tomato(), new Egg(), new Egg());
+        List<Edible> x = farm.getPantry().takeEarCorn(1);
+        chickenCoop.getChickenList().forEach(chicken -> chicken.eat((EarCorn) x));
+
+
+        List<Edible> breakFast = farm.getPantry().takeEarCorn(1);
+        breakFast.addAll(farm.getPantry().takeTomato(2));
+        breakFast.addAll(farm.getPantry().takeEgg(5));
+        froilan.eat(breakFast);
+        breakFast = farm.getPantry().takeEarCorn(2);
+        breakFast.addAll(farm.getPantry().takeTomato(1));
+        breakFast.addAll(farm.getPantry().takeEgg(2));
+        froilanda.eat(breakFast);
 
     }
 
     public void lunch() {
-        froilan.eat(new Carrot(), new Carrot(), new Tomato(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg());
-        froilanda.eat(new EarCorn(), new Carrot(), new Carrot(), new Carrot(), new Egg(), new Egg());
+        List<Edible> lunch = farm.getPantry().takeCarrot(2);
+        lunch.addAll(farm.getPantry().takeTomato(3));
+        lunch.addAll(farm.getPantry().takeEgg(3));
+        froilan.eat(lunch);
+        lunch = farm.getPantry().takeEarCorn(1);
+        lunch.addAll(farm.getPantry().takeCarrot(3));
+        lunch.addAll(farm.getPantry().takeEgg(2));
+        froilanda.eat(lunch);
     }
 
     public void dinner() {
-        froilan.eat(new EarCorn(), new Tomato(), new Tomato(), new Carrot(), new Egg(), new Egg());
-        froilanda.eat(new EarCorn(), new Tomato(), new Tomato(), new Carrot(), new Egg(), new Egg());
+        List<Edible> dinner = farm.getPantry().takeCarrot(1);
+        dinner.addAll(farm.getPantry().takeEarCorn(1));
+        dinner.addAll(farm.getPantry().takeTomato(2));
+        dinner.addAll(farm.getPantry().takeEgg(2));
+        froilan.eat(dinner);
+        dinner = farm.getPantry().takeCarrot(1);
+        dinner.addAll(farm.getPantry().takeEarCorn(1));
+        dinner.addAll(farm.getPantry().takeTomato(2));
+        dinner.addAll(farm.getPantry().takeEgg(2));
+        froilanda.eat(dinner);
     }
 }

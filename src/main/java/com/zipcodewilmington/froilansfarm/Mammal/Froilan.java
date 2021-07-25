@@ -5,12 +5,12 @@ import com.zipcodewilmington.froilansfarm.Field;
 import com.zipcodewilmington.froilansfarm.Food.*;
 
 public class Froilan extends Farmer implements Botanist {
+    private static final Froilan froilan = new Froilan();
 
-    String name;
+    public static Froilan getInstance() { return froilan; }
 
-    public Froilan(String name) { super(name); }
+    public Froilan() { super("Froilan"); }
 
-    public Froilan() { name = "Froilan"; }
 
     public void plant(Crop crop, CropRow cropRow) {
         cropRow.plantCrop(crop);

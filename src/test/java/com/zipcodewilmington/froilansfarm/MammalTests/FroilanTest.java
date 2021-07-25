@@ -20,7 +20,7 @@ public class FroilanTest {
         //given
         String expected = "Froilan";
         //when
-        Froilan froilan = new Froilan(expected);
+        Froilan froilan = Froilan.getInstance();
         String actual = froilan.getName();
         //then
         Assert.assertEquals(expected, actual);
@@ -29,8 +29,8 @@ public class FroilanTest {
     @Test
     public void testSetName() {
         //given
-        String expected = "Froiland";
-        Froilan froilan = new Froilan(expected);
+        String expected = "Froilan";
+        Froilan froilan = Froilan.getInstance();
         //when
         String actual = froilan.getName();
         //then
@@ -42,7 +42,7 @@ public class FroilanTest {
         //given
         TomatoPlant tomatoPlant = new TomatoPlant(0);
         CropRow cropRow = new CropRow();
-        Froilan farmer = new Froilan();
+        Froilan farmer = Froilan.getInstance();
         //when
         farmer.plant(tomatoPlant, cropRow);
         //then
@@ -54,7 +54,7 @@ public class FroilanTest {
         //given
         String expected = "Howdy";
         //when
-        Froilan froilan = new Froilan();
+        Froilan froilan = Froilan.getInstance();
         String actual = froilan.makeNoise();
         //then
         Assert.assertEquals(expected, actual);
@@ -66,7 +66,7 @@ public class FroilanTest {
         Horse horse = new Horse();
         Rideable expected = horse;
         //when
-        Froilan froilan = new Froilan();
+        Froilan froilan = Froilan.getInstance();
         froilan.mount(horse);
         Rideable actual = froilan.getIsRiding();
         //then
@@ -78,7 +78,7 @@ public class FroilanTest {
         //given
         Horse horse = new Horse();
         //when
-        Froilan froilan = new Froilan();
+        Froilan froilan = Froilan.getInstance();
         froilan.mount(horse);
         froilan.dismount(horse);
         //then
@@ -88,7 +88,7 @@ public class FroilanTest {
     @Test
     public void testEat() {
         //given
-        Froilan froilan = new Froilan();
+        Froilan froilan = Froilan.getInstance();
         //when
         Tomato tomato = new Tomato();
         froilan.eat(tomato);
@@ -99,13 +99,13 @@ public class FroilanTest {
 
     @Test
     public void testInheritance() {
-        Froilan froilan = new Froilan();
+        Froilan froilan = Froilan.getInstance();
         Assert.assertTrue(froilan instanceof Farmer);
     }
 
     @Test
     public void testImplementationBotanist() {
-        Froilan froilan = new Froilan("Joe");
+        Froilan froilan = Froilan.getInstance();
         Assert.assertTrue(froilan instanceof Botanist);
     }
 

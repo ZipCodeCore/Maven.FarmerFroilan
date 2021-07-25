@@ -13,9 +13,9 @@ import java.util.List;
 
 public class Farmer extends Person implements Rider, Eater, Botanist {
     CropRow cropRow = new CropRow();
-    Integer numberOfRidesTaken;
-    Integer numberOfCropsPlanted;
-    Integer numberOfEdiblesEaten;
+    int numberOfRidesTaken;
+    int numberOfCropsPlanted;
+    int numberOfEdiblesEaten;
     // List<Edible> thingsEaten;
     String name = "Froilan";
     Rideable vehicle;
@@ -68,16 +68,18 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
 
     public void plant(Crop Object) {
         cropRow.addCrop(Object);
-        this.numberOfCropsPlanted = 0;
-        numberOfCropsPlanted++;
+       numberOfCropsPlanted++;
+
     }
 
     public Integer getNumberOfCropsPlanted() {
-        return numberOfCropsPlanted;
+        return cropRow.getCropRow().size();
     }
 
+    @Deprecated
     public void setNumberOfPlants(Integer num) {
-        this.numberOfCropsPlanted = num;
+
+        throw new RuntimeException("Deprecated");
     }
 
     public void setName(String name) {

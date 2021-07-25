@@ -5,30 +5,11 @@ import com.zipcodewilmington.froilansfarm.crops.CropRow;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Field implements StorageInterface {
-
-    List<CropRow> listOfCropRow;
-
-    public Field () {
-        this.listOfCropRow = new ArrayList<>();
-    }
+public class Field implements StorageInterface <CropRow> {
+    private List<CropRow> list = new ArrayList<>();
 
     @Override
-    public void add(Object thingYouAreStoring) {
-        listOfCropRow.add((CropRow) thingYouAreStoring);
-    }
-
-    @Override
-    public void remove(Object thingYouAreStoring) {
-        listOfCropRow.remove(thingYouAreStoring);
-    }
-
-    @Override
-    public int amount(Object thingYouAreStoring) {
-        return listOfCropRow.size();
-    }
-
-    public List<CropRow> getListOfCropRow() {
-        return listOfCropRow;
+    public List<CropRow> getList() {
+        return list;
     }
 }

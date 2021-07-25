@@ -23,7 +23,7 @@ public class FieldTest {
 
         field.add(cr);
         field.add(cr2);
-        Integer actual = field.getListOfCropRow().size();
+        Integer actual = field.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -38,7 +38,7 @@ public class FieldTest {
         field.add(cr);
         field.add(cr2);
         field.remove(cr);
-        Integer actual = field.getListOfCropRow().size();
+        Integer actual = field.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -53,7 +53,7 @@ public class FieldTest {
         field.add(cr);
         field.add(cr2);
         field.remove(cr);
-        Integer actual = field.getListOfCropRow().size();
+        Integer actual = field.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -63,7 +63,7 @@ public class FieldTest {
         Field field = new Field();
         Integer expected = 0;
 
-        Integer actual = field.getListOfCropRow().size();
+        Integer actual = field.getSize();
 
         Assert.assertEquals(expected, actual);
     }

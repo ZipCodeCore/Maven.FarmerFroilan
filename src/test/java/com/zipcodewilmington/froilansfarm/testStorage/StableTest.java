@@ -32,7 +32,7 @@ public class StableTest {
 
         stable.add(horse);
         stable.add(horse1);
-        Integer actual = stable.getListOfHorses().size();
+        Integer actual = stable.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -47,7 +47,7 @@ public class StableTest {
         stable.add(horse);
         stable.add(horse1);
         stable.remove(horse);
-        Integer actual = stable.getListOfHorses().size();
+        Integer actual = stable.getSize();
 
         Assert.assertEquals(expected, actual);
     }
@@ -62,7 +62,7 @@ public class StableTest {
         stable.add(horse);
         stable.add(horse1);
         stable.remove(horse);
-        Integer actual = stable.getListOfHorses().size();
+        Integer actual = stable.getSize();
 
         Assert.assertEquals(expected, actual);
     }

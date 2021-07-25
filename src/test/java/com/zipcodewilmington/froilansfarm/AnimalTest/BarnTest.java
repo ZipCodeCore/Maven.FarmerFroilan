@@ -2,7 +2,6 @@ package com.zipcodewilmington.froilansfarm.AnimalTest;
 
 import com.zipcodewilmington.froilansfarm.Animal.Animal;
 import com.zipcodewilmington.froilansfarm.Animal.Barn;
-import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.storage.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.storage.Stable;
@@ -26,7 +25,7 @@ public class BarnTest {
         animals.add((T) "chick");
         Integer expected = 3;
         barn.setAnimals(animals);
-        Assert.assertEquals(expected, barn.numberOfAnimals(animals));
+        Assert.assertEquals(expected, barn.getSize());
     }
 
     @Test
@@ -36,7 +35,7 @@ public class BarnTest {
         animals.add("chicken");
         barn.setAnimals(animals);
         //animals.toArray();
-        Assert.assertEquals("chicken", barn.getAnimals().get(0));
+        Assert.assertEquals("chicken", barn.getList().get(0));
 
     }
 
@@ -52,9 +51,9 @@ public class BarnTest {
 
         barn.setAnimals(animals);
 
-        barn.getAnimals().remove(horse);
+        barn.getList().remove(horse);
 
-        Assert.assertEquals(1, barn.getAnimals().size());
+        Assert.assertEquals(1, barn.getList().size());
     }
 
     @Test
@@ -65,7 +64,7 @@ public class BarnTest {
         animals.add("horse");
         barn.setAnimals(animals);
 
-        Assert.assertEquals("chicken", barn.getAnimals().get(0));
+        Assert.assertEquals("chicken", barn.getList().get(0));
     }
 
     @Test
@@ -76,6 +75,6 @@ public class BarnTest {
         animals.add("horse");
         barn.setAnimals(animals);
 
-        Assert.assertEquals("horse", barn.getAnimals().get(1));
+        Assert.assertEquals("horse", barn.getList().get(1));
     }
 }

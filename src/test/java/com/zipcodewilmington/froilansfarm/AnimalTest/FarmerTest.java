@@ -31,7 +31,7 @@ public class FarmerTest {
         Crop crop = new CornPlant();
         Integer expected = 1;
 //        cropRow.addCrop(crop);
-        farmer.plant(crop);
+        farmer.plant(cropRow, crop);
         Assert.assertEquals(expected, farmer.getNumberOfCropsPlanted());
 
     }

@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
+
 import com.zipcodewilmington.froilansfarm.Food.*;
 import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
 import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
@@ -10,7 +10,7 @@ import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicles.Tractor;
-import org.graalvm.compiler.hotspot.replacements.InstanceOfSnippets;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;

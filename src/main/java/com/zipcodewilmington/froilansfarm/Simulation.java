@@ -19,16 +19,17 @@ public class Simulation implements Runnable {
     }
 
     public void run() {
+    Weekdays weekdays = new Weekdays(new Farm());
+    weekdays.tuesday();
+    weekdays.wednesday();
+    weekdays.thursday();
+    weekdays.friday();
+    weekdays.saturday();
+    weekdays.sunday();
+    weekdays.monday();
 
-        Farm farm = new Farm();
-        CropDuster cropDuster = new CropDuster();
-
-        Froilanda msFroid = Froilanda.getInstance();
-
-        msFroid.mount(cropDuster);
-
-        msFroid.fly(farm);
-
+        System.out.println("some stuff");
     }
 }
+
 

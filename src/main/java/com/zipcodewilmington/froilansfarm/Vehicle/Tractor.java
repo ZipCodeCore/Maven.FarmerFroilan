@@ -40,7 +40,7 @@ public class Tractor extends FarmVehicle {
     }
 
     public boolean needsToBeHarvested(CropRow cropRow) {
-        for (Crop crop : cropRow.getCropRow()) {
+        for (Crop crop : cropRow.getList()) {
             if (crop.hasBeenHarvested() == false) {
                 return true;
             }

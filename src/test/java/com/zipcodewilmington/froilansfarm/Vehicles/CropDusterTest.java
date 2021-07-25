@@ -99,7 +99,7 @@ public class CropDusterTest {
         CropRow cropRow = new CropRow();
         Boolean expected = true;
         crop.hasBeenFertilized();
-        cropRow.addCrop(crop);
+        cropRow.add(crop);
 
         Boolean actual = cd.needsToBeFertilized(cropRow);
 

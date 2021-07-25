@@ -65,7 +65,7 @@ public class Farmer extends Person implements Rider, Eater, Botanist {
     }
 
     public void plant(CropRow cropRow, Crop crop) {
-        cropRow.addCrop(crop);
+        cropRow.add(crop);
        incrementNumberOfPlants();
 
     }

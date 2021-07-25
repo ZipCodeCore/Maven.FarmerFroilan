@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Structure;
 
+import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
 import com.zipcodewilmington.froilansfarm.Mammal.Person;
 import com.zipcodewilmington.froilansfarm.Shelter;
 
@@ -31,5 +32,10 @@ public class FarmHouse implements Shelter<Person> {
 
     public List<Person> getPersonList() {
         return personList;
+    }
+
+    public Person getFroi(){
+        Froilan froi = (Froilan) getObjectByName("Froilan");
+        return froi;
     }
 }

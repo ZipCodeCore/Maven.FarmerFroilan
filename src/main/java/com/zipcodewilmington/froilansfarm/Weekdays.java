@@ -2,10 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 
 import com.zipcodewilmington.froilansfarm.Food.*;
-import com.zipcodewilmington.froilansfarm.Mammal.Chicken;
-import com.zipcodewilmington.froilansfarm.Mammal.Froilan;
-import com.zipcodewilmington.froilansfarm.Mammal.Froilanda;
-import com.zipcodewilmington.froilansfarm.Mammal.Horse;
+import com.zipcodewilmington.froilansfarm.Mammal.*;
 import com.zipcodewilmington.froilansfarm.Structure.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Structure.Stable;
 import com.zipcodewilmington.froilansfarm.Vehicles.CropDuster;
@@ -17,22 +14,25 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Weekdays {
+    private Farm farm;
 
-    Farm farm = new Farm();
+    public Weekdays(Farm farm){
+        this.farm = farm;
+    }
 
-    Froilan froilan = new Froilan();
+    Froilan froilan = (Froilan) farm.getFarmhouse().getObjectByName("Froilan");
     Froilanda froilanda = Froilanda.getInstance();
 
-    Stable stable = new Stable();
-    ChickenCoop chickenCoop = new ChickenCoop();
+    List<Shelter<Horse>> stables = farm.getStables();
+    List<Shelter<Chicken>> chickenCoops = farm.getChickenCoops();
 
     EarCorn earCorn = new EarCorn();
     CornStalk cornStalk = new CornStalk();
     TomatoPlant tomatoPlant = new TomatoPlant();
     CropRow cropRow = new CropRow();
 
-    CropDuster cropDuster = new CropDuster();
-    Tractor tractor = new Tractor();
+    CropDuster cropDuster = farm.getCropDuster();
+    Tractor tractor = farm.getTractor();
 
     public void sunday() {
         List<CropRow> cropRows = farm.getField().getMyField();
@@ -89,15 +89,20 @@ public class Weekdays {
     }
 
     public void morningRoutine(Farm farm) {
-        for(Horse horse : stable.getHorseList()) {
-            froilan.mount(horse);
-            horse.ride(froilan);
+        for (int i = 0; i < stables.size(); i++) {
+            Stable stable = (Stable) stables.get(i);
+            for (Horse horse : stable.getHorseList()) {
+                horse.eat(new EarCorn(), new EarCorn(), new EarCorn());
+                froilan.mount(horse);
+                horse.ride(froilan);
+            }
         }
-        for(Horse horse : stable.getHorseList()) {
-            horse.eat(new EarCorn(), new EarCorn(), new EarCorn());
+
+        for(int i = 0; i < chickenCoops.size(); i++) {
+            ChickenCoop coop = (ChickenCoop) chickenCoops.get(i);
+            List<Edible> x = farm.getPantry().takeEarCorn(1);
+            coop.getChickenList().forEach(chicken -> chicken.eat((EarCorn) x));
         }
-        List<Edible> x = farm.getPantry().takeEarCorn(1);
-        chickenCoop.getChickenList().forEach(chicken -> chicken.eat((EarCorn) x));
 
 
         List<Edible> breakFast = farm.getPantry().takeEarCorn(1);

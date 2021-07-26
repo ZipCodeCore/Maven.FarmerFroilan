@@ -30,13 +30,15 @@ public abstract class Crop <someType extends Edible> implements Produce <someTyp
         this.hasBeenFertilized = hasBeenFertilized;
     }
 
-    public someType getEdible() {
-        return null;
+    public someType getEdible(someType crop) {
+        return crop;
     }
 
-    public someType yield() {
-        if(hasBeenFertilized() && hasBeenHarvested()) {
-            return getEdible();
+    public someType yield(someType... crops) {
+        for (someType crop : crops) {
+            if (hasBeenFertilized() && hasBeenHarvested()) {
+                return getEdible(crop);
+            }
         }
         return null;
     }

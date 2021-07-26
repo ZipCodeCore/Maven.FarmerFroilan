@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Egg implements Edible{
+
+        private boolean hasBeenFertilized = false;
+
         public boolean IsEdible() {
                 return true;
         }
@@ -17,9 +20,16 @@ public class Egg implements Edible{
                 return list;
         }
 
-
         public boolean isInedibleEgg() {
                 return false;
+        }
+
+        public boolean getHasBeenFertilized() {
+                return hasBeenFertilized;
+        }
+
+        public void setHasBeenFertilized(boolean hasBeenFertilized) {
+                this.hasBeenFertilized = hasBeenFertilized;
         }
 
 }

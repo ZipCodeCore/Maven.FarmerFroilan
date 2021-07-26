@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.crops.*;
 
 import java.util.*;
 
-public class FarmStorage {
+public class FarmStorage <SomeEdible extends Edible> {
 
     private static FarmStorage farmStorage;
 
@@ -54,5 +54,15 @@ public class FarmStorage {
 
     public Map<Class<? extends Edible>, List<? extends Edible>> getMap() {
         return map;
+    }
+
+    public SomeEdible getFoodItem(SomeEdible someEdible) {
+        List<? extends Edible> edibleList = map.get(someEdible.getClass());
+        return (SomeEdible)edibleList.get(0);
+//        switch (nameOfFood) {
+//            case "tomato":
+//                List<? extends Edible> list = map.get(new Tomato().getClass());
+//                return (SomeEdible)list.get(0);
+//        }
     }
 }

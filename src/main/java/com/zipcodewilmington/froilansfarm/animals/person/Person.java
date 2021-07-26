@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.animals.person;
 
 import com.zipcodewilmington.froilansfarm.animals.Animal;
 import com.zipcodewilmington.froilansfarm.crops.Edible;
+import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 
 public class Person extends Animal {
 
@@ -25,11 +26,5 @@ public class Person extends Animal {
 
     public String getName() {
         return name;
-    }
-
-
-    @Override
-    public <SomeTypeBoolean eat(Edible food) {
-        return null;
     }
 }

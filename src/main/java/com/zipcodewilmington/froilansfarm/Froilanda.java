@@ -3,14 +3,13 @@ package com.zipcodewilmington.froilansfarm;
 import com.zipcodewilmington.froilansfarm.animals.person.Person;
 import com.zipcodewilmington.froilansfarm.animals.person.Pilot;
 import com.zipcodewilmington.froilansfarm.crops.Edible;
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 
 public class Froilanda extends Person implements Pilot {
-    public void fly() {
 
-    }
+    Farm farm = FroilansFarm.getInstance();
 
-    public Boolean eat(Edible food) {
-
-        return null;
+    public Farm getFarm() {
+        return farm;
     }
 }

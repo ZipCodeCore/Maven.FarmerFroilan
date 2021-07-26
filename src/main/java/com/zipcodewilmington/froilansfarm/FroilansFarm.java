@@ -44,7 +44,10 @@ public class FroilansFarm {
                         new ChickenCoop(new Chicken(), new Chicken(), new Chicken(), new Chicken()),
                         new ChickenCoop(new Chicken(), new Chicken(), new Chicken(), new Chicken()),
                         new ChickenCoop(new Chicken(), new Chicken(), new Chicken()))
-                .setVehicles(new Tractor(5), new CropDuster())
+                .setTractors(
+                        new Tractor(5))
+                .setCropDusters(
+                        new CropDuster())
                 .build();
         return farm;
     }

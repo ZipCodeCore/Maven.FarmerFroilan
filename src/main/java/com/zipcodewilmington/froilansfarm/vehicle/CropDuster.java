@@ -21,10 +21,4 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
     public String makeNoise() {
         return "Buzzzzz!";
     }
-
-
-    @Override
-    public boolean fly() {
-        return false;
-    }
 }

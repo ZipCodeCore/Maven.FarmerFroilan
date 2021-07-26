@@ -1,17 +1,7 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-public abstract class Aircraft implements FarmVehicle {
+public interface Aircraft {
 
 
-    public boolean fly(){
-        return true;
-
-
-    }
-
-
-    @Override
-    public boolean operate() {
-        return false;
-    }
+    public boolean fly();
 }

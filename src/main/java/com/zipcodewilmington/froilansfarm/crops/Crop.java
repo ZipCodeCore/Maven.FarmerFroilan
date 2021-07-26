@@ -40,6 +40,4 @@ public abstract class Crop <someType extends Edible> implements Produce <someTyp
         }
         return null;
     }
-
-
 }

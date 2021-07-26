@@ -4,12 +4,12 @@ import com.zipcodewilmington.froilansfarm.crops.*;
 
 import java.util.*;
 
-public class FarmStorage <SomeEdible extends Edible> {
+public class FarmStorage {
 
     private static FarmStorage farmStorage;
 
-    private List<SomeEdible> list = new ArrayList<>();
-    private Map<Class<SomeEdible>, List<SomeEdible>> map = constructMap();
+    private List<? extends Edible> list = new ArrayList<>();
+    private Map<Class<? extends Edible>, List<? extends Edible>> map = constructMap();
 
 
 
@@ -24,13 +24,13 @@ public class FarmStorage <SomeEdible extends Edible> {
         return farmStorage;
     }
 
-    public void add(SomeEdible foodItem) {
-        List<SomeEdible> list = map.get(foodItem.getClass());
+    public <SomeEdible extends Edible> void add(SomeEdible foodItem) {
+        List<SomeEdible> list = (List<SomeEdible>) map.get(foodItem.getClass());
         list.add(foodItem);
     }
 
-    public void remove(SomeEdible foodItem) {
-        List<SomeEdible> list = map.get(foodItem.getClass());
+    public <SomeEdible extends Edible> void remove(SomeEdible foodItem) {
+        List<SomeEdible> list = (List<SomeEdible>) map.get(foodItem.getClass());
         list.remove(foodItem);
     }
 
@@ -39,19 +39,20 @@ public class FarmStorage <SomeEdible extends Edible> {
         Potato potato = new Potato();
         Egg egg = new Egg();
         EarCorn earCorn = new EarCorn();
-        map.put((Class<SomeEdible>) tomato.getClass(), null);
-        map.put((Class<SomeEdible>) potato.getClass(), null);
-        map.put((Class<SomeEdible>) egg.getClass(), null);
-        map.put((Class<SomeEdible>) earCorn.getClass(), null);
+        map.put(tomato.getClass(), tomato.createFood(20));
+        map.put(potato.getClass(), potato.createFood(20));
+        map.put(egg.getClass(), egg.createFood(20));
+        map.put(earCorn.getClass(), earCorn.createFood(20));
     }
 
-    private Map<Class<SomeEdible>, List<SomeEdible>> constructMap() {
+
+    private Map<Class<? extends Edible>, List<? extends Edible>> constructMap() {
         map = new HashMap<>();
         populateMap();
         return map;
     }
 
-    public Map<Class<SomeEdible>, List<SomeEdible>> getMap() {
+    public Map<Class<? extends Edible>, List<? extends Edible>> getMap() {
         return map;
     }
 }

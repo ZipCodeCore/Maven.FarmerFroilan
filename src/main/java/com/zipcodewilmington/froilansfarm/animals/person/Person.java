@@ -8,22 +8,15 @@ public class Person extends Animal {
     private String name;
 
     public Person() {
-
     }
 
     public Person (String name){
-        setName(name);
+        this.name = name;
     }
-
 
     public String makeNoise() {
 
        return null;
-    }
-
-    public Boolean eat(Edible food) {
-
-        return null;
     }
 
     public void setName(String name){
@@ -35,4 +28,8 @@ public class Person extends Animal {
     }
 
 
+    @Override
+    public <SomeTypeBoolean eat(Edible food) {
+        return null;
+    }
 }

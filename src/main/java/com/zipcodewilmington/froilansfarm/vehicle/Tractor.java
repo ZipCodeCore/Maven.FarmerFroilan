@@ -3,9 +3,13 @@ package com.zipcodewilmington.froilansfarm.vehicle;
 
 import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 
-public class Tractor extends Vehicle implements FarmVehicle<Vehicle> {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tractor extends Vehicle implements FarmVehicle {
 
 
 
@@ -16,31 +20,16 @@ public class Tractor extends Vehicle implements FarmVehicle<Vehicle> {
          this.crop = crop;
      }
 
-//    public void harvest(CropRow cropRow){
-//        FarmStorage storage = FarmStorage.getInstance();
-//        storage.add(cropRow.getCrop());
-//    }
-
-//
-    public void operate (Object vehicle){
-
+    public <SomeCrop extends Crop> void harvest(CropRow cropRow){
+        List<SomeCrop> list = cropRow.getCropsInRow();
+        for (SomeCrop crop : list) {
+            crop.setHasBeenHarvested(true);
+        }
 
     }
-
 
     @Override
     public String makeNoise () {
          return null;
-    }
-
-    @Override
-    public void move () {
-
-    }
-
-
-    @Override
-    public boolean operate() {
-        return false;
     }
 }

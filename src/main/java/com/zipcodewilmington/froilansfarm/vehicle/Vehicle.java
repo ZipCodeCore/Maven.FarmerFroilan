@@ -21,4 +21,5 @@ public abstract class Vehicle implements NoiseMaker, Rideable {
     public void setIsBeingRidden(boolean isBeingRidden) {
         this.isBeingRidden = isBeingRidden;
     }
+
 }

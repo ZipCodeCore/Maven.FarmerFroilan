@@ -6,7 +6,9 @@ import java.util.*;
 
 public class FarmStorage <SomeEdible extends Edible> {
 
-    private static FarmStorage farmStorage;
+    private static class FarmStorageHelper {
+        private static final FarmStorage INSTANCE = new FarmStorage();
+    }
 
     private List<? extends Edible> list = new ArrayList<>();
     private Map<Class<? extends Edible>, List<? extends Edible>> map = constructMap();
@@ -17,11 +19,7 @@ public class FarmStorage <SomeEdible extends Edible> {
     }
 
     public static FarmStorage getInstance() {
-        if (farmStorage == null) {
-            farmStorage = new FarmStorage();
-            return farmStorage;
-        }
-        return farmStorage;
+        return FarmStorageHelper.INSTANCE;
     }
 
     public <SomeEdible extends Edible> void add(SomeEdible foodItem) {
@@ -39,10 +37,10 @@ public class FarmStorage <SomeEdible extends Edible> {
         Potato potato = new Potato();
         Egg egg = new Egg();
         EarCorn earCorn = new EarCorn();
-        map.put(tomato.getClass(), tomato.createFood(20));
-        map.put(potato.getClass(), potato.createFood(20));
-        map.put(egg.getClass(), egg.createFood(20));
-        map.put(earCorn.getClass(), earCorn.createFood(20));
+        map.put(tomato.getClass(), tomato.createFood(400));
+        map.put(potato.getClass(), potato.createFood(400));
+        map.put(egg.getClass(), egg.createFood(400));
+        map.put(earCorn.getClass(), earCorn.createFood(400));
     }
 
 
@@ -58,11 +56,11 @@ public class FarmStorage <SomeEdible extends Edible> {
 
     public SomeEdible getFoodItem(SomeEdible someEdible) {
         List<? extends Edible> edibleList = map.get(someEdible.getClass());
-        return (SomeEdible)edibleList.get(0);
-//        switch (nameOfFood) {
-//            case "tomato":
-//                List<? extends Edible> list = map.get(new Tomato().getClass());
-//                return (SomeEdible)list.get(0);
-//        }
+            return (SomeEdible) edibleList.get(0);
+    }
+
+    public Integer getNumberOfItems(SomeEdible someEdible) {
+        List<? extends Edible> edibleList = map.get(someEdible.getClass());
+        return edibleList.size();
     }
 }

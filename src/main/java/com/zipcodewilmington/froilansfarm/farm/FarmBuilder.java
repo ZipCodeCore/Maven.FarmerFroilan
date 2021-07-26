@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.farm;
 
+import com.zipcodewilmington.froilansfarm.vehicle.CropDuster;
+import com.zipcodewilmington.froilansfarm.vehicle.Tractor;
 import com.zipcodewilmington.froilansfarm.vehicle.Vehicle;
 
 import java.util.*;
@@ -11,6 +13,8 @@ public class FarmBuilder {
     private List<ChickenCoop> chickenCoops;
     private List<Field> fields;
     private List<Vehicle> vehicles;
+    private List<Tractor> tractors;
+    private List<CropDuster> cropDusters;
 
     public FarmBuilder setFarmhouses(FarmHouse farmhouses) {
         this.farmhouses = new ArrayList<>(Arrays.asList(farmhouses));
@@ -32,12 +36,17 @@ public class FarmBuilder {
         return this;
     }
 
-    public FarmBuilder setVehicles(Vehicle... vehicles) {
-        this.vehicles = new ArrayList<>(Arrays.asList(vehicles));
+    public FarmBuilder setCropDusters(CropDuster... cropDusters) {
+        this.cropDusters = new ArrayList<>(Arrays.asList(cropDusters));
+        return this;
+    }
+
+    public FarmBuilder setTractors(Tractor... tractors) {
+        this.tractors = new ArrayList<>(Arrays.asList(tractors));
         return this;
     }
 
     public Farm build() {
-        return new Farm(farmhouses, stables, chickenCoops, fields, vehicles);
+        return new Farm(farmhouses, stables, chickenCoops, fields, cropDusters, tractors);
     }
 }

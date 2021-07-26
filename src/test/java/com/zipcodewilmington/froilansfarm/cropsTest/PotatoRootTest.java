@@ -14,10 +14,10 @@ public class PotatoRootTest {
         PotatoRoot potatoRoot = new PotatoRoot(true, true);
 
         // When
-        //Potato potato = potatoRoot.getEdible();
+        Potato potato = potatoRoot.getEdible(new Potato());
 
         // Then
-        //Assert.assertNotNull(potato);
+        Assert.assertNotNull(potato);
 
     }
 }

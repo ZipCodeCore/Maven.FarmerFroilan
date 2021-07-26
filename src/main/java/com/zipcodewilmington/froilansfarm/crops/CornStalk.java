@@ -6,7 +6,8 @@ public class CornStalk extends Crop<EarCorn>{
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    public EarCorn getEdible() {
-        return new EarCorn();
+    @Override
+    public EarCorn getEdible(EarCorn crop) {
+        return super.getEdible(crop);
     }
 }

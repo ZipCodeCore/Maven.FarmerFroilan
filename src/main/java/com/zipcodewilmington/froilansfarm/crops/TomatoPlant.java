@@ -6,7 +6,9 @@ public class TomatoPlant extends Crop<Tomato>{
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    public Tomato getEdible() {
-        return new Tomato();
+    @Override
+    public Tomato getEdible(Tomato crop) {
+        return super.getEdible(crop);
     }
+
 }

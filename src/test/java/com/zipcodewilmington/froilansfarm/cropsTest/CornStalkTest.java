@@ -14,7 +14,7 @@ public class CornStalkTest {
         CornStalk cornStalk = new CornStalk(true, true);
 
         // When
-        EarCorn earCorn = cornStalk.getEdible();
+        EarCorn earCorn = cornStalk.getEdible(new EarCorn());
 
         // Then
         Assert.assertNotNull(earCorn);

@@ -14,7 +14,7 @@ public class TomatoPlantTest {
         TomatoPlant tomatoPlant = new TomatoPlant(true, true);
 
         // When
-        Tomato tomato = tomatoPlant.getEdible();
+        Tomato tomato = tomatoPlant.getEdible(new Tomato());
 
         // Then
         Assert.assertNotNull(tomato);

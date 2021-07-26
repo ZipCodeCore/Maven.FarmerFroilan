@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 
+import com.zipcodewilmington.froilansfarm.crops.Tomato;
 import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 import org.junit.Test;
 
@@ -11,8 +12,11 @@ public class MainApplicationTest {
 
     @Test
     public void test() {
-        FarmStorage farmStorage = FarmStorage.getInstance();
-        System.out.println(farmStorage.getMap().toString());
+        FarmStorage storage = FarmStorage.getInstance();
+        Froilan froilan = new Froilan();
+        System.out.println(storage.getMap().get(new Tomato().getClass()));
+        froilan.eat(storage.getFoodItem(new Tomato()));
+        System.out.println(storage.getMap().get(new Tomato().getClass()));
     }
 
 }

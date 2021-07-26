@@ -6,6 +6,8 @@ import com.zipcodewilmington.froilansfarm.crops.Edible;
 
 public class Horse extends Animal implements Rideable {
 
+    private boolean isBeingRidden = false;
+
     public String makeNoise() {
         return "neigh!";
     }
@@ -14,9 +16,13 @@ public class Horse extends Animal implements Rideable {
 
     }
 
+    @Override
+    public boolean getIsBeingRidden() {
+        return isBeingRidden;
+    }
 
-    public Boolean eat(Edible food) {
-
-        return null;
+    @Override
+    public void setIsBeingRidden(boolean isBeingRidden) {
+        this.isBeingRidden = isBeingRidden;
     }
 }

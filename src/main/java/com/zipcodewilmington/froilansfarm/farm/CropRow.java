@@ -20,6 +20,12 @@ public class CropRow <SomeCrop extends Crop> {
         }
     }
 
+    public void addCropsToRow(SomeCrop someCrop) {
+        for (int i = 0; i < 15; i++) {
+            cropsInRow.add(someCrop);
+        }
+    }
+
     public List<SomeCrop> getCropsInRow() {
         return cropsInRow;
     }

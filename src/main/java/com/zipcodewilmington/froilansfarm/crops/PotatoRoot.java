@@ -6,7 +6,8 @@ public class PotatoRoot extends Crop<Potato> {
         super(hasBeenHarvested, hasBeenFertilized);
     }
 
-    public Potato getEdible() {
-        return new Potato();
+    @Override
+    public Potato getEdible(Potato crop) {
+        return super.getEdible(crop);
     }
 }

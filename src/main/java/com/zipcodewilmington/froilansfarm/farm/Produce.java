@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.crops.Edible;
 
 public interface Produce<someType extends Edible> {
 
-    someType yield();
+    //someType yield();
 
     boolean hasBeenFertilized();
 }

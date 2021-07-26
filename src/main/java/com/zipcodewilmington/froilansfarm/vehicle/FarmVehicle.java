@@ -1,8 +1,15 @@
 package com.zipcodewilmington.froilansfarm.vehicle;
 
-public interface FarmVehicle <T extends Vehicle> {
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 
-   public boolean operate();
+public interface FarmVehicle {
+
+   default public boolean operate(Farm farm) {
+      if (farm != null) {
+         return true;
+      }
+      return false;
+   }
 
 
 }

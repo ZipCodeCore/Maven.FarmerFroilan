@@ -2,35 +2,29 @@ package com.zipcodewilmington.froilansfarm.vehicle;
 
 import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.farm.CropRow;
+import com.zipcodewilmington.froilansfarm.farm.Farm;
 
 import java.util.List;
 
-public class CropDuster extends Vehicle implements FarmVehicle {
+public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
 
 
 
-    public void fertilize(CropRow row){
-        List<Crop> crops = row.getCropsInRow();
-        for (Crop crop : crops) {
-            crop.setHasBeenFertilized(true);
-        } row.getCropsInRow();
-
-
-
-    }
-
-    @Override
-    public boolean operate() {
-        return false;
+    public <SomeCrop extends Crop> void fertilize(CropRow row){
+        List<SomeCrop> crops = row.getCropsInRow();
+        for (SomeCrop crop : crops) {
+                crop.setHasBeenFertilized(true);
+        }
     }
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Buzzzzz!";
     }
 
-    @Override
-    public void move() {
 
+    @Override
+    public boolean fly() {
+        return false;
     }
 }

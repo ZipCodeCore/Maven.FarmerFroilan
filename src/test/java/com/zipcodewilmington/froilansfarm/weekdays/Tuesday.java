@@ -4,14 +4,16 @@ import com.zipcodewilmington.froilansfarm.Froilan;
 import com.zipcodewilmington.froilansfarm.Froilanda;
 import com.zipcodewilmington.froilansfarm.FroilansFarm;
 import com.zipcodewilmington.froilansfarm.animals.Horse;
+import com.zipcodewilmington.froilansfarm.crops.Crop;
 import com.zipcodewilmington.froilansfarm.crops.EarCorn;
 import com.zipcodewilmington.froilansfarm.crops.Egg;
 import com.zipcodewilmington.froilansfarm.crops.Tomato;
-import com.zipcodewilmington.froilansfarm.farm.Farm;
-import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
-import com.zipcodewilmington.froilansfarm.farm.Stable;
+import com.zipcodewilmington.froilansfarm.farm.*;
+import com.zipcodewilmington.froilansfarm.vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
 
 public class Tuesday {
 
@@ -19,6 +21,10 @@ public class Tuesday {
     Farm farm = FroilansFarm.getInstance();
     Froilan froilan = new Froilan();
     Froilanda froilanda = new Froilanda();
+    Field field = farm.getFields().get(0);
+    CropRow firstRow = field.getRowsInField().get(0); CropRow secondRow = field.getRowsInField().get(1);
+    CropRow thirdRow = field.getRowsInField().get(2); CropRow fourthRow = field.getRowsInField().get(3);
+    CropRow fifthRow = field.getRowsInField().get(4);
 
     @Test
     public void rideEachHorse() {
@@ -85,5 +91,27 @@ public class Tuesday {
         Assert.assertEquals(expectedNumberOfCorn,actualNumberOfCorn);
         Assert.assertEquals(expectedNumberOfTomato,actualNumberOfTomato);
         Assert.assertEquals(expectedNumberOfEgg,actualNumberOfEgg);
+    }
+
+    @Test
+    public void froilanHarvestsCropsWithTractor() {
+        // Given
+        boolean expectedHarvestedStatusOfCrops = true;
+
+        // When
+
+        Tractor tractor = farm.getTractors().get(0);
+        froilan.mount(tractor);
+        tractor.harvest(firstRow); tractor.harvest(secondRow); tractor.harvest(thirdRow);
+        tractor.harvest(fourthRow); tractor.harvest(fifthRow);
+        froilan.dismount(tractor);
+
+        // Then
+        for (CropRow eachCropRow : field.getRowsInField()) {
+            for (Object eachCrop : eachCropRow.getCropsInRow()) {
+                Crop crop = (Crop)eachCrop;
+                Assert.assertEquals(expectedHarvestedStatusOfCrops, crop.hasBeenHarvested());
+            }
+        }
     }
 }

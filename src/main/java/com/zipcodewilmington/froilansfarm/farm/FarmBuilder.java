@@ -12,7 +12,6 @@ public class FarmBuilder {
     private List<Stable> stables;
     private List<ChickenCoop> chickenCoops;
     private List<Field> fields;
-    private List<Vehicle> vehicles;
     private List<Tractor> tractors;
     private List<CropDuster> cropDusters;
 

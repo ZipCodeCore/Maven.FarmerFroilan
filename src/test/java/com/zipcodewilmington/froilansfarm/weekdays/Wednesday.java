@@ -4,12 +4,12 @@ import com.zipcodewilmington.froilansfarm.Froilan;
 import com.zipcodewilmington.froilansfarm.Froilanda;
 import com.zipcodewilmington.froilansfarm.FroilansFarm;
 import com.zipcodewilmington.froilansfarm.animals.Horse;
-import com.zipcodewilmington.froilansfarm.crops.EarCorn;
-import com.zipcodewilmington.froilansfarm.crops.Egg;
-import com.zipcodewilmington.froilansfarm.crops.Tomato;
+import com.zipcodewilmington.froilansfarm.crops.*;
+import com.zipcodewilmington.froilansfarm.farm.CropRow;
 import com.zipcodewilmington.froilansfarm.farm.Farm;
 import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
 import com.zipcodewilmington.froilansfarm.farm.Stable;
+import com.zipcodewilmington.froilansfarm.vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,6 +19,9 @@ public class Wednesday {
     Farm farm = FroilansFarm.getInstance();
     Froilan froilan = new Froilan();
     Froilanda froilanda = new Froilanda();
+    Potato[] potatoesToStore = new Potato[]{new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato(), new Potato()};
+    Tomato[] tomatoesToStore = new Tomato[]{new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato(), new Tomato()};
+    EarCorn[] cornToStore = new EarCorn[]{new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn()};
 
     @Test
     public void rideEachHorse() {
@@ -85,5 +88,22 @@ public class Wednesday {
         Assert.assertEquals(expectedNumberOfCorn,actualNumberOfCorn);
         Assert.assertEquals(expectedNumberOfTomato,actualNumberOfTomato);
         Assert.assertEquals(expectedNumberOfEgg,actualNumberOfEgg);
+    }
+
+    @Test
+    public void froilanStoresCropsInStorage() {
+        // Given
+        int numberOfCropsInStorage = storage.getNumberOfItems(new EarCorn()) + storage.getNumberOfItems(new Tomato()) + storage.getNumberOfItems(new Potato());
+        int numberOfCropsToStore = potatoesToStore.length + tomatoesToStore.length + cornToStore.length;
+        int expectedNumberOfCropsInStorage = numberOfCropsInStorage + numberOfCropsToStore;
+
+        // When
+        froilan.storeCrop(tomatoesToStore);
+        froilan.storeCrop(potatoesToStore);
+        froilan.storeCrop(cornToStore);
+        int actualNumberOfCropsInStorage = storage.getNumberOfItems(new EarCorn()) + storage.getNumberOfItems(new Tomato()) + storage.getNumberOfItems(new Potato());
+
+        // Then
+        Assert.assertEquals(expectedNumberOfCropsInStorage, actualNumberOfCropsInStorage);
     }
 }

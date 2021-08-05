@@ -7,11 +7,13 @@ import com.zipcodewilmington.froilansfarm.animals.Horse;
 import com.zipcodewilmington.froilansfarm.crops.EarCorn;
 import com.zipcodewilmington.froilansfarm.crops.Egg;
 import com.zipcodewilmington.froilansfarm.crops.Tomato;
-import com.zipcodewilmington.froilansfarm.farm.Farm;
-import com.zipcodewilmington.froilansfarm.farm.FarmStorage;
-import com.zipcodewilmington.froilansfarm.farm.Stable;
+import com.zipcodewilmington.froilansfarm.crops.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.farm.*;
+import com.zipcodewilmington.froilansfarm.vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
 
 public class Sunday {
 
@@ -85,5 +87,29 @@ public class Sunday {
         Assert.assertEquals(expectedNumberOfCorn,actualNumberOfCorn);
         Assert.assertEquals(expectedNumberOfTomato,actualNumberOfTomato);
         Assert.assertEquals(expectedNumberOfEgg,actualNumberOfEgg);
+    }
+
+    @Test
+    public void froilanPlantCrops() {
+        // Given
+        Field cropField = farm.getFields().get(0);
+        List<CropRow> cropRows = cropField.getRowsInField();
+        int originalNumberOfCrops = cropRows.stream().mapToInt(CropRow::getNumberOfCropsInRow).sum();
+        boolean hasNotBeenHarvested = false;
+        boolean hasNotBeenFertilized = false;
+        int numberOfCropsPlantedInEachRow = 15;
+        int numberOfRows = cropRows.size();
+        int expectedNumberOfCrops = originalNumberOfCrops + (numberOfCropsPlantedInEachRow * numberOfRows);
+
+        // When
+        froilan.plant(new TomatoPlant(hasNotBeenHarvested, hasNotBeenFertilized), cropRows.get(0));
+        froilan.plant(new TomatoPlant(hasNotBeenHarvested, hasNotBeenFertilized), cropRows.get(1));
+        froilan.plant(new TomatoPlant(hasNotBeenHarvested, hasNotBeenFertilized), cropRows.get(2));
+        froilan.plant(new TomatoPlant(hasNotBeenHarvested, hasNotBeenFertilized), cropRows.get(3));
+        froilan.plant(new TomatoPlant(hasNotBeenHarvested, hasNotBeenFertilized), cropRows.get(4));
+        int actualNumberOfCrops = cropRows.stream().mapToInt(CropRow::getNumberOfCropsInRow).sum();
+
+        // Then
+        Assert.assertEquals(expectedNumberOfCrops, actualNumberOfCrops);
     }
 }

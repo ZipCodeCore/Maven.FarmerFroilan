@@ -11,4 +11,6 @@ public class EdibleEgg implements Edible {
     public void eat(EdibleEgg egg) {
 
     }
+
+
 }

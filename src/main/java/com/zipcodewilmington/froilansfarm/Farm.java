@@ -1,9 +1,5 @@
 package com.zipcodewilmington.froilansfarm;
 
-public interface Ridable {
-
-
-
-
+public class Farm {
 
 }

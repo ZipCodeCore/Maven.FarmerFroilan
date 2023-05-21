@@ -8,9 +8,11 @@ public class Cornstalk extends Crop {
     @Override
     public Edible yield() {
         if(isFertilized() && !isHarvested()) {
+            this.harvest();
             return new Corn();
         }
         else {
+            this.harvest();
             return null;
         }
     }

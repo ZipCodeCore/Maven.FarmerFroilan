@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.animals;
 
-import com.zipcodewilmington.froilansfarm.EdibleEgg;
+import com.zipcodewilmington.froilansfarm.food.Corn;
 import org.junit.jupiter.api.Test;
 
 class HorseTest {
@@ -12,7 +12,7 @@ class HorseTest {
         Horse horse = new Horse();
 
         // WHEN
-        horse.eat(new EdibleEgg());
+        horse.eat(new Corn());
 
         // THEN
         // ????

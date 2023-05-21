@@ -9,7 +9,6 @@ public class Stable {
 
     private List<Horse> horses = new ArrayList<>();
 
-    //additional add horse method
     public void addHorse(Horse horse) {
         horses.add(horse);
     }

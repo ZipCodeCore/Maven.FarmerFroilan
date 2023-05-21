@@ -1,10 +1,10 @@
 package com.zipcodewilmington.froilansfarm.interfaces;
 
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.plants.Crop;
 
 public interface Botanist {
 
-    //TODO
-    void plant(/*CropRow cropRow, */Crop crop);
+    void plant(CropRow cropRow, Crop crop);
 
 }

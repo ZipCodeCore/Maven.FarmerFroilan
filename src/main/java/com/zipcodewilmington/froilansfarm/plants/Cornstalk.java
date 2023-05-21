@@ -1,12 +1,13 @@
 package com.zipcodewilmington.froilansfarm.plants;
 
 import com.zipcodewilmington.froilansfarm.food.Corn;
-import com.zipcodewilmington.froilansfarm.interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.food.EdibleEgg;
+
 
 public class Cornstalk extends Crop {
 
     @Override
-    public Edible yield() {
+    public EdibleEgg yield() {
         if(isFertilized() && !isHarvested()) {
             this.harvest();
             return new Corn();

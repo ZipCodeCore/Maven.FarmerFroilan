@@ -1,7 +1,9 @@
 package com.zipcodewilmington.froilansfarm.interfaces;
 
+import com.zipcodewilmington.froilansfarm.food.EdibleEgg;
+
 public interface Produce {
 
-    Edible yield();
+    EdibleEgg yield();
 
 }

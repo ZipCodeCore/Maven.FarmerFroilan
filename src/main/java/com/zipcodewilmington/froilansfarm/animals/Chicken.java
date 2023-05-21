@@ -6,10 +6,14 @@ import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
 public class Chicken extends Animal implements Produce {
 
+    private String chickenPeck ="peck peck";
+    private String chickenBuck ="buck buck buckawk";
     public boolean hasBeenFertilized;
 
+
+
     @Override
-    public Edible yield() {
+    public EdibleEgg yield() {
         if(hasBeenFertilized) {
             return new EdibleEgg();
         } else {
@@ -19,15 +23,15 @@ public class Chicken extends Animal implements Produce {
 
     @Override
     public String eat(Edible edible) {
-        System.out.println("peck peck");
-        return null;
+        System.out.println(chickenPeck);
+        return chickenPeck;
     }
 
 
     @Override
     public String makeNoise() {
-        System.out.println("buck buck buckawk");
-        return null;
+        System.out.println(chickenBuck);
+        return chickenBuck;
     }
 
 }

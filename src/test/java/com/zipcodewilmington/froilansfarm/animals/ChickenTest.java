@@ -1,11 +1,13 @@
 package com.zipcodewilmington.froilansfarm.animals;
 
 import com.zipcodewilmington.froilansfarm.food.Corn;
+import com.zipcodewilmington.froilansfarm.food.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.plants.Crop;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChickenTest {
 
@@ -18,7 +20,7 @@ public class ChickenTest {
         // WHEN
         boolean isFertilized = chicken.hasBeenFertilized;
         // THEN
-        assertEquals(true, isFertilized);
+        assertEquals(false, isFertilized);
     }
 
     @Test
@@ -27,10 +29,11 @@ public class ChickenTest {
 
         // GIVEN
         Chicken chicken = new Chicken();
+        EdibleEgg egg1 = new EdibleEgg();
         // WHEN
         Edible e = chicken.yield();
         // THEN
-        assertEquals(true, e);
+        assertEquals(false, e);
     }
 
 

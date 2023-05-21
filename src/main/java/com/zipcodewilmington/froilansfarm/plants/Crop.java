@@ -20,11 +20,4 @@ public abstract class Crop implements Produce {
         this.hasBeenHarvested = true;
     }
 
-    @Override
-    public void yield(Edible edible) {
-
-        this.hasBeenHarvested = true;
-        EdibleEgg egg = new EdibleEgg();
-        edible.eat(egg);
-    }
 }

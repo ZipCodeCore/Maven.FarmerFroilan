@@ -6,8 +6,9 @@ import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
 public class Vehicle implements Rideable, NoiseMaker {
 
     @Override
-    public void makeNoise(){
+    public String makeNoise(){
     System.out.println("Vroom Vroom");
+        return null;
     }
 
 }

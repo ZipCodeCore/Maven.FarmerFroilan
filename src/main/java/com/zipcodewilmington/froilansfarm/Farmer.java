@@ -18,8 +18,9 @@ public class Farmer extends Person implements Botanist, Rider {
     }
 
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
         System.out.println("howdy");
+        return null;
     }
 
     @Override
@@ -31,8 +32,9 @@ public class Farmer extends Person implements Botanist, Rider {
     }
 
     @Override
-    public void eat(Edible edible) {
+    public String eat(Edible edible) {
         System.out.println("yum yum");
+        return null;
     }
 
 }

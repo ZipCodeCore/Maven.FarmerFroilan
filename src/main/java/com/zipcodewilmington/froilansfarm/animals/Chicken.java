@@ -18,13 +18,16 @@ public class Chicken extends Animal implements Produce {
     }
 
     @Override
-    public void eat(Edible edible) {
+    public String eat(Edible edible) {
         System.out.println("peck peck");
+        return null;
     }
 
+
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
         System.out.println("buck buck buckawk");
+        return null;
     }
 
 }

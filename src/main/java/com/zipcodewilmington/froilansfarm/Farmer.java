@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
+import com.zipcodewilmington.froilansfarm.animals.Horse;
+import com.zipcodewilmington.froilansfarm.food.Corn;
 import com.zipcodewilmington.froilansfarm.interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.interfaces.Rideable;
@@ -8,6 +10,10 @@ import com.zipcodewilmington.froilansfarm.plants.Crop;
 
 public class Farmer extends Person implements Botanist, Rider {
 
+    private int cornCount;
+    private int tomatoCount;
+
+    private int eggCount;
     public Farmer(String name) {
         super(name);
     }
@@ -37,4 +43,21 @@ public class Farmer extends Person implements Botanist, Rider {
         return null;
     }
 
+    public void feedHorse(Horse horse, Corn corn) {
+        for (int i = 0; i < 3; i++){
+            horse.eat(corn);
+        }
+    }
+
+    public int getCornCount() {
+        return cornCount;
+    }
+
+    public int getTomatoCount() {
+        return tomatoCount;
+    }
+
+    public int getEggCount() {
+        return eggCount;
+    }
 }

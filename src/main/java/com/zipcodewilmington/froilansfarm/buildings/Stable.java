@@ -9,8 +9,9 @@ public class Stable {
 
     private List<Horse> horses = new ArrayList<>();
 
-    public void addHorse(Horse horse) {
+    public boolean addHorse(Horse horse) {
         horses.add(horse);
+        return true;
     }
 
 }

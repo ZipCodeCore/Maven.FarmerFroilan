@@ -20,7 +20,6 @@ public abstract class Crop implements Produce {
         this.hasBeenHarvested = true;
     }
 
-<<<<<<< HEAD:src/main/java/Farm/Crop.java
     @Override
     public void yield(Edible edible) {
 
@@ -28,7 +27,4 @@ public abstract class Crop implements Produce {
         EdibleEgg egg = new EdibleEgg();
         edible.eat(egg);
     }
-
-=======
->>>>>>> 89fef60c05d52d32c7b0308f0d45a4a6d9f1d060:src/main/java/com/zipcodewilmington/froilansfarm/plants/Crop.java
 }

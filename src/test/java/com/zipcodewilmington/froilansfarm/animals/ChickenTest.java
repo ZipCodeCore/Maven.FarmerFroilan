@@ -60,5 +60,6 @@ public class ChickenTest {
 
         // THEN
         assertEquals("buck buck buckawk", noise);
+
     }
 }

@@ -14,17 +14,17 @@ import java.util.List;
 import static com.zipcodewilmington.froilansfarm.days.EveryMorning.everyMorning;
 
 public class Tuesday {
-    public static void tuesday(Farmer farmer, Tractor tractor, Farm farm) {
+    public static List<Edible> tuesday(Farmer farmer, Tractor tractor, Field field) {
         everyMorning();
         farmer.mount(tractor);
         List<Edible> yields = new ArrayList<>();
-        for(Field field : farm.getFields()) {
-            for(CropRow cropRow : field.getCropRows()) {
-                for(Crop crop : cropRow.getCrops()) {
-                    tractor.makeNoise();
-                    yields.add(tractor.harvest(crop));
-                }
+        for(CropRow cropRow : field.getCropRows()) {
+            for(Crop crop : cropRow.getCrops()) {
+                tractor.makeNoise();
+                Edible yield = tractor.harvest(crop);
+                if (yield != null) yields.add(yield);
             }
         }
+        return yields;
     }
 }

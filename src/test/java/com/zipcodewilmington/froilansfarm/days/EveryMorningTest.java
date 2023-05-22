@@ -17,7 +17,6 @@ class EveryMorningTest {
 
     @Test
     void everyMorning() {
-        //TODO
         //GIVEN
         Farmer farmer = new Farmer("Froilan");
         Farmer farmer2 = new Farmer("Froilanda");

@@ -4,20 +4,28 @@ import com.zipcodewilmington.froilansfarm.interfaces.Produce;
 
 public abstract class Crop implements Produce {
 
-    private boolean hasBeenHarvested;
-    private boolean hasBeenFertilized;
+    private boolean harvested;
+    private boolean fertilized;
 
     public Crop() {
-        this.hasBeenHarvested = false;
-        this.hasBeenFertilized = false;
+        this.harvested = false;
+        this.fertilized = false;
     }
 
     public void fertilize() {
-        this.hasBeenFertilized = true;
+        this.fertilized = true;
     }
 
     public void harvest() {
-        this.hasBeenHarvested = true;
+        this.harvested = true;
+    }
+
+    public boolean isFertilized() {
+        return fertilized;
+    }
+
+    public boolean isHarvested() {
+        return harvested;
     }
 
     public boolean isHasBeenHarvested() {

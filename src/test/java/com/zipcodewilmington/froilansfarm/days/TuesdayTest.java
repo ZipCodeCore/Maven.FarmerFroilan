@@ -1,9 +1,11 @@
 package com.zipcodewilmington.froilansfarm.days;
 
 import com.zipcodewilmington.froilansfarm.CropRow;
-import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Farmer;
 import com.zipcodewilmington.froilansfarm.Field;
+import com.zipcodewilmington.froilansfarm.food.Corn;
+import com.zipcodewilmington.froilansfarm.food.Tomato;
+import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.plants.Cornstalk;
 import com.zipcodewilmington.froilansfarm.plants.Crop;
 import com.zipcodewilmington.froilansfarm.plants.TomatoPlant;
@@ -14,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.zipcodewilmington.froilansfarm.days.Tuesday.tuesday;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TuesdayTest {
@@ -43,10 +46,12 @@ class TuesdayTest {
         CropRow cropRow4 = new CropRow(Arrays.asList(tomato3, tomato4));
         Field field1 = new Field(Arrays.asList(cropRow1, cropRow2));
         Field field2 = new Field(Arrays.asList(cropRow3, cropRow4));
-        Farm farm = new Farm(List.of(field1, field2));
 
         //WHEN
-        tuesday(farmer, tractor, farm);
+        List<Edible> result1 = tuesday(farmer, tractor, field1);
+        List<Edible> expected1 = List.of(new Corn(), new Corn(), new Corn());
+        List<Edible> result2 = tuesday(farmer, tractor, field2);
+        List<Edible> expected2 = List.of(new Tomato(), new Tomato(), new Tomato());
 
         //THEN
         assertTrue(corn1.isHarvested());
@@ -57,6 +62,14 @@ class TuesdayTest {
         assertTrue(tomato2.isHarvested());
         assertTrue(tomato3.isHarvested());
         assertTrue(tomato4.isHarvested());
+        assertEquals(result1.size(), expected1.size());
+        assertTrue(result1.get(0) instanceof Corn);
+        assertTrue(result1.get(1) instanceof Corn);
+        assertTrue(result1.get(2) instanceof Corn);
+        assertEquals(result2.size(), expected2.size());
+        assertTrue(result2.get(0) instanceof Tomato);
+        assertTrue(result2.get(1) instanceof Tomato);
+        assertTrue(result2.get(2) instanceof Tomato);
     }
 
 }

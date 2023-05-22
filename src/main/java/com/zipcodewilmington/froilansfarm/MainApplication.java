@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.buildings.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.buildings.Stable;
 import com.zipcodewilmington.froilansfarm.interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.plants.Crop;
+import com.zipcodewilmington.froilansfarm.plants.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.vehicles.Aircraft;
 import com.zipcodewilmington.froilansfarm.vehicles.CropDuster;
 import com.zipcodewilmington.froilansfarm.vehicles.Tractor;
@@ -71,8 +72,6 @@ public class MainApplication {
         Farmer froilanda = new Farmer("Froilanda");
         Person[] people = {froilan,froilanda};
         Aircraft cropduster = new CropDuster();
-
-
-
     }
+
 }

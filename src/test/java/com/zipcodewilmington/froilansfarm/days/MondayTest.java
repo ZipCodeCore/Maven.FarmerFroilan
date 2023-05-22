@@ -1,36 +1,53 @@
 package com.zipcodewilmington.froilansfarm.days;
 
 import com.zipcodewilmington.froilansfarm.CropRow;
-import com.zipcodewilmington.froilansfarm.Farm;
 import com.zipcodewilmington.froilansfarm.Farmer;
 import com.zipcodewilmington.froilansfarm.Field;
-import org.junit.jupiter.api.Assertions;
+import com.zipcodewilmington.froilansfarm.plants.Cornstalk;
+import com.zipcodewilmington.froilansfarm.plants.Crop;
+import com.zipcodewilmington.froilansfarm.plants.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.vehicles.CropDuster;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+
+import static com.zipcodewilmington.froilansfarm.days.Monday.monday;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MondayTest {
 
     //On `Monday`, his sister, `Froilanda` uses the `CropDuster` to `fly` over the `Field` and `fertilize` each of the `CropRow`
     @Test
     void mondayTest() {
-        // Farm setup
-        Farm farm = new Farm();
-        Field field = new Field();
-//        farm.setField(field);
-        CropRow[] cropRows = field.getCropRows().toArray(new CropRow[0]);
-        CropRow cropRow1 = cropRows[0];
-        CropRow cropRow2 = cropRows[1];
-        CropRow cropRow3 = cropRows[2];
-
-        // Monday routine - Fertilizing crops
+        //GIVEN
         Farmer froilanda = new Farmer("Froilanda");
-        froilanda.equals(cropRow1);
-        froilanda.equals(cropRow2);
-        froilanda.equals(cropRow3);
+        CropDuster cropDuster = new CropDuster();
+        Crop corn1 = new Cornstalk();
+        Crop corn2 = new Cornstalk();
+        Crop corn3 = new Cornstalk();
+        Crop corn4 = new Cornstalk();
+        Crop tomato1 = new TomatoPlant();
+        Crop tomato2 = new TomatoPlant();
+        Crop tomato3 = new TomatoPlant();
+        Crop tomato4 = new TomatoPlant();
+        CropRow cropRow1 = new CropRow(Arrays.asList(corn1, corn2));
+        CropRow cropRow2 = new CropRow(Arrays.asList(corn3, corn4));
+        CropRow cropRow3 = new CropRow(Arrays.asList(tomato1, tomato2));
+        CropRow cropRow4 = new CropRow(Arrays.asList(tomato3, tomato4));
+        Field field = new Field(Arrays.asList(cropRow1, cropRow2, cropRow3, cropRow4));
+
+        //WHEN
+        monday(froilanda, cropDuster, field);
 
         // Assertions
-        Assertions.assertTrue(cropRow1.fertilize());
-        Assertions.assertTrue(cropRow2.fertilize());
-        Assertions.assertTrue(cropRow3.fertilize());
+        assertTrue(corn1.isFertilized());
+        assertTrue(corn2.isFertilized());
+        assertTrue(corn3.isFertilized());
+        assertTrue(corn4.isFertilized());
+        assertTrue(tomato1.isFertilized());
+        assertTrue(tomato2.isFertilized());
+        assertTrue(tomato3.isFertilized());
+        assertTrue(tomato4.isFertilized());
     }
 
-    }
+}

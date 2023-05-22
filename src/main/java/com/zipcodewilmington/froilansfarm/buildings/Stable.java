@@ -17,6 +17,8 @@ public class Stable {
         this.horses = horses;
     }
 
+    public Stable() {}
+
     public List<Horse> getHorses() {
         return horses;
     }

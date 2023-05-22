@@ -38,4 +38,7 @@ public class Field {
         this.cropRows.addAll(cropRows);
     }
 
+    public List<CropRow> getCropRows() {
+        return cropRows;
+    }
 }

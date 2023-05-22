@@ -13,4 +13,22 @@ public class Stable {
         horses.add(horse);
     }
 
+    public Stable(List<Horse> horses) {
+        this.horses = horses;
+    }
+
+    public List<Horse> getHorses() {
+        return horses;
+    }
+
+    public void setHorses(List<Horse> horses) {
+        this.horses = horses;
+    }
+
+    @Override
+    public String toString() {
+        return "Stable{" +
+                "horses=" + horses +
+                '}';
+    }
 }

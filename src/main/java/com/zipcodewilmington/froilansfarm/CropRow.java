@@ -40,10 +40,13 @@ public class CropRow {
         this.row.addAll(crops);
     }
 
-    public void fertilize() {
+
+    public boolean fertilize() {
         for (Crop crop : this.row) {
             crop.fertilize();
         }
+
+        return false;
     }
 
 }

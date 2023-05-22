@@ -12,9 +12,9 @@ public class Farmer extends Person implements Botanist, Rider {
         super(name);
     }
 
-    //TODO
     @Override
-    public void plant(/*CropRow cropRow, */Crop crop) {
+    public void plant(CropRow cropRow, Crop crop) {
+        cropRow.store(crop);
     }
 
     @Override

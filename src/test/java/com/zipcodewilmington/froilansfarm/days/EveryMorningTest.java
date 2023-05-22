@@ -15,8 +15,12 @@ class EveryMorningTest {
 
     @Test
     void everyMorning() {
+<<<<<<< HEAD
         // TODO
         // GIVEN
+=======
+        //GIVEN
+>>>>>>> accf6c3e7998137e63d9ace02d2cb88ba86e3c90
         Farmer farmer = new Farmer("Froilan");
         Farmer farmer2 = new Farmer("Froilanda");
 

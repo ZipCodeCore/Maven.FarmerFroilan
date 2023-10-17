@@ -1,4 +1,6 @@
 # Ol' McFroilan Had a Farm
+Fork this repository and submit the URL of your fork via the Student Portal.
+
 * **Objective:** To implement a system representative of a Farm environment
 * **Purpose:** To demonstrate [multi-inheritence design issues](https://www.geeksforgeeks.org/java-and-multiple-inheritance/)
 * **Prerequesites:** A `UML` approved by an instructor.

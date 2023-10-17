@@ -74,4 +74,4 @@ As a team, fork this repository to an Organization and submit the URL of your fo
 		* On `Tuesday`, `Froilan` uses his `Tractor` to `harvest` each `Crop` in each `CropRow`.
 
 # Planning & Execution of Design: 
-	* ask yourselves: "How do we apply **Generics** to implement our design CLEANLY?
+  * ask yourselves: "How do we apply **Generics** to implement our design CLEANLY?

@@ -1,5 +1,5 @@
 # Ol' McFroilan Had a Farm
-Fork this repository and submit the URL of your fork via the Student Portal.
+As a team, fork this repository to an Organization and submit the URL of your fork via the Student Portal. Each teammate will submit the SAME URL. 
 
 * **Objective:** To implement a system representative of a Farm environment
 * **Purpose:** To demonstrate [multi-inheritence design issues](https://www.geeksforgeeks.org/java-and-multiple-inheritance/)
